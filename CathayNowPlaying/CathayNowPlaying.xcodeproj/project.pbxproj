@@ -18,6 +18,12 @@
 		49DFEEE126DB61CF00749A41 /* NowPlayingItemsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEEE026DB61CF00749A41 /* NowPlayingItemsMapper.swift */; };
 		49DFEEE326DB622A00749A41 /* RemoteNowPlayingLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEEE226DB622A00749A41 /* RemoteNowPlayingLoader.swift */; };
 		49DFEF6F26DB793300749A41 /* CathayNowPlayingiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFEF6626DB793300749A41 /* CathayNowPlayingiOS.framework */; };
+		49DFEF7E26DB7A0200749A41 /* NowPlayingViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEF7D26DB7A0200749A41 /* NowPlayingViewControllerTests.swift */; };
+		49DFEF9126DB81FC00749A41 /* XCTestCase+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEED226DB4F1900749A41 /* XCTestCase+Extension.swift */; };
+		49DFEF9826DB871E00749A41 /* CathayNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFEF9726DB871E00749A41 /* CathayNetworking.framework */; };
+		49DFEF9926DB871E00749A41 /* CathayNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFEF9726DB871E00749A41 /* CathayNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		49DFEF9B26DB889F00749A41 /* CathayNowPlaying.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFEEB226DB499200749A41 /* CathayNowPlaying.framework */; };
+		49DFEF9C26DB889F00749A41 /* CathayNowPlaying.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFEEB226DB499200749A41 /* CathayNowPlaying.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +41,39 @@
 			remoteGlobalIDString = 49DFEF6526DB793300749A41;
 			remoteInfo = CathayNowPlayingiOS;
 		};
+		49DFEF9D26DB889F00749A41 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49DFEEA926DB499200749A41 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49DFEEB126DB499200749A41;
+			remoteInfo = CathayNowPlaying;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		49DFEF9A26DB871E00749A41 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				49DFEF9926DB871E00749A41 /* CathayNetworking.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49DFEF9F26DB889F00749A41 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				49DFEF9C26DB889F00749A41 /* CathayNowPlaying.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		49DFEEB226DB499200749A41 /* CathayNowPlaying.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CathayNowPlaying.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,6 +93,9 @@
 		49DFEF6926DB793300749A41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49DFEF6E26DB793300749A41 /* CathayNowPlayingiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CathayNowPlayingiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DFEF7526DB793300749A41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49DFEF7D26DB7A0200749A41 /* NowPlayingViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingViewControllerTests.swift; sourceTree = "<group>"; };
+		49DFEF8026DB7F2D00749A41 /* CathayNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CathayNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49DFEF9726DB871E00749A41 /* CathayNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CathayNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49DFEF9826DB871E00749A41 /* CathayNetworking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49DFEF9B26DB889F00749A41 /* CathayNowPlaying.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +142,7 @@
 				49DFEF6726DB793300749A41 /* CathayNowPlayingiOS */,
 				49DFEF7226DB793300749A41 /* CathayNowPlayingiOSTests */,
 				49DFEEB326DB499200749A41 /* Products */,
+				49DFEF7F26DB7F2D00749A41 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,7 +161,6 @@
 			isa = PBXGroup;
 			children = (
 				49DFEED826DB5FAB00749A41 /* API */,
-				49DFEED026DB4B0600749A41 /* Feature */,
 				49DFEEB626DB499200749A41 /* Info.plist */,
 			);
 			path = CathayNowPlaying;
@@ -155,6 +198,7 @@
 		49DFEED826DB5FAB00749A41 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				49DFEED026DB4B0600749A41 /* Feature */,
 				49DFEEDD26DB618100749A41 /* Helpers */,
 				49DFEEE026DB61CF00749A41 /* NowPlayingItemsMapper.swift */,
 				49DFEEE226DB622A00749A41 /* RemoteNowPlayingLoader.swift */,
@@ -182,8 +226,18 @@
 			isa = PBXGroup;
 			children = (
 				49DFEF7526DB793300749A41 /* Info.plist */,
+				49DFEF7D26DB7A0200749A41 /* NowPlayingViewControllerTests.swift */,
 			);
 			path = CathayNowPlayingiOSTests;
+			sourceTree = "<group>";
+		};
+		49DFEF7F26DB7F2D00749A41 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				49DFEF9726DB871E00749A41 /* CathayNetworking.framework */,
+				49DFEF8026DB7F2D00749A41 /* CathayNetworking.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +268,7 @@
 				49DFEEAE26DB499200749A41 /* Sources */,
 				49DFEEAF26DB499200749A41 /* Frameworks */,
 				49DFEEB026DB499200749A41 /* Resources */,
+				49DFEF9A26DB871E00749A41 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -250,10 +305,12 @@
 				49DFEF6226DB793300749A41 /* Sources */,
 				49DFEF6326DB793300749A41 /* Frameworks */,
 				49DFEF6426DB793300749A41 /* Resources */,
+				49DFEF9F26DB889F00749A41 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				49DFEF9E26DB889F00749A41 /* PBXTargetDependency */,
 			);
 			name = CathayNowPlayingiOS;
 			productName = CathayNowPlayingiOS;
@@ -300,6 +357,7 @@
 					};
 					49DFEF6D26DB793300749A41 = {
 						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
 					};
 				};
 			};
@@ -390,6 +448,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49DFEF9126DB81FC00749A41 /* XCTestCase+Extension.swift in Sources */,
+				49DFEF7E26DB7A0200749A41 /* NowPlayingViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +465,11 @@
 			isa = PBXTargetDependency;
 			target = 49DFEF6526DB793300749A41 /* CathayNowPlayingiOS */;
 			targetProxy = 49DFEF7026DB793300749A41 /* PBXContainerItemProxy */;
+		};
+		49DFEF9E26DB889F00749A41 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49DFEEB126DB499200749A41 /* CathayNowPlaying */;
+			targetProxy = 49DFEF9D26DB889F00749A41 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -551,6 +616,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.GanNaSong.CathayNowPlaying;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -577,6 +643,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.GanNaSong.CathayNowPlaying;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "macosx iphonesimulator iphoneos";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -597,6 +664,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.GanNaSong.CathayNowPlayingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -618,6 +686,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.GanNaSong.CathayNowPlayingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -643,8 +712,10 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -669,8 +740,10 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -678,6 +751,7 @@
 		49DFEF7926DB793300749A41 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U27B56TU48;
 				INFOPLIST_FILE = CathayNowPlayingiOSTests/Info.plist;
@@ -690,6 +764,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.GanNaSong.CathayNowPlayingiOSTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -698,6 +774,7 @@
 		49DFEF7A26DB793300749A41 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U27B56TU48;
 				INFOPLIST_FILE = CathayNowPlayingiOSTests/Info.plist;
@@ -710,6 +787,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.GanNaSong.CathayNowPlayingiOSTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
