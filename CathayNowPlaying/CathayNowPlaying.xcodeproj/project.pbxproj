@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		49DFEEBC26DB499200749A41 /* CathayNowPlaying.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFEEB226DB499200749A41 /* CathayNowPlaying.framework */; };
 		49DFEECD26DB4A7C00749A41 /* NowPlayingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEECC26DB4A7C00749A41 /* NowPlayingCard.swift */; };
+		49DFEECF26DB4ACC00749A41 /* NowPlayingLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEECE26DB4ACC00749A41 /* NowPlayingLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +28,7 @@
 		49DFEEBB26DB499200749A41 /* CathayNowPlayingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CathayNowPlayingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DFEEC226DB499200749A41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49DFEECC26DB4A7C00749A41 /* NowPlayingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingCard.swift; sourceTree = "<group>"; };
+		49DFEECE26DB4ACC00749A41 /* NowPlayingLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 			children = (
 				49DFEEB626DB499200749A41 /* Info.plist */,
 				49DFEECC26DB4A7C00749A41 /* NowPlayingCard.swift */,
+				49DFEECE26DB4ACC00749A41 /* NowPlayingLoader.swift */,
 			);
 			path = CathayNowPlaying;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49DFEECF26DB4ACC00749A41 /* NowPlayingLoader.swift in Sources */,
 				49DFEECD26DB4A7C00749A41 /* NowPlayingCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
