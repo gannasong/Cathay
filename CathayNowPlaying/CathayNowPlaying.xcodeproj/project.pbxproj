@@ -71,9 +71,8 @@
 		49DFEEB426DB499200749A41 /* CathayNowPlaying */ = {
 			isa = PBXGroup;
 			children = (
+				49DFEED026DB4B0600749A41 /* Feature */,
 				49DFEEB626DB499200749A41 /* Info.plist */,
-				49DFEECC26DB4A7C00749A41 /* NowPlayingCard.swift */,
-				49DFEECE26DB4ACC00749A41 /* NowPlayingLoader.swift */,
 			);
 			path = CathayNowPlaying;
 			sourceTree = "<group>";
@@ -84,6 +83,15 @@
 				49DFEEC226DB499200749A41 /* Info.plist */,
 			);
 			path = CathayNowPlayingTests;
+			sourceTree = "<group>";
+		};
+		49DFEED026DB4B0600749A41 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				49DFEECE26DB4ACC00749A41 /* NowPlayingLoader.swift */,
+				49DFEECC26DB4A7C00749A41 /* NowPlayingCard.swift */,
+			);
+			path = Feature;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
