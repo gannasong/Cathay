@@ -59,6 +59,18 @@ class LoadNowPlayingFromRemoteUseCaseTests: XCTestCase {
     XCTAssertEqual(client.requestedURLs, [expectedURL])
   }
 
+  func test_loadTwice_requestsDataFromURLTwice() {
+    let request = PagedNowPlayingRequest(page: 1, language: "some-language")
+    let expectedURL = makeURL("https://some-remote-svc.com/3/discover/movie?language=\(request.language)&page=\(request.page)")
+    let baseURL = makeURL("https://some-remote-svc.com")
+    let (sut, client) = makeSUT(baseURL: baseURL)
+
+    sut.execute(request)
+    sut.execute(request)
+
+    XCTAssertEqual(client.requestedURLs, [expectedURL, expectedURL])
+  }
+
   // MARK: - Helpers
 
   func makeSUT(baseURL: URL? = nil, file: StaticString = #file, line: UInt = #line) -> (RemoteNowPlayingLoader, HTTPClientSpy) {
