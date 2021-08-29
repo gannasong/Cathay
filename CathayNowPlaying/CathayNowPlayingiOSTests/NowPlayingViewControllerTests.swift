@@ -38,7 +38,9 @@ final class NowPlayingViewController: UIViewController {
 
   @objc func load() {
     refreshControl.beginRefreshing()
-    loader?.execute(PagedNowPlayingRequest(page: 1), completion: { _ in })
+    loader?.execute(PagedNowPlayingRequest(page: 1), completion: { [weak self] result in
+      self?.refreshControl.endRefreshing()
+    })
   }
 }
 
@@ -64,12 +66,15 @@ class NowPlayingViewControllerTests: XCTestCase {
   }
 
   func test_loadingIndicator_isVisibleDuringLoadingState() {
-    let (sut, _) = makeSUT()
+    let (sut, loader) = makeSUT()
 
     XCTAssertFalse(sut.loadingIndicatorIsVisible)
 
     sut.loadViewIfNeeded()
     XCTAssertTrue(sut.loadingIndicatorIsVisible)
+
+    loader.loadFeedCompletes(with: .success(.init(items: [], page: 1, totalPages: 1)))
+    XCTAssertFalse(sut.loadingIndicatorIsVisible)
   }
 
   // MARK: - Helpers
@@ -83,15 +88,29 @@ class NowPlayingViewControllerTests: XCTestCase {
     return (sut, loader)
   }
 
+  func makeNowPlayingFeed(items: [NowPlayingCard] = [], pageNumber: Int = 0, totalPages: Int = 1) -> NowPlayingFeed {
+    return NowPlayingFeed(items: items, page: pageNumber, totalPages: totalPages)
+  }
+
+  func makeNowPlayingCard(id: Int, title: String? = nil, imagePath: String? = nil ) -> NowPlayingCard {
+    return NowPlayingCard(id: id, title: title ?? UUID().uuidString, imagePath: imagePath ?? "\(UUID().uuidString).jpg")
+  }
+
   class LoaderSpy: NowPlayingLoader {
+    private(set) var messages: [Message] = []
+    private var loadCompletions: [(NowPlayingLoader.Result) -> Void] = []
+
     enum Message: Equatable {
       case load(PagedNowPlayingRequest)
     }
 
-    private(set) var messages: [Message] = []
-
     func execute(_ request: PagedNowPlayingRequest, completion: @escaping (NowPlayingLoader.Result) -> Void) {
       messages.append(.load(request))
+      loadCompletions.append(completion)
+    }
+
+    func loadFeedCompletes(with result: NowPlayingLoader.Result, at index: Int = 0) {
+      loadCompletions[index](result)
     }
   }
 }
