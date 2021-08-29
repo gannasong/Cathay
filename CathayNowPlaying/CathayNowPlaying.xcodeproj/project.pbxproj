@@ -37,6 +37,7 @@
 		49DFEFC026DBEAB400749A41 /* NowPlayingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEFBF26DBEAB400749A41 /* NowPlayingViewModel.swift */; };
 		49DFEFC226DBEADE00749A41 /* NowPlayingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEFC126DBEADE00749A41 /* NowPlayingPresenter.swift */; };
 		49DFEFC526DBECDC00749A41 /* WeakRefVirtualProxyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEFC426DBECDC00749A41 /* WeakRefVirtualProxyTests.swift */; };
+		49DFEFC826DBEDB400749A41 /* WeakRefVirtualProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEFC726DBEDB400749A41 /* WeakRefVirtualProxy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +123,7 @@
 		49DFEFBF26DBEAB400749A41 /* NowPlayingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingViewModel.swift; sourceTree = "<group>"; };
 		49DFEFC126DBEADE00749A41 /* NowPlayingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingPresenter.swift; sourceTree = "<group>"; };
 		49DFEFC426DBECDC00749A41 /* WeakRefVirtualProxyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakRefVirtualProxyTests.swift; sourceTree = "<group>"; };
+		49DFEFC726DBEDB400749A41 /* WeakRefVirtualProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakRefVirtualProxy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 			children = (
 				49DFEFB926DBEA2300749A41 /* Presentation */,
 				49DFEED826DB5FAB00749A41 /* API */,
+				49DFEFC626DBEDA000749A41 /* Utils */,
 				49DFEEB626DB499200749A41 /* Info.plist */,
 			);
 			path = CathayNowPlaying;
@@ -347,6 +350,14 @@
 			isa = PBXGroup;
 			children = (
 				49DFEFC426DBECDC00749A41 /* WeakRefVirtualProxyTests.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		49DFEFC626DBEDA000749A41 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				49DFEFC726DBEDB400749A41 /* WeakRefVirtualProxy.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -530,6 +541,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49DFEFC826DBEDB400749A41 /* WeakRefVirtualProxy.swift in Sources */,
 				49DFEEDF26DB61A300749A41 /* HTTPURLResponse+Extension.swift in Sources */,
 				49DFEECF26DB4ACC00749A41 /* NowPlayingLoader.swift in Sources */,
 				49DFEFC226DBEADE00749A41 /* NowPlayingPresenter.swift in Sources */,
