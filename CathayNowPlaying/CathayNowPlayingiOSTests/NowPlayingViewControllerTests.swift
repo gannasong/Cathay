@@ -9,6 +9,8 @@ import XCTest
 import UIKit
 import CathayNowPlaying
 
+final class NowPlayingCardFeedCell: UICollectionViewCell { }
+
 final class NowPlayingViewController: UIViewController {
   let refreshControl = UIRefreshControl(frame: .zero)
 
@@ -19,7 +21,7 @@ final class NowPlayingViewController: UIViewController {
     collectionView.delegate = self
     collectionView.dataSource = self
 
-    collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "UICollectionViewCell")
+    collectionView.register(NowPlayingCardFeedCell.self, forCellWithReuseIdentifier: "NowPlayingCardFeedCell")
 
     refreshControl.addTarget(self, action: #selector(load), for: .valueChanged)
     collectionView.refreshControl = refreshControl
@@ -70,7 +72,7 @@ extension NowPlayingViewController: UICollectionViewDataSource {
   }
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UICollectionViewCell", for: indexPath)
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NowPlayingCardFeedCell", for: indexPath)
     return cell
   }
 }
@@ -142,6 +144,17 @@ class NowPlayingViewControllerTests: XCTestCase {
     guard sut.numberOfItems == feed.count else {
       return XCTFail("Expected \(feed.count) cards, got \(sut.numberOfItems) instead.", file: file, line: line)
     }
+
+    feed.enumerated().forEach { index, card in
+      assertThat(sut, hasViewConfiguredFor: card, at: index)
+    }
+  }
+
+  func assertThat(_ sut: NowPlayingViewController, hasViewConfiguredFor item: NowPlayingCard, at index: Int, file: StaticString = #file, line: UInt = #line) {
+    let cell = sut.itemAt(index)
+    guard let _ = cell as? NowPlayingCardFeedCell else {
+      return XCTFail("Expected \(NowPlayingCardFeedCell.self) instance, got \(String(describing: cell)) instead", file: file, line: line)
+    }
   }
 
   class LoaderSpy: NowPlayingLoader {
@@ -170,6 +183,12 @@ extension NowPlayingViewController {
 
   var numberOfItems: Int {
     return collectionView.numberOfSections == 0 ? 0 : collectionView.numberOfItems(inSection: 0)
+  }
+
+  func itemAt(_ item: Int, section: Int = 0) -> UICollectionViewCell? {
+    let dataSource = collectionView.dataSource
+    let indexPath = IndexPath(item: item, section: section)
+    return dataSource?.collectionView(collectionView, cellForItemAt: indexPath)
   }
 
   func simulateUserRefresh() {
