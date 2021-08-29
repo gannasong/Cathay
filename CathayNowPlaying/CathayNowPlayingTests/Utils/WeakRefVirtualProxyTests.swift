@@ -24,6 +24,15 @@ class WeakRefVirtualProxyTests: XCTestCase {
     XCTAssertEqual(ObjectIdentifier(sut.object!), ObjectIdentifier(objectStub))
   }
 
+  func test_reference_forObjectIsWeak() {
+    var objectStub: ObjectStub? = ObjectStub()
+    let sut = WeakRefVirtualProxy(objectStub!)
+
+    objectStub = nil
+
+    XCTAssertNil(sut.object)
+  }
+
   // MARK: - Helpers
 
   class ObjectStub {
