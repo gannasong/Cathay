@@ -11,6 +11,7 @@
 		49DFEECD26DB4A7C00749A41 /* NowPlayingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEECC26DB4A7C00749A41 /* NowPlayingCard.swift */; };
 		49DFEECF26DB4ACC00749A41 /* NowPlayingLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEECE26DB4ACC00749A41 /* NowPlayingLoader.swift */; };
 		49DFEED326DB4F1900749A41 /* XCTestCase+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEED226DB4F1900749A41 /* XCTestCase+Extension.swift */; };
+		49DFEED526DB4F8F00749A41 /* LoadNowPlayingFromRemoteUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEED426DB4F8F00749A41 /* LoadNowPlayingFromRemoteUseCaseTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		49DFEECC26DB4A7C00749A41 /* NowPlayingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingCard.swift; sourceTree = "<group>"; };
 		49DFEECE26DB4ACC00749A41 /* NowPlayingLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingLoader.swift; sourceTree = "<group>"; };
 		49DFEED226DB4F1900749A41 /* XCTestCase+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extension.swift"; sourceTree = "<group>"; };
+		49DFEED426DB4F8F00749A41 /* LoadNowPlayingFromRemoteUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadNowPlayingFromRemoteUseCaseTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 			children = (
 				49DFEED126DB4F0400749A41 /* Helpers */,
 				49DFEEC226DB499200749A41 /* Info.plist */,
+				49DFEED426DB4F8F00749A41 /* LoadNowPlayingFromRemoteUseCaseTests.swift */,
 			);
 			path = CathayNowPlayingTests;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49DFEED326DB4F1900749A41 /* XCTestCase+Extension.swift in Sources */,
+				49DFEED526DB4F8F00749A41 /* LoadNowPlayingFromRemoteUseCaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
