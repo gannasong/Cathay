@@ -31,6 +31,7 @@
 		49DFEFAF26DBDE1D00749A41 /* NowPlayingCardFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEFAE26DBDE1D00749A41 /* NowPlayingCardFeedCell.swift */; };
 		49DFEFB226DBDE8300749A41 /* NowPlayingUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEFB126DBDE8300749A41 /* NowPlayingUIComposer.swift */; };
 		49DFEFB426DBDF7200749A41 /* NowPlayingRefreshController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEFB326DBDF7200749A41 /* NowPlayingRefreshController.swift */; };
+		49DFEFB826DBE42C00749A41 /* NowPlayingPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEFB726DBE42C00749A41 /* NowPlayingPresenterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,7 @@
 		49DFEFAE26DBDE1D00749A41 /* NowPlayingCardFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingCardFeedCell.swift; sourceTree = "<group>"; };
 		49DFEFB126DBDE8300749A41 /* NowPlayingUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingUIComposer.swift; sourceTree = "<group>"; };
 		49DFEFB326DBDF7200749A41 /* NowPlayingRefreshController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingRefreshController.swift; sourceTree = "<group>"; };
+		49DFEFB726DBE42C00749A41 /* NowPlayingPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingPresenterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,9 +185,10 @@
 		49DFEEBF26DB499200749A41 /* CathayNowPlayingTests */ = {
 			isa = PBXGroup;
 			children = (
+				49DFEFB626DBE41000749A41 /* API */,
+				49DFEFB526DBE3FD00749A41 /* Presentation */,
 				49DFEED126DB4F0400749A41 /* Helpers */,
 				49DFEEC226DB499200749A41 /* Info.plist */,
-				49DFEED426DB4F8F00749A41 /* LoadNowPlayingFromRemoteUseCaseTests.swift */,
 			);
 			path = CathayNowPlayingTests;
 			sourceTree = "<group>";
@@ -291,6 +294,22 @@
 				49DFEFB126DBDE8300749A41 /* NowPlayingUIComposer.swift */,
 			);
 			path = Composers;
+			sourceTree = "<group>";
+		};
+		49DFEFB526DBE3FD00749A41 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				49DFEFB726DBE42C00749A41 /* NowPlayingPresenterTests.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		49DFEFB626DBE41000749A41 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				49DFEED426DB4F8F00749A41 /* LoadNowPlayingFromRemoteUseCaseTests.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -485,6 +504,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49DFEFB826DBE42C00749A41 /* NowPlayingPresenterTests.swift in Sources */,
 				49DFEED326DB4F1900749A41 /* XCTestCase+Extension.swift in Sources */,
 				49DFEEDC26DB600100749A41 /* HTTPClientSpy.swift in Sources */,
 				49DFEED526DB4F8F00749A41 /* LoadNowPlayingFromRemoteUseCaseTests.swift in Sources */,
