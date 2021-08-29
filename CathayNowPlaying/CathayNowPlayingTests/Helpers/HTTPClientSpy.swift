@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CathayNetworking
 import CathayNowPlaying
 
 class HTTPClientSpy: HTTPClient {

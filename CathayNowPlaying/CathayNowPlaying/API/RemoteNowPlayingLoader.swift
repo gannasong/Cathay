@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CathayNetworking
 
 public final class RemoteNowPlayingLoader: NowPlayingLoader {
   private let baseURL: URL

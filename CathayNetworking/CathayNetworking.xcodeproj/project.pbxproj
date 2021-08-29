@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		49DFEF3D26DB678700749A41 /* CathayNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFEF3326DB678700749A41 /* CathayNetworking.framework */; };
 		49DFEF5826DB6E7700749A41 /* XCTestCase+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEF5726DB6E7700749A41 /* XCTestCase+Extension.swift */; };
+		49DFEF5A26DB6F0500749A41 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEF5926DB6F0500749A41 /* HTTPClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +28,7 @@
 		49DFEF3C26DB678700749A41 /* CathayNetworkingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CathayNetworkingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DFEF4326DB678700749A41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49DFEF5726DB6E7700749A41 /* XCTestCase+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extension.swift"; sourceTree = "<group>"; };
+		49DFEF5926DB6F0500749A41 /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 		49DFEF3526DB678700749A41 /* CathayNetworking */ = {
 			isa = PBXGroup;
 			children = (
+				49DFEF5926DB6F0500749A41 /* HTTPClient.swift */,
 				49DFEF3726DB678700749A41 /* Info.plist */,
 			);
 			path = CathayNetworking;
@@ -199,6 +202,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49DFEF5A26DB6F0500749A41 /* HTTPClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +397,7 @@
 		49DFEF4B26DB678700749A41 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -413,6 +418,7 @@
 		49DFEF4C26DB678700749A41 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
