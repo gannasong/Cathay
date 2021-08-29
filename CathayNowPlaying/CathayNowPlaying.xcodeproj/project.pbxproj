@@ -12,6 +12,7 @@
 		49DFEECF26DB4ACC00749A41 /* NowPlayingLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEECE26DB4ACC00749A41 /* NowPlayingLoader.swift */; };
 		49DFEED326DB4F1900749A41 /* XCTestCase+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEED226DB4F1900749A41 /* XCTestCase+Extension.swift */; };
 		49DFEED526DB4F8F00749A41 /* LoadNowPlayingFromRemoteUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEED426DB4F8F00749A41 /* LoadNowPlayingFromRemoteUseCaseTests.swift */; };
+		49DFEED726DB570F00749A41 /* NowPlayingFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEED626DB570F00749A41 /* NowPlayingFeed.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +34,7 @@
 		49DFEECE26DB4ACC00749A41 /* NowPlayingLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingLoader.swift; sourceTree = "<group>"; };
 		49DFEED226DB4F1900749A41 /* XCTestCase+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extension.swift"; sourceTree = "<group>"; };
 		49DFEED426DB4F8F00749A41 /* LoadNowPlayingFromRemoteUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadNowPlayingFromRemoteUseCaseTests.swift; sourceTree = "<group>"; };
+		49DFEED626DB570F00749A41 /* NowPlayingFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingFeed.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				49DFEECE26DB4ACC00749A41 /* NowPlayingLoader.swift */,
 				49DFEECC26DB4A7C00749A41 /* NowPlayingCard.swift */,
+				49DFEED626DB570F00749A41 /* NowPlayingFeed.swift */,
 			);
 			path = Feature;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 			files = (
 				49DFEECF26DB4ACC00749A41 /* NowPlayingLoader.swift in Sources */,
 				49DFEECD26DB4A7C00749A41 /* NowPlayingCard.swift in Sources */,
+				49DFEED726DB570F00749A41 /* NowPlayingFeed.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
