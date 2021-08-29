@@ -24,6 +24,7 @@
 		49DFEF9926DB871E00749A41 /* CathayNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFEF9726DB871E00749A41 /* CathayNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		49DFEF9B26DB889F00749A41 /* CathayNowPlaying.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFEEB226DB499200749A41 /* CathayNowPlaying.framework */; };
 		49DFEF9C26DB889F00749A41 /* CathayNowPlaying.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFEEB226DB499200749A41 /* CathayNowPlaying.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		49DFEFA526DBDACD00749A41 /* NowPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEFA426DBDACD00749A41 /* NowPlayingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		49DFEF7D26DB7A0200749A41 /* NowPlayingViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingViewControllerTests.swift; sourceTree = "<group>"; };
 		49DFEF8026DB7F2D00749A41 /* CathayNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CathayNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DFEF9726DB871E00749A41 /* CathayNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CathayNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49DFEFA426DBDACD00749A41 /* NowPlayingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +219,7 @@
 		49DFEF6726DB793300749A41 /* CathayNowPlayingiOS */ = {
 			isa = PBXGroup;
 			children = (
+				49DFEFA326DBDAB300749A41 /* Controllers */,
 				49DFEF6926DB793300749A41 /* Info.plist */,
 			);
 			path = CathayNowPlayingiOS;
@@ -238,6 +241,14 @@
 				49DFEF8026DB7F2D00749A41 /* CathayNetworking.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		49DFEFA326DBDAB300749A41 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				49DFEFA426DBDACD00749A41 /* NowPlayingViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,6 +365,7 @@
 					};
 					49DFEF6526DB793300749A41 = {
 						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
 					};
 					49DFEF6D26DB793300749A41 = {
 						CreatedOnToolsVersion = 12.5;
@@ -441,6 +453,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49DFEFA526DBDACD00749A41 /* NowPlayingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -694,6 +707,7 @@
 		49DFEF7726DB793300749A41 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = U27B56TU48;
@@ -714,6 +728,7 @@
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
 				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -722,6 +737,7 @@
 		49DFEF7826DB793300749A41 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = U27B56TU48;
@@ -751,6 +767,7 @@
 		49DFEF7926DB793300749A41 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U27B56TU48;
@@ -774,6 +791,7 @@
 		49DFEF7A26DB793300749A41 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U27B56TU48;
