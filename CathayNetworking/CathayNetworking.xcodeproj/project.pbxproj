@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		49DFEF3D26DB678700749A41 /* CathayNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFEF3326DB678700749A41 /* CathayNetworking.framework */; };
+		49DFEF5826DB6E7700749A41 /* XCTestCase+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEF5726DB6E7700749A41 /* XCTestCase+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +26,7 @@
 		49DFEF3726DB678700749A41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49DFEF3C26DB678700749A41 /* CathayNetworkingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CathayNetworkingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DFEF4326DB678700749A41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49DFEF5726DB6E7700749A41 /* XCTestCase+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,9 +77,18 @@
 		49DFEF4026DB678700749A41 /* CathayNetworkingTests */ = {
 			isa = PBXGroup;
 			children = (
+				49DFEF5626DB6E5A00749A41 /* Helpers */,
 				49DFEF4326DB678700749A41 /* Info.plist */,
 			);
 			path = CathayNetworkingTests;
+			sourceTree = "<group>";
+		};
+		49DFEF5626DB6E5A00749A41 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				49DFEF5726DB6E7700749A41 /* XCTestCase+Extension.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +154,7 @@
 					};
 					49DFEF3B26DB678700749A41 = {
 						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
 					};
 				};
 			};
@@ -194,6 +206,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49DFEF5826DB6E7700749A41 /* XCTestCase+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +393,7 @@
 		49DFEF4B26DB678700749A41 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = U27B56TU48;
@@ -391,6 +405,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.GanNaSong.CathayNetworkingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -398,6 +413,7 @@
 		49DFEF4C26DB678700749A41 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = U27B56TU48;
