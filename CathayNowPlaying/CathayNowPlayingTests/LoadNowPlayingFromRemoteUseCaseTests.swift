@@ -10,7 +10,7 @@ import CathayNowPlaying
 
 class RemoteNowPlayingLoader: NowPlayingLoader {
   private let baseURL: URL
-  private let client: LoadNowPlayingFromRemoteUseCaseTests.HTTPClientSpy
+  private let client: HTTPClient
 
   public typealias Result = NowPlayingLoader.Result
 
@@ -19,7 +19,7 @@ class RemoteNowPlayingLoader: NowPlayingLoader {
     case invalidResponse
   }
 
-  init(baseURL: URL, client: LoadNowPlayingFromRemoteUseCaseTests.HTTPClientSpy) {
+  init(baseURL: URL, client: HTTPClient) {
     self.baseURL = baseURL
     self.client = client
   }
@@ -145,7 +145,7 @@ class LoadNowPlayingFromRemoteUseCaseTests: XCTestCase {
 
     expect(sut, toCompleteWith: failure(.connectivity)) {
       let clientError = makeError()
-      client.completes(with: .failure(clientError))
+      client.completes(with: clientError)
     }
   }
 
@@ -276,26 +276,5 @@ class LoadNowPlayingFromRemoteUseCaseTests: XCTestCase {
     ]
 
     return (model, json)
-  }
-
-  class HTTPClientSpy {
-    private var messages = [(request: URLRequest, completion: (Result<(data: Data, response: HTTPURLResponse), Error>) -> Void)]()
-
-    var requestedURLs: [URL] {
-      return messages.compactMap { $0.request.url }
-    }
-
-    func dispatch(_ request: URLRequest, completion: @escaping (Result<(data: Data, response: HTTPURLResponse), Error>) -> Void) {
-      messages.append((request, completion))
-    }
-
-    func completes(with result: Result<(data: Data, response: HTTPURLResponse), Error>, at index: Int = 0) {
-      messages[index].completion(result)
-    }
-
-    func completes(withStatusCode code: Int, data: Data, at index: Int = 0) {
-      let response = HTTPURLResponse(url: requestedURLs[index], statusCode: code, httpVersion: nil, headerFields: nil)!
-      messages[index].completion(.success((data, response)))
-    }
   }
 }

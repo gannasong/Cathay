@@ -14,6 +14,7 @@
 		49DFEED526DB4F8F00749A41 /* LoadNowPlayingFromRemoteUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEED426DB4F8F00749A41 /* LoadNowPlayingFromRemoteUseCaseTests.swift */; };
 		49DFEED726DB570F00749A41 /* NowPlayingFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEED626DB570F00749A41 /* NowPlayingFeed.swift */; };
 		49DFEEDA26DB5FC500749A41 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEED926DB5FC500749A41 /* HTTPClient.swift */; };
+		49DFEEDC26DB600100749A41 /* HTTPClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEEDB26DB600100749A41 /* HTTPClientSpy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,7 @@
 		49DFEED426DB4F8F00749A41 /* LoadNowPlayingFromRemoteUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadNowPlayingFromRemoteUseCaseTests.swift; sourceTree = "<group>"; };
 		49DFEED626DB570F00749A41 /* NowPlayingFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingFeed.swift; sourceTree = "<group>"; };
 		49DFEED926DB5FC500749A41 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		49DFEEDB26DB600100749A41 /* HTTPClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientSpy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				49DFEED226DB4F1900749A41 /* XCTestCase+Extension.swift */,
+				49DFEEDB26DB600100749A41 /* HTTPClientSpy.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49DFEED326DB4F1900749A41 /* XCTestCase+Extension.swift in Sources */,
+				49DFEEDC26DB600100749A41 /* HTTPClientSpy.swift in Sources */,
 				49DFEED526DB4F8F00749A41 /* LoadNowPlayingFromRemoteUseCaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
