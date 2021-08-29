@@ -13,6 +13,7 @@
 		49DFEED326DB4F1900749A41 /* XCTestCase+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEED226DB4F1900749A41 /* XCTestCase+Extension.swift */; };
 		49DFEED526DB4F8F00749A41 /* LoadNowPlayingFromRemoteUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEED426DB4F8F00749A41 /* LoadNowPlayingFromRemoteUseCaseTests.swift */; };
 		49DFEED726DB570F00749A41 /* NowPlayingFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEED626DB570F00749A41 /* NowPlayingFeed.swift */; };
+		49DFEEDA26DB5FC500749A41 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEED926DB5FC500749A41 /* HTTPClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,7 @@
 		49DFEED226DB4F1900749A41 /* XCTestCase+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extension.swift"; sourceTree = "<group>"; };
 		49DFEED426DB4F8F00749A41 /* LoadNowPlayingFromRemoteUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadNowPlayingFromRemoteUseCaseTests.swift; sourceTree = "<group>"; };
 		49DFEED626DB570F00749A41 /* NowPlayingFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingFeed.swift; sourceTree = "<group>"; };
+		49DFEED926DB5FC500749A41 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		49DFEEB426DB499200749A41 /* CathayNowPlaying */ = {
 			isa = PBXGroup;
 			children = (
+				49DFEED826DB5FAB00749A41 /* API */,
 				49DFEED026DB4B0600749A41 /* Feature */,
 				49DFEEB626DB499200749A41 /* Info.plist */,
 			);
@@ -109,6 +112,14 @@
 				49DFEED226DB4F1900749A41 /* XCTestCase+Extension.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		49DFEED826DB5FAB00749A41 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				49DFEED926DB5FC500749A41 /* HTTPClient.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +233,7 @@
 			files = (
 				49DFEECF26DB4ACC00749A41 /* NowPlayingLoader.swift in Sources */,
 				49DFEECD26DB4A7C00749A41 /* NowPlayingCard.swift in Sources */,
+				49DFEEDA26DB5FC500749A41 /* HTTPClient.swift in Sources */,
 				49DFEED726DB570F00749A41 /* NowPlayingFeed.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
