@@ -32,6 +32,10 @@
 		49DFEFB226DBDE8300749A41 /* NowPlayingUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEFB126DBDE8300749A41 /* NowPlayingUIComposer.swift */; };
 		49DFEFB426DBDF7200749A41 /* NowPlayingRefreshController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEFB326DBDF7200749A41 /* NowPlayingRefreshController.swift */; };
 		49DFEFB826DBE42C00749A41 /* NowPlayingPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEFB726DBE42C00749A41 /* NowPlayingPresenterTests.swift */; };
+		49DFEFBC26DBEA4600749A41 /* NowPlayingErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEFBB26DBEA4600749A41 /* NowPlayingErrorViewModel.swift */; };
+		49DFEFBE26DBEA7600749A41 /* NowPlayingLoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEFBD26DBEA7600749A41 /* NowPlayingLoadingViewModel.swift */; };
+		49DFEFC026DBEAB400749A41 /* NowPlayingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEFBF26DBEAB400749A41 /* NowPlayingViewModel.swift */; };
+		49DFEFC226DBEADE00749A41 /* NowPlayingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEFC126DBEADE00749A41 /* NowPlayingPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +116,10 @@
 		49DFEFB126DBDE8300749A41 /* NowPlayingUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingUIComposer.swift; sourceTree = "<group>"; };
 		49DFEFB326DBDF7200749A41 /* NowPlayingRefreshController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingRefreshController.swift; sourceTree = "<group>"; };
 		49DFEFB726DBE42C00749A41 /* NowPlayingPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingPresenterTests.swift; sourceTree = "<group>"; };
+		49DFEFBB26DBEA4600749A41 /* NowPlayingErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingErrorViewModel.swift; sourceTree = "<group>"; };
+		49DFEFBD26DBEA7600749A41 /* NowPlayingLoadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingLoadingViewModel.swift; sourceTree = "<group>"; };
+		49DFEFBF26DBEAB400749A41 /* NowPlayingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingViewModel.swift; sourceTree = "<group>"; };
+		49DFEFC126DBEADE00749A41 /* NowPlayingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +184,7 @@
 		49DFEEB426DB499200749A41 /* CathayNowPlaying */ = {
 			isa = PBXGroup;
 			children = (
+				49DFEFB926DBEA2300749A41 /* Presentation */,
 				49DFEED826DB5FAB00749A41 /* API */,
 				49DFEEB626DB499200749A41 /* Info.plist */,
 			);
@@ -310,6 +319,25 @@
 				49DFEED426DB4F8F00749A41 /* LoadNowPlayingFromRemoteUseCaseTests.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		49DFEFB926DBEA2300749A41 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				49DFEFBA26DBEA3400749A41 /* Models */,
+				49DFEFC126DBEADE00749A41 /* NowPlayingPresenter.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		49DFEFBA26DBEA3400749A41 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				49DFEFBB26DBEA4600749A41 /* NowPlayingErrorViewModel.swift */,
+				49DFEFBD26DBEA7600749A41 /* NowPlayingLoadingViewModel.swift */,
+				49DFEFBF26DBEAB400749A41 /* NowPlayingViewModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -493,7 +521,11 @@
 			files = (
 				49DFEEDF26DB61A300749A41 /* HTTPURLResponse+Extension.swift in Sources */,
 				49DFEECF26DB4ACC00749A41 /* NowPlayingLoader.swift in Sources */,
+				49DFEFC226DBEADE00749A41 /* NowPlayingPresenter.swift in Sources */,
+				49DFEFBE26DBEA7600749A41 /* NowPlayingLoadingViewModel.swift in Sources */,
+				49DFEFBC26DBEA4600749A41 /* NowPlayingErrorViewModel.swift in Sources */,
 				49DFEECD26DB4A7C00749A41 /* NowPlayingCard.swift in Sources */,
+				49DFEFC026DBEAB400749A41 /* NowPlayingViewModel.swift in Sources */,
 				49DFEEE126DB61CF00749A41 /* NowPlayingItemsMapper.swift in Sources */,
 				49DFEEE326DB622A00749A41 /* RemoteNowPlayingLoader.swift in Sources */,
 				49DFEED726DB570F00749A41 /* NowPlayingFeed.swift in Sources */,
