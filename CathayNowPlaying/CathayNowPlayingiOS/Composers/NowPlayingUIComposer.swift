@@ -12,7 +12,8 @@ public final class NowPlayingUIComposer {
   private init() {}
 
   public static func compose(loader: NowPlayingLoader) -> NowPlayingViewController {
-    let viewController = NowPlayingViewController(loader: loader)
+    let refreshController = NowPlayingRefreshController(loader: loader)
+    let viewController = NowPlayingViewController(refreshController: refreshController)
     return viewController
   }
 }

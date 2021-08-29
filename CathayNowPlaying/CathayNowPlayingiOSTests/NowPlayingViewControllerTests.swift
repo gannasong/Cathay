@@ -27,8 +27,6 @@ class NowPlayingViewControllerTests: XCTestCase {
   func test_loadingIndicator_isVisibleDuringLoadingState() {
     let (sut, loader) = makeSUT()
 
-    XCTAssertFalse(sut.loadingIndicatorIsVisible)
-
     sut.loadViewIfNeeded()
     XCTAssertTrue(sut.loadingIndicatorIsVisible)
 

@@ -10,7 +10,7 @@ import CathayNowPlayingiOS
 
 extension NowPlayingViewController {
   var loadingIndicatorIsVisible: Bool {
-    return refreshControl.isRefreshing
+    return collectionView.refreshControl?.isRefreshing == true
   }
 
   var numberOfItems: Int {
@@ -24,7 +24,7 @@ extension NowPlayingViewController {
   }
 
   func simulateUserRefresh() {
-    refreshControl.beginRefreshing()
-    refreshControl.simulatePullToRefresh()
+    collectionView.refreshControl?.beginRefreshing()
+    scrollViewDidEndDragging(collectionView, willDecelerate: true)
   }
 }
