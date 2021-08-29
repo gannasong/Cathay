@@ -15,6 +15,9 @@
 		49DFEED726DB570F00749A41 /* NowPlayingFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEED626DB570F00749A41 /* NowPlayingFeed.swift */; };
 		49DFEEDA26DB5FC500749A41 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEED926DB5FC500749A41 /* HTTPClient.swift */; };
 		49DFEEDC26DB600100749A41 /* HTTPClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEEDB26DB600100749A41 /* HTTPClientSpy.swift */; };
+		49DFEEDF26DB61A300749A41 /* HTTPURLResponse+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEEDE26DB61A300749A41 /* HTTPURLResponse+Extension.swift */; };
+		49DFEEE126DB61CF00749A41 /* NowPlayingItemsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEEE026DB61CF00749A41 /* NowPlayingItemsMapper.swift */; };
+		49DFEEE326DB622A00749A41 /* RemoteNowPlayingLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEEE226DB622A00749A41 /* RemoteNowPlayingLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +42,9 @@
 		49DFEED626DB570F00749A41 /* NowPlayingFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingFeed.swift; sourceTree = "<group>"; };
 		49DFEED926DB5FC500749A41 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		49DFEEDB26DB600100749A41 /* HTTPClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientSpy.swift; sourceTree = "<group>"; };
+		49DFEEDE26DB61A300749A41 /* HTTPURLResponse+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPURLResponse+Extension.swift"; sourceTree = "<group>"; };
+		49DFEEE026DB61CF00749A41 /* NowPlayingItemsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingItemsMapper.swift; sourceTree = "<group>"; };
+		49DFEEE226DB622A00749A41 /* RemoteNowPlayingLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteNowPlayingLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,9 +126,20 @@
 		49DFEED826DB5FAB00749A41 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				49DFEEDD26DB618100749A41 /* Helpers */,
 				49DFEED926DB5FC500749A41 /* HTTPClient.swift */,
+				49DFEEE026DB61CF00749A41 /* NowPlayingItemsMapper.swift */,
+				49DFEEE226DB622A00749A41 /* RemoteNowPlayingLoader.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		49DFEEDD26DB618100749A41 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				49DFEEDE26DB61A300749A41 /* HTTPURLResponse+Extension.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,8 +251,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49DFEEDF26DB61A300749A41 /* HTTPURLResponse+Extension.swift in Sources */,
 				49DFEECF26DB4ACC00749A41 /* NowPlayingLoader.swift in Sources */,
 				49DFEECD26DB4A7C00749A41 /* NowPlayingCard.swift in Sources */,
+				49DFEEE126DB61CF00749A41 /* NowPlayingItemsMapper.swift in Sources */,
+				49DFEEE326DB622A00749A41 /* RemoteNowPlayingLoader.swift in Sources */,
 				49DFEEDA26DB5FC500749A41 /* HTTPClient.swift in Sources */,
 				49DFEED726DB570F00749A41 /* NowPlayingFeed.swift in Sources */,
 			);
