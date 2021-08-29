@@ -8,8 +8,6 @@
 import UIKit
 import CathayNowPlaying
 
-public final class NowPlayingCardFeedCell: UICollectionViewCell { }
-
 public final class NowPlayingViewController: UIViewController {
   public let refreshControl = UIRefreshControl(frame: .zero)
 
