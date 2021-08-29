@@ -30,6 +30,7 @@
 		49DFEFAC26DBDD6F00749A41 /* NowPlayingViewController+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEFAB26DBDD6F00749A41 /* NowPlayingViewController+TestHelpers.swift */; };
 		49DFEFAF26DBDE1D00749A41 /* NowPlayingCardFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEFAE26DBDE1D00749A41 /* NowPlayingCardFeedCell.swift */; };
 		49DFEFB226DBDE8300749A41 /* NowPlayingUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEFB126DBDE8300749A41 /* NowPlayingUIComposer.swift */; };
+		49DFEFB426DBDF7200749A41 /* NowPlayingRefreshController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEFB326DBDF7200749A41 /* NowPlayingRefreshController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,7 @@
 		49DFEFAB26DBDD6F00749A41 /* NowPlayingViewController+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NowPlayingViewController+TestHelpers.swift"; sourceTree = "<group>"; };
 		49DFEFAE26DBDE1D00749A41 /* NowPlayingCardFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingCardFeedCell.swift; sourceTree = "<group>"; };
 		49DFEFB126DBDE8300749A41 /* NowPlayingUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingUIComposer.swift; sourceTree = "<group>"; };
+		49DFEFB326DBDF7200749A41 /* NowPlayingRefreshController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingRefreshController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				49DFEFA426DBDACD00749A41 /* NowPlayingViewController.swift */,
+				49DFEFB326DBDF7200749A41 /* NowPlayingRefreshController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -493,6 +496,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49DFEFA526DBDACD00749A41 /* NowPlayingViewController.swift in Sources */,
+				49DFEFB426DBDF7200749A41 /* NowPlayingRefreshController.swift in Sources */,
 				49DFEFB226DBDE8300749A41 /* NowPlayingUIComposer.swift in Sources */,
 				49DFEFAF26DBDE1D00749A41 /* NowPlayingCardFeedCell.swift in Sources */,
 			);
