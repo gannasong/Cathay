@@ -17,6 +17,7 @@
 		49DFEEDF26DB61A300749A41 /* HTTPURLResponse+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEEDE26DB61A300749A41 /* HTTPURLResponse+Extension.swift */; };
 		49DFEEE126DB61CF00749A41 /* NowPlayingItemsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEEE026DB61CF00749A41 /* NowPlayingItemsMapper.swift */; };
 		49DFEEE326DB622A00749A41 /* RemoteNowPlayingLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEEE226DB622A00749A41 /* RemoteNowPlayingLoader.swift */; };
+		49DFEF6F26DB793300749A41 /* CathayNowPlayingiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFEF6626DB793300749A41 /* CathayNowPlayingiOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +27,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 49DFEEB126DB499200749A41;
 			remoteInfo = CathayNowPlaying;
+		};
+		49DFEF7026DB793300749A41 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49DFEEA926DB499200749A41 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49DFEF6526DB793300749A41;
+			remoteInfo = CathayNowPlayingiOS;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -43,6 +51,10 @@
 		49DFEEDE26DB61A300749A41 /* HTTPURLResponse+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPURLResponse+Extension.swift"; sourceTree = "<group>"; };
 		49DFEEE026DB61CF00749A41 /* NowPlayingItemsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingItemsMapper.swift; sourceTree = "<group>"; };
 		49DFEEE226DB622A00749A41 /* RemoteNowPlayingLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteNowPlayingLoader.swift; sourceTree = "<group>"; };
+		49DFEF6626DB793300749A41 /* CathayNowPlayingiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CathayNowPlayingiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49DFEF6926DB793300749A41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49DFEF6E26DB793300749A41 /* CathayNowPlayingiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CathayNowPlayingiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		49DFEF7526DB793300749A41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +73,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		49DFEF6326DB793300749A41 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49DFEF6B26DB793300749A41 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49DFEF6F26DB793300749A41 /* CathayNowPlayingiOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -69,6 +96,8 @@
 			children = (
 				49DFEEB426DB499200749A41 /* CathayNowPlaying */,
 				49DFEEBF26DB499200749A41 /* CathayNowPlayingTests */,
+				49DFEF6726DB793300749A41 /* CathayNowPlayingiOS */,
+				49DFEF7226DB793300749A41 /* CathayNowPlayingiOSTests */,
 				49DFEEB326DB499200749A41 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -78,6 +107,8 @@
 			children = (
 				49DFEEB226DB499200749A41 /* CathayNowPlaying.framework */,
 				49DFEEBB26DB499200749A41 /* CathayNowPlayingTests.xctest */,
+				49DFEF6626DB793300749A41 /* CathayNowPlayingiOS.framework */,
+				49DFEF6E26DB793300749A41 /* CathayNowPlayingiOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,10 +170,33 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		49DFEF6726DB793300749A41 /* CathayNowPlayingiOS */ = {
+			isa = PBXGroup;
+			children = (
+				49DFEF6926DB793300749A41 /* Info.plist */,
+			);
+			path = CathayNowPlayingiOS;
+			sourceTree = "<group>";
+		};
+		49DFEF7226DB793300749A41 /* CathayNowPlayingiOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				49DFEF7526DB793300749A41 /* Info.plist */,
+			);
+			path = CathayNowPlayingiOSTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
 		49DFEEAD26DB499200749A41 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49DFEF6126DB793300749A41 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -188,6 +242,42 @@
 			productReference = 49DFEEBB26DB499200749A41 /* CathayNowPlayingTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		49DFEF6526DB793300749A41 /* CathayNowPlayingiOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49DFEF7B26DB793300749A41 /* Build configuration list for PBXNativeTarget "CathayNowPlayingiOS" */;
+			buildPhases = (
+				49DFEF6126DB793300749A41 /* Headers */,
+				49DFEF6226DB793300749A41 /* Sources */,
+				49DFEF6326DB793300749A41 /* Frameworks */,
+				49DFEF6426DB793300749A41 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CathayNowPlayingiOS;
+			productName = CathayNowPlayingiOS;
+			productReference = 49DFEF6626DB793300749A41 /* CathayNowPlayingiOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		49DFEF6D26DB793300749A41 /* CathayNowPlayingiOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49DFEF7C26DB793300749A41 /* Build configuration list for PBXNativeTarget "CathayNowPlayingiOSTests" */;
+			buildPhases = (
+				49DFEF6A26DB793300749A41 /* Sources */,
+				49DFEF6B26DB793300749A41 /* Frameworks */,
+				49DFEF6C26DB793300749A41 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				49DFEF7126DB793300749A41 /* PBXTargetDependency */,
+			);
+			name = CathayNowPlayingiOSTests;
+			productName = CathayNowPlayingiOSTests;
+			productReference = 49DFEF6E26DB793300749A41 /* CathayNowPlayingiOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -204,6 +294,12 @@
 					49DFEEBA26DB499200749A41 = {
 						CreatedOnToolsVersion = 12.5;
 						LastSwiftMigration = 1250;
+					};
+					49DFEF6526DB793300749A41 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					49DFEF6D26DB793300749A41 = {
+						CreatedOnToolsVersion = 12.5;
 					};
 				};
 			};
@@ -222,6 +318,8 @@
 			targets = (
 				49DFEEB126DB499200749A41 /* CathayNowPlaying */,
 				49DFEEBA26DB499200749A41 /* CathayNowPlayingTests */,
+				49DFEF6526DB793300749A41 /* CathayNowPlayingiOS */,
+				49DFEF6D26DB793300749A41 /* CathayNowPlayingiOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -235,6 +333,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		49DFEEB926DB499200749A41 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49DFEF6426DB793300749A41 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49DFEF6C26DB793300749A41 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -267,6 +379,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		49DFEF6226DB793300749A41 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49DFEF6A26DB793300749A41 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -274,6 +400,11 @@
 			isa = PBXTargetDependency;
 			target = 49DFEEB126DB499200749A41 /* CathayNowPlaying */;
 			targetProxy = 49DFEEBD26DB499200749A41 /* PBXContainerItemProxy */;
+		};
+		49DFEF7126DB793300749A41 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49DFEF6526DB793300749A41 /* CathayNowPlayingiOS */;
+			targetProxy = 49DFEF7026DB793300749A41 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -491,6 +622,100 @@
 			};
 			name = Release;
 		};
+		49DFEF7726DB793300749A41 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = U27B56TU48;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CathayNowPlayingiOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.GanNaSong.CathayNowPlayingiOS;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		49DFEF7826DB793300749A41 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = U27B56TU48;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CathayNowPlayingiOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.GanNaSong.CathayNowPlayingiOS;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		49DFEF7926DB793300749A41 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U27B56TU48;
+				INFOPLIST_FILE = CathayNowPlayingiOSTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.GanNaSong.CathayNowPlayingiOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		49DFEF7A26DB793300749A41 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U27B56TU48;
+				INFOPLIST_FILE = CathayNowPlayingiOSTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.GanNaSong.CathayNowPlayingiOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -517,6 +742,24 @@
 			buildConfigurations = (
 				49DFEECA26DB499200749A41 /* Debug */,
 				49DFEECB26DB499200749A41 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49DFEF7B26DB793300749A41 /* Build configuration list for PBXNativeTarget "CathayNowPlayingiOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49DFEF7726DB793300749A41 /* Debug */,
+				49DFEF7826DB793300749A41 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49DFEF7C26DB793300749A41 /* Build configuration list for PBXNativeTarget "CathayNowPlayingiOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49DFEF7926DB793300749A41 /* Debug */,
+				49DFEF7A26DB793300749A41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
