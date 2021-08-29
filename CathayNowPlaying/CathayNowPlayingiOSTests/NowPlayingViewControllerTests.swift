@@ -10,15 +10,15 @@ import UIKit
 import CathayNowPlaying
 
 final class NowPlayingViewController: UIViewController {
+  let refreshControl = UIRefreshControl(frame: .zero)
+
   private(set) lazy var collectionView: UICollectionView = {
     let collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: UICollectionViewFlowLayout())
     collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
     collectionView.backgroundColor = .systemBackground
     collectionView.delegate = self
 
-    let refreshControl = UIRefreshControl(frame: .zero)
     refreshControl.addTarget(self, action: #selector(load), for: .valueChanged)
-
     collectionView.refreshControl = refreshControl
     return collectionView
   }()
@@ -37,13 +37,14 @@ final class NowPlayingViewController: UIViewController {
   }
 
   @objc func load() {
+    refreshControl.beginRefreshing()
     loader?.execute(PagedNowPlayingRequest(page: 1), completion: { _ in })
   }
 }
 
 extension NowPlayingViewController: UICollectionViewDelegateFlowLayout {
   func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-    guard collectionView.refreshControl?.isRefreshing == true else { return }
+    guard refreshControl.isRefreshing == true else { return }
     load()
   }
 }
@@ -60,6 +61,15 @@ class NowPlayingViewControllerTests: XCTestCase {
 
     sut.simulateUserRefresh()
     XCTAssertEqual(loader.messages, [request, request])
+  }
+
+  func test_loadingIndicator_isVisibleDuringLoadingState() {
+    let (sut, _) = makeSUT()
+
+    XCTAssertFalse(sut.loadingIndicatorIsVisible)
+
+    sut.loadViewIfNeeded()
+    XCTAssertTrue(sut.loadingIndicatorIsVisible)
   }
 
   // MARK: - Helpers
@@ -87,9 +97,13 @@ class NowPlayingViewControllerTests: XCTestCase {
 }
 
 extension NowPlayingViewController {
+  var loadingIndicatorIsVisible: Bool {
+    return refreshControl.isRefreshing
+  }
+
   func simulateUserRefresh() {
-    collectionView.refreshControl?.beginRefreshing()
-    collectionView.refreshControl?.simulatePullToRefresh()
+    refreshControl.beginRefreshing()
+    refreshControl.simulatePullToRefresh()
   }
 }
 
