@@ -16,6 +16,7 @@ class RemoteNowPlayingLoader: NowPlayingLoader {
 
   public enum Error: Swift.Error {
     case connectivity
+    case invalidResponse
   }
 
   init(baseURL: URL, client: LoadNowPlayingFromRemoteUseCaseTests.HTTPClientSpy) {
@@ -27,10 +28,10 @@ class RemoteNowPlayingLoader: NowPlayingLoader {
     let request = URLRequest(url: enrich(baseURL, with: request))
     client.dispatch(request) { result in
       switch result {
+      case .success:
+        completion(.failure(Error.invalidResponse))
       case .failure:
         completion(.failure(Error.connectivity))
-      default:
-        break
       }
     }
   }
@@ -93,6 +94,19 @@ class LoadNowPlayingFromRemoteUseCaseTests: XCTestCase {
     }
   }
 
+  func test_load_deliversErrorOnNon200HTTPResponse() {
+    let (sut, client) = makeSUT()
+
+    let samples = [299, 300, 399, 400, 418, 499, 500]
+
+    samples.enumerated().forEach { index, code in
+      expect(sut, toCompleteWith: failure(.invalidResponse)) {
+        let data = makeData()
+        client.completes(withStatusCode: code, data: data, at: index)
+      }
+    }
+  }
+
   // MARK: - Helpers
 
   func makeSUT(baseURL: URL? = nil, file: StaticString = #file, line: UInt = #line) -> (NowPlayingLoader, HTTPClientSpy) {
@@ -141,6 +155,11 @@ class LoadNowPlayingFromRemoteUseCaseTests: XCTestCase {
 
     func completes(with result: Result<(data: Data, response: HTTPURLResponse), Error>, at index: Int = 0) {
       messages[index].completion(result)
+    }
+
+    func completes(withStatusCode code: Int, data: Data, at index: Int = 0) {
+      let response = HTTPURLResponse(url: requestedURLs[index], statusCode: code, httpVersion: nil, headerFields: nil)!
+      messages[index].completion(.success((data, response)))
     }
   }
 }
