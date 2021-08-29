@@ -107,6 +107,15 @@ class LoadNowPlayingFromRemoteUseCaseTests: XCTestCase {
     }
   }
 
+  func test_load_deliversErrorOn200HTTPResponseWithInvalidJSON() {
+    let (sut, client) = makeSUT()
+
+    expect(sut, toCompleteWith: failure(.invalidResponse)) {
+      let invalidJSONData = Data("invalid json".utf8)
+      client.completes(withStatusCode: 200, data: invalidJSONData)
+    }
+  }
+
   // MARK: - Helpers
 
   func makeSUT(baseURL: URL? = nil, file: StaticString = #file, line: UInt = #line) -> (NowPlayingLoader, HTTPClientSpy) {
