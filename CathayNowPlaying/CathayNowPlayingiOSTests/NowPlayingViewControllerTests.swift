@@ -17,6 +17,9 @@ final class NowPlayingViewController: UIViewController {
     collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
     collectionView.backgroundColor = .systemBackground
     collectionView.delegate = self
+    collectionView.dataSource = self
+
+    collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "UICollectionViewCell")
 
     refreshControl.addTarget(self, action: #selector(load), for: .valueChanged)
     collectionView.refreshControl = refreshControl
@@ -24,6 +27,12 @@ final class NowPlayingViewController: UIViewController {
   }()
 
   private var loader: NowPlayingLoader?
+
+  private var items: [NowPlayingCard] = [] {
+    didSet {
+      collectionView.reloadData()
+    }
+  }
 
   convenience init(loader: NowPlayingLoader) {
     self.init()
@@ -39,6 +48,10 @@ final class NowPlayingViewController: UIViewController {
   @objc func load() {
     refreshControl.beginRefreshing()
     loader?.execute(PagedNowPlayingRequest(page: 1), completion: { [weak self] result in
+      if let page = try? result.get() {
+        self?.items = page.items
+      }
+
       self?.refreshControl.endRefreshing()
     })
   }
@@ -48,6 +61,17 @@ extension NowPlayingViewController: UICollectionViewDelegateFlowLayout {
   func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
     guard refreshControl.isRefreshing == true else { return }
     load()
+  }
+}
+
+extension NowPlayingViewController: UICollectionViewDataSource {
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    return items.count
+  }
+
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UICollectionViewCell", for: indexPath)
+    return cell
   }
 }
 
@@ -92,6 +116,7 @@ class NowPlayingViewControllerTests: XCTestCase {
     assertThat(sut, isRendering: [])
 
     loader.loadFeedCompletes(with: .success(feedPage))
+    assertThat(sut, isRendering: items)
   }
 
   // MARK: - Helpers
@@ -114,8 +139,8 @@ class NowPlayingViewControllerTests: XCTestCase {
   }
 
   func assertThat(_ sut: NowPlayingViewController, isRendering feed: [NowPlayingCard], file: StaticString = #file, line: UInt = #line) {
-    guard sut.numberOfRenderedCards == feed.count else {
-      return XCTFail("Expected \(feed.count) cards, got \(sut.numberOfRenderedCards) instead.", file: file, line: line)
+    guard sut.numberOfItems == feed.count else {
+      return XCTFail("Expected \(feed.count) cards, got \(sut.numberOfItems) instead.", file: file, line: line)
     }
   }
 
@@ -143,7 +168,7 @@ extension NowPlayingViewController {
     return refreshControl.isRefreshing
   }
 
-  var numberOfRenderedCards: Int {
+  var numberOfItems: Int {
     return collectionView.numberOfSections == 0 ? 0 : collectionView.numberOfItems(inSection: 0)
   }
 
