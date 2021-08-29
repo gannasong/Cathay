@@ -9,10 +9,14 @@ import XCTest
 import CathayNowPlaying
 
 class RemoteNowPlayingLoader: NowPlayingLoader {
-  public typealias Result = NowPlayingLoader.Result
-
   private let baseURL: URL
   private let client: LoadNowPlayingFromRemoteUseCaseTests.HTTPClientSpy
+
+  public typealias Result = NowPlayingLoader.Result
+
+  public enum Error: Swift.Error {
+    case connectivity
+  }
 
   init(baseURL: URL, client: LoadNowPlayingFromRemoteUseCaseTests.HTTPClientSpy) {
     self.baseURL = baseURL
@@ -21,7 +25,14 @@ class RemoteNowPlayingLoader: NowPlayingLoader {
 
   func execute(_ request: PagedNowPlayingRequest, completion: @escaping (Result) -> Void) {
     let request = URLRequest(url: enrich(baseURL, with: request))
-    client.dispatch(request)
+    client.dispatch(request) { result in
+      switch result {
+      case .failure:
+        completion(.failure(Error.connectivity))
+      default:
+        break
+      }
+    }
   }
 }
 
@@ -73,6 +84,15 @@ class LoadNowPlayingFromRemoteUseCaseTests: XCTestCase {
     XCTAssertEqual(client.requestedURLs, [expectedURL, expectedURL])
   }
 
+  func test_load_deliversErrorOnClientError() {
+    let (sut, client) = makeSUT()
+
+    expect(sut, toCompleteWith: failure(.connectivity)) {
+      let clientError = makeError()
+      client.completes(with: .failure(clientError))
+    }
+  }
+
   // MARK: - Helpers
 
   func makeSUT(baseURL: URL? = nil, file: StaticString = #file, line: UInt = #line) -> (NowPlayingLoader, HTTPClientSpy) {
@@ -85,15 +105,42 @@ class LoadNowPlayingFromRemoteUseCaseTests: XCTestCase {
     return (sut, client)
   }
 
+  func expect(_ sut: NowPlayingLoader, toCompleteWith expectedResult: NowPlayingLoader.Result, when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
+    let exp = expectation(description: "Wait for load completion")
+    let request = PagedNowPlayingRequest(page: 1)
+
+    sut.execute(request, completion: { receivedResult in
+      switch (receivedResult, expectedResult) {
+      case let (.failure(receivedError as RemoteNowPlayingLoader.Error), .failure(expectedError as RemoteNowPlayingLoader.Error)):
+        XCTAssertEqual(receivedError, expectedError, file: file, line: line)
+      default:
+        XCTFail("Expected result \(expectedResult) got \(receivedResult) instead", file: file, line: line)
+      }
+      exp.fulfill()
+    })
+
+    action()
+
+    wait(for: [exp], timeout: 1.0)
+  }
+
+  func failure(_ error: RemoteNowPlayingLoader.Error) -> NowPlayingLoader.Result {
+    return .failure(error)
+  }
+
   class HTTPClientSpy {
-    private var messages = [URLRequest]()
+    private var messages = [(request: URLRequest, completion: (Result<(data: Data, response: HTTPURLResponse), Error>) -> Void)]()
 
     var requestedURLs: [URL] {
-      return messages.compactMap { $0.url }
+      return messages.compactMap { $0.request.url }
     }
 
-    func dispatch(_ request: URLRequest) {
-      messages.append(request)
+    func dispatch(_ request: URLRequest, completion: @escaping (Result<(data: Data, response: HTTPURLResponse), Error>) -> Void) {
+      messages.append((request, completion))
+    }
+
+    func completes(with result: Result<(data: Data, response: HTTPURLResponse), Error>, at index: Int = 0) {
+      messages[index].completion(result)
     }
   }
 }
