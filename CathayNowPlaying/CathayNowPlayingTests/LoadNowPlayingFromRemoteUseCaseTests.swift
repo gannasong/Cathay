@@ -26,7 +26,9 @@ class RemoteNowPlayingLoader: NowPlayingLoader {
 
   func execute(_ request: PagedNowPlayingRequest, completion: @escaping (Result) -> Void) {
     let request = URLRequest(url: enrich(baseURL, with: request))
-    client.dispatch(request) { result in
+    client.dispatch(request) { [weak self] result in
+      guard self != nil else { return }
+
       switch result {
       case let .success((data, response)):
         completion(RemoteNowPlayingLoader.map(data, from: response))
@@ -188,6 +190,19 @@ class LoadNowPlayingFromRemoteUseCaseTests: XCTestCase {
       let pageData = makeItemsJSONData(for: page.json)
       client.completes(withStatusCode: 200, data: pageData)
     }
+  }
+
+  func test_load_doesNotDeliverResultAfterSUTInstanceHasBeenDeallocated() {
+    let client = HTTPClientSpy()
+    var sut: NowPlayingLoader? = RemoteNowPlayingLoader(baseURL: makeURL(), client: client)
+
+    var captureResults = [NowPlayingLoader.Result]()
+    sut?.execute(.init(page: 1)) { captureResults.append($0) }
+
+    sut = nil
+    client.completes(withStatusCode: 200, data: makeData())
+
+    XCTAssertTrue(captureResults.isEmpty)
   }
 
   // MARK: - Helpers
