@@ -10,6 +10,7 @@
 		49DFEEBC26DB499200749A41 /* CathayNowPlaying.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFEEB226DB499200749A41 /* CathayNowPlaying.framework */; };
 		49DFEECD26DB4A7C00749A41 /* NowPlayingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEECC26DB4A7C00749A41 /* NowPlayingCard.swift */; };
 		49DFEECF26DB4ACC00749A41 /* NowPlayingLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEECE26DB4ACC00749A41 /* NowPlayingLoader.swift */; };
+		49DFEED326DB4F1900749A41 /* XCTestCase+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEED226DB4F1900749A41 /* XCTestCase+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		49DFEEC226DB499200749A41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49DFEECC26DB4A7C00749A41 /* NowPlayingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingCard.swift; sourceTree = "<group>"; };
 		49DFEECE26DB4ACC00749A41 /* NowPlayingLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingLoader.swift; sourceTree = "<group>"; };
+		49DFEED226DB4F1900749A41 /* XCTestCase+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 		49DFEEBF26DB499200749A41 /* CathayNowPlayingTests */ = {
 			isa = PBXGroup;
 			children = (
+				49DFEED126DB4F0400749A41 /* Helpers */,
 				49DFEEC226DB499200749A41 /* Info.plist */,
 			);
 			path = CathayNowPlayingTests;
@@ -92,6 +95,14 @@
 				49DFEECC26DB4A7C00749A41 /* NowPlayingCard.swift */,
 			);
 			path = Feature;
+			sourceTree = "<group>";
+		};
+		49DFEED126DB4F0400749A41 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				49DFEED226DB4F1900749A41 /* XCTestCase+Extension.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +169,7 @@
 					};
 					49DFEEBA26DB499200749A41 = {
 						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
 					};
 				};
 			};
@@ -211,6 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49DFEED326DB4F1900749A41 /* XCTestCase+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +414,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = U27B56TU48;
@@ -412,6 +426,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.GanNaSong.CathayNowPlayingTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -420,6 +435,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = U27B56TU48;
