@@ -7,9 +7,14 @@
 
 import Foundation
 
-struct PagedNowPlayingRequest {
-  let page: Int
-  let language: String
+public struct PagedNowPlayingRequest {
+  public let page: Int
+  public let language: String
+
+  public init(page: Int, language: String = "zh-TW") {
+    self.page = page
+    self.language = language
+  }
 }
 
 protocol NowPlayingLoader {
