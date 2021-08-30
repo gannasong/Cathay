@@ -34,6 +34,8 @@
 		49FBAB0726DD0F5B00628E9D /* CathayCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 49FBAB0526DD0F5B00628E9D /* CathayCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		49FBAB0A26DD127C00628E9D /* MovieDetailsCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBAB0926DD127C00628E9D /* MovieDetailsCustomView.swift */; };
 		49FBAB0D26DD143200628E9D /* MovieDetailsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBAB0C26DD143200628E9D /* MovieDetailsPresenterTests.swift */; };
+		49FBAB1426DD24BF00628E9D /* MovieDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBAB1326DD24BF00628E9D /* MovieDetailsViewModel.swift */; };
+		49FBAB1626DD24F400628E9D /* MovieDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBAB1526DD24F400628E9D /* MovieDetailsPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +115,8 @@
 		49FBAB0526DD0F5B00628E9D /* CathayCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CathayCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49FBAB0926DD127C00628E9D /* MovieDetailsCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsCustomView.swift; sourceTree = "<group>"; };
 		49FBAB0C26DD143200628E9D /* MovieDetailsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsPresenterTests.swift; sourceTree = "<group>"; };
+		49FBAB1326DD24BF00628E9D /* MovieDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewModel.swift; sourceTree = "<group>"; };
+		49FBAB1526DD24F400628E9D /* MovieDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +182,7 @@
 		49DFF04526DCC86200749A41 /* CathayMovieDetails */ = {
 			isa = PBXGroup;
 			children = (
+				49FBAB1126DD24AA00628E9D /* Presentation */,
 				49DFF06E26DCD15400749A41 /* API */,
 				49DFF05D26DCC92B00749A41 /* Feature */,
 				49DFF04726DCC86200749A41 /* Info.plist */,
@@ -302,6 +307,23 @@
 				49FBAB0C26DD143200628E9D /* MovieDetailsPresenterTests.swift */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		49FBAB1126DD24AA00628E9D /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				49FBAB1226DD24AF00628E9D /* Models */,
+				49FBAB1526DD24F400628E9D /* MovieDetailsPresenter.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		49FBAB1226DD24AF00628E9D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				49FBAB1326DD24BF00628E9D /* MovieDetailsViewModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -483,7 +505,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49FBAB1426DD24BF00628E9D /* MovieDetailsViewModel.swift in Sources */,
 				49DFF07026DCD16300749A41 /* RemoteMovie.swift in Sources */,
+				49FBAB1626DD24F400628E9D /* MovieDetailsPresenter.swift in Sources */,
 				49DFF07226DCD17F00749A41 /* RemoteMovieLoader.swift in Sources */,
 				49DFF05F26DCC93800749A41 /* Movie.swift in Sources */,
 				49DFF06126DCC97300749A41 /* MovieLoader.swift in Sources */,
