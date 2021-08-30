@@ -94,8 +94,8 @@
 		49DFEFD826DC6B9700749A41 /* CathayMedia */ = {
 			isa = PBXGroup;
 			children = (
+				49DFEFFE26DC735200749A41 /* API */,
 				49DFEFDA26DC6B9700749A41 /* Info.plist */,
-				49DFEFFC26DC724B00749A41 /* RemoteImageDataLoader.swift */,
 			);
 			path = CathayMedia;
 			sourceTree = "<group>";
@@ -125,6 +125,14 @@
 				49DFEFF826DC6CBC00749A41 /* HTTPClientSpy.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		49DFEFFE26DC735200749A41 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				49DFEFFC26DC724B00749A41 /* RemoteImageDataLoader.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
