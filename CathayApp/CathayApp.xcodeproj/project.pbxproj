@@ -24,6 +24,8 @@
 		49DFF02926DCADAE00749A41 /* AuthConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF02826DCADAE00749A41 /* AuthConfig.swift */; };
 		49DFF02C26DCAE2000749A41 /* AuthenticatedHTTPClientDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF02B26DCAE2000749A41 /* AuthenticatedHTTPClientDecorator.swift */; };
 		49DFF02F26DCAECF00749A41 /* AuthenticatedHTTPClientDecoratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF02E26DCAECF00749A41 /* AuthenticatedHTTPClientDecoratorTests.swift */; };
+		49DFF03126DCB5C000749A41 /* AuthConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49DFF03026DCB5C000749A41 /* AuthConfig.plist */; };
+		49DFF03326DCB5E300749A41 /* GetConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF03226DCB5E300749A41 /* GetConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		49DFF02826DCADAE00749A41 /* AuthConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthConfig.swift; sourceTree = "<group>"; };
 		49DFF02B26DCAE2000749A41 /* AuthenticatedHTTPClientDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedHTTPClientDecorator.swift; sourceTree = "<group>"; };
 		49DFF02E26DCAECF00749A41 /* AuthenticatedHTTPClientDecoratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedHTTPClientDecoratorTests.swift; sourceTree = "<group>"; };
+		49DFF03026DCB5C000749A41 /* AuthConfig.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AuthConfig.plist; sourceTree = "<group>"; };
+		49DFF03226DCB5E300749A41 /* GetConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +174,8 @@
 			isa = PBXGroup;
 			children = (
 				49DFF02B26DCAE2000749A41 /* AuthenticatedHTTPClientDecorator.swift */,
+				49DFF03226DCB5E300749A41 /* GetConfig.swift */,
+				49DFF03026DCB5C000749A41 /* AuthConfig.plist */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -264,6 +270,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49DFF03126DCB5C000749A41 /* AuthConfig.plist in Resources */,
 				49DFEEFD26DB651700749A41 /* LaunchScreen.storyboard in Resources */,
 				49DFEEFA26DB651700749A41 /* Assets.xcassets in Resources */,
 			);
@@ -283,6 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49DFF03326DCB5E300749A41 /* GetConfig.swift in Sources */,
 				49DFEEF526DB651600749A41 /* ViewController.swift in Sources */,
 				49DFEEF126DB651600749A41 /* AppDelegate.swift in Sources */,
 				49DFEEF326DB651600749A41 /* SceneDelegate.swift in Sources */,
