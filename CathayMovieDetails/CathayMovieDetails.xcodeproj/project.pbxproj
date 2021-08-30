@@ -12,6 +12,9 @@
 		49DFF06126DCC97300749A41 /* MovieLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF06026DCC97300749A41 /* MovieLoader.swift */; };
 		49DFF06426DCC9CC00749A41 /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF06326DCC9CC00749A41 /* XCTestCase+Extensions.swift */; };
 		49DFF06626DCC9FD00749A41 /* HTTPClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF06526DCC9FD00749A41 /* HTTPClientSpy.swift */; };
+		49DFF06826DCCA6100749A41 /* LoadMovieFromRemoteUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF06726DCCA6100749A41 /* LoadMovieFromRemoteUseCaseTests.swift */; };
+		49DFF06B26DCCA7A00749A41 /* CathayNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFF06A26DCCA7A00749A41 /* CathayNetworking.framework */; };
+		49DFF06C26DCCA7A00749A41 /* CathayNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFF06A26DCCA7A00749A41 /* CathayNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,6 +27,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		49DFF06D26DCCA7A00749A41 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				49DFF06C26DCCA7A00749A41 /* CathayNetworking.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		49DFF04326DCC86200749A41 /* CathayMovieDetails.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CathayMovieDetails.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DFF04726DCC86200749A41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -33,6 +50,8 @@
 		49DFF06026DCC97300749A41 /* MovieLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieLoader.swift; sourceTree = "<group>"; };
 		49DFF06326DCC9CC00749A41 /* XCTestCase+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extensions.swift"; sourceTree = "<group>"; };
 		49DFF06526DCC9FD00749A41 /* HTTPClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientSpy.swift; sourceTree = "<group>"; };
+		49DFF06726DCCA6100749A41 /* LoadMovieFromRemoteUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMovieFromRemoteUseCaseTests.swift; sourceTree = "<group>"; };
+		49DFF06A26DCCA7A00749A41 /* CathayNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CathayNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49DFF06B26DCCA7A00749A41 /* CathayNetworking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +80,7 @@
 				49DFF04526DCC86200749A41 /* CathayMovieDetails */,
 				49DFF05026DCC86200749A41 /* CathayMovieDetailsTests */,
 				49DFF04426DCC86200749A41 /* Products */,
+				49DFF06926DCCA7A00749A41 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,6 +107,7 @@
 			children = (
 				49DFF06226DCC9B000749A41 /* Helpers */,
 				49DFF05326DCC86200749A41 /* Info.plist */,
+				49DFF06726DCCA6100749A41 /* LoadMovieFromRemoteUseCaseTests.swift */,
 			);
 			path = CathayMovieDetailsTests;
 			sourceTree = "<group>";
@@ -106,6 +128,14 @@
 				49DFF06526DCC9FD00749A41 /* HTTPClientSpy.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		49DFF06926DCCA7A00749A41 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				49DFF06A26DCCA7A00749A41 /* CathayNetworking.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,6 +159,7 @@
 				49DFF03F26DCC86200749A41 /* Sources */,
 				49DFF04026DCC86200749A41 /* Frameworks */,
 				49DFF04126DCC86200749A41 /* Resources */,
+				49DFF06D26DCCA7A00749A41 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -227,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49DFF06426DCC9CC00749A41 /* XCTestCase+Extensions.swift in Sources */,
+				49DFF06826DCCA6100749A41 /* LoadMovieFromRemoteUseCaseTests.swift in Sources */,
 				49DFF06626DCC9FD00749A41 /* HTTPClientSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
