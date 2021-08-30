@@ -72,6 +72,34 @@ class MovieDetailsViewControllerTests: XCTestCase {
     wait(for: [exp], timeout: 1.0)
   }
 
+  func test_load_imageLoaderCompletesFromBackgroundToMainThread() {
+    let (sut, loader) = makeSUT()
+    let movie = makeMovie()
+    sut.loadViewIfNeeded()
+    loader.loadCompletes(with: .success(movie))
+
+    let exp = expectation(description: "await background queue")
+    DispatchQueue.global().async {
+      loader.completeImageLoading()
+      exp.fulfill()
+    }
+
+    wait(for: [exp], timeout: 1.0)
+  }
+
+  func test_load_rendersImageFromRemote() {
+    let (sut, loader) = makeSUT()
+    let movie = makeMovie()
+    let imageData = makeImageData()
+
+    sut.loadViewIfNeeded()
+    loader.loadCompletes(with: .success(movie))
+    XCTAssertEqual(sut.renderedImage, .none)
+
+    loader.completeImageLoading(with: imageData)
+    XCTAssertEqual(sut.renderedImage, imageData)
+  }
+
   // MARK: - Helpers
 
   func makeSUT(id: Int = 0, onBuyTicketSpy: @escaping () -> Void = { }, file: StaticString = #file, line: UInt = #line) -> (MovieDetailsViewController, LoaderSpy) {
@@ -88,6 +116,14 @@ class MovieDetailsViewControllerTests: XCTestCase {
     XCTAssertEqual(sut.titleText, item.title, file: file, line: line)
     XCTAssertEqual(sut.metaText, "2 hr, 10 min | Action", file: file, line: line)
     XCTAssertEqual(sut.overviewText, item.overview, file: file, line: line)
+  }
+
+  func makeImageData(withColor color: UIColor = .systemTeal) -> Data {
+    return makeImage(withColor: color).pngData()!
+  }
+
+  func makeImage(withColor color: UIColor = .systemTeal) -> UIImage {
+    return UIImage.make(withColor: color)
   }
 
   func makeMovie() -> Movie {
@@ -170,5 +206,9 @@ extension MovieDetailsViewController {
 
   func simulateBuyTicket() {
     customView.buyTicketButton.simulateTap()
+  }
+
+  var renderedImage: Data? {
+    return customView.bakcgroundImageView.image?.pngData()
   }
 }
