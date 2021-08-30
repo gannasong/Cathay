@@ -321,7 +321,7 @@ class NowPlayingViewControllerTests: XCTestCase {
 
 extension NowPlayingCardFeedCell {
   var loadingIndicatorIsVisible: Bool {
-    return imageContainer.isShimmering
+    return isShimmering
   }
 
   var renderedImage: Data? {
