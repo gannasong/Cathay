@@ -14,6 +14,7 @@
 		49DFEFF926DC6CBC00749A41 /* HTTPClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEFF826DC6CBC00749A41 /* HTTPClientSpy.swift */; };
 		49DFEFFB26DC6D2300749A41 /* LoadImageDataFromRemoteUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEFFA26DC6D2300749A41 /* LoadImageDataFromRemoteUseCaseTests.swift */; };
 		49DFEFFD26DC724B00749A41 /* RemoteImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEFFC26DC724B00749A41 /* RemoteImageDataLoader.swift */; };
+		49DFF00126DC739000749A41 /* ImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF00026DC739000749A41 /* ImageDataLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		49DFEFF826DC6CBC00749A41 /* HTTPClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientSpy.swift; sourceTree = "<group>"; };
 		49DFEFFA26DC6D2300749A41 /* LoadImageDataFromRemoteUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadImageDataFromRemoteUseCaseTests.swift; sourceTree = "<group>"; };
 		49DFEFFC26DC724B00749A41 /* RemoteImageDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageDataLoader.swift; sourceTree = "<group>"; };
+		49DFF00026DC739000749A41 /* ImageDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 		49DFEFD826DC6B9700749A41 /* CathayMedia */ = {
 			isa = PBXGroup;
 			children = (
+				49DFEFFF26DC738100749A41 /* Feature */,
 				49DFEFFE26DC735200749A41 /* API */,
 				49DFEFDA26DC6B9700749A41 /* Info.plist */,
 			);
@@ -133,6 +136,14 @@
 				49DFEFFC26DC724B00749A41 /* RemoteImageDataLoader.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		49DFEFFF26DC738100749A41 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				49DFF00026DC739000749A41 /* ImageDataLoader.swift */,
+			);
+			path = Feature;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,6 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49DFF00126DC739000749A41 /* ImageDataLoader.swift in Sources */,
 				49DFEFFD26DC724B00749A41 /* RemoteImageDataLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
