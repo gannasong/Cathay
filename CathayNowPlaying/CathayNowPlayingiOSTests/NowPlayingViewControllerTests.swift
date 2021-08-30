@@ -247,6 +247,35 @@ class NowPlayingViewControllerTests: XCTestCase {
     XCTAssertEqual(output, item.id)
   }
 
+  func test_scroll_toButtomRequestsNextPage() {
+    let (sut, loader) = makeSUT()
+    let items = Array(0..<25).map { index in makeNowPlayingCard(id: index) }
+    let feedPage = makeNowPlayingFeed(items: items, pageNumber: 1, totalPages: 10)
+
+    sut.loadViewIfNeeded()
+    loader.loadFeedCompletes(with: .success(feedPage))
+
+    sut.simulatePagingRequest()
+    XCTAssertEqual(loader.messages, [
+      .load(PagedNowPlayingRequest(page: 1)),
+      .load(PagedNowPlayingRequest(page: 2))
+    ])
+  }
+
+  func test_scroll_toButtomDoesNotRequestIfOnLastPage() {
+    let (sut, loader) = makeSUT()
+    let items = Array(0..<5).map { index in makeNowPlayingCard(id: index) }
+    let feedPage = makeNowPlayingFeed(items: items, pageNumber: 1, totalPages: 1)
+
+    sut.loadViewIfNeeded()
+    loader.loadFeedCompletes(with: .success(feedPage))
+
+    sut.simulatePagingRequest()
+    XCTAssertEqual(loader.messages, [
+      .load(PagedNowPlayingRequest(page: 1))
+    ])
+  }
+
   // MARK: - Helpers
 
   func makeSUT(onSelectSpy: @escaping (Int) -> Void = { _ in }, file: StaticString = #file, line: UInt = #line) -> (NowPlayingViewController, LoaderSpy) {

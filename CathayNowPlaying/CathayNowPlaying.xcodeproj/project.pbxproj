@@ -51,6 +51,7 @@
 		49DFF11226DD0DBF00749A41 /* CathayCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFF11126DD0DBF00749A41 /* CathayCommon.framework */; };
 		49DFF11326DD0DBF00749A41 /* CathayCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFF11126DD0DBF00749A41 /* CathayCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		49FBAB2826DD324500628E9D /* NowPlayingCardFeedCell+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBAB2726DD324500628E9D /* NowPlayingCardFeedCell+TestHelpers.swift */; };
+		49FBAB2A26DD348800628E9D /* NowPlayingPagingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBAB2926DD348800628E9D /* NowPlayingPagingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -150,6 +151,7 @@
 		49DFF03726DCBC8F00749A41 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		49DFF11126DD0DBF00749A41 /* CathayCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CathayCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49FBAB2726DD324500628E9D /* NowPlayingCardFeedCell+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NowPlayingCardFeedCell+TestHelpers.swift"; sourceTree = "<group>"; };
+		49FBAB2926DD348800628E9D /* NowPlayingPagingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingPagingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -378,6 +380,7 @@
 				49DFEFBD26DBEA7600749A41 /* NowPlayingLoadingViewModel.swift */,
 				49DFEFBF26DBEAB400749A41 /* NowPlayingViewModel.swift */,
 				49DFF00B26DC820900749A41 /* NowPlayingImageViewModel.swift */,
+				49FBAB2926DD348800628E9D /* NowPlayingPagingViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -591,6 +594,7 @@
 				49DFF00C26DC820900749A41 /* NowPlayingImageViewModel.swift in Sources */,
 				49DFEEE126DB61CF00749A41 /* NowPlayingItemsMapper.swift in Sources */,
 				49DFEEE326DB622A00749A41 /* RemoteNowPlayingLoader.swift in Sources */,
+				49FBAB2A26DD348800628E9D /* NowPlayingPagingViewModel.swift in Sources */,
 				49DFEED726DB570F00749A41 /* NowPlayingFeed.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

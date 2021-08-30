@@ -21,7 +21,7 @@ class NowPlayingPresenterTests: XCTestCase {
 
     sut.didStartLoading()
 
-    XCTAssertEqual(view.messages, [.display(isLoading: true), .display(message: nil)])
+    XCTAssertEqual(view.messages, [.display(isLoading: true), .display(message: nil), .display(page: .init(isLoading: true, isLast: true, pageNumber: 0))])
   }
 
   func test_didFinishLoading_successDisplaysFeedAndStopsLoading() {
@@ -31,7 +31,7 @@ class NowPlayingPresenterTests: XCTestCase {
 
     sut.didFinishLoading(with: feed)
 
-    XCTAssertEqual(view.messages, [.display(isLoading: false), .display(items: items)])
+    XCTAssertEqual(view.messages, [.display(isLoading: false), .display(items: items), .display(page: .init(isLoading: false, isLast: true, pageNumber: 1))])
   }
 
   func test_didFinishLoading_errorDisplaysErrorAndStopsLoading() {
@@ -48,18 +48,19 @@ class NowPlayingPresenterTests: XCTestCase {
 
   func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: NowPlayingPresenter, view: ViewSpy) {
     let view = ViewSpy()
-    let sut = NowPlayingPresenter(view: view, loadingView: view, errorView: view)
+    let sut = NowPlayingPresenter(view: view, loadingView: view, errorView: view, pagingView: view)
 
     trackForMemoryLeaks(view, file: file, line: line)
     trackForMemoryLeaks(sut, file: file, line: line)
     return (sut, view)
   }
 
-  class ViewSpy: NowPlayingLoadingView, NowPlayingErrorView, NowPlayingView {
+  class ViewSpy: NowPlayingLoadingView, NowPlayingErrorView, NowPlayingView, NowPlayingPagingView {
     enum Message: Equatable {
       case display(isLoading: Bool)
       case display(message: String?)
       case display(items: [NowPlayingCard])
+      case display(page: NowPlayingPagingViewModel)
     }
 
     private(set) var messages: [Message] = []
@@ -74,6 +75,10 @@ class NowPlayingPresenterTests: XCTestCase {
 
     func display(_ viewModel: NowPlayingViewModel) {
       messages.append(.display(items: viewModel.items))
+    }
+
+    func display(_ viewModel: NowPlayingPagingViewModel) {
+      messages.append(.display(page: viewModel))
     }
   }
 }

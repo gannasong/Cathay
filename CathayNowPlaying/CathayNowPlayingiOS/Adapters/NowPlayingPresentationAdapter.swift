@@ -9,7 +9,6 @@ import Foundation
 import CathayNowPlaying
 
 final class NowPlayingPresentationAdapter: NowPlayingRefreshControllerDelegate {
-
   var presenter: NowPlayingPresenter?
   private let loader: NowPlayingLoader
   
@@ -19,9 +18,13 @@ final class NowPlayingPresentationAdapter: NowPlayingRefreshControllerDelegate {
 
   func didRequestLoad() {
     presenter?.didStartLoading()
-    loader.execute(.init(page: 1), completion: { [weak self] result in
+    load(page: 1)
+  }
+
+  private func load(page: Int) {
+    loader.execute(.init(page: page), completion: { [weak self] result in
       guard let self = self else { return }
-      
+
       switch result {
       case let .success(feed):
         self.presenter?.didFinishLoading(with: feed)
@@ -32,4 +35,8 @@ final class NowPlayingPresentationAdapter: NowPlayingRefreshControllerDelegate {
   }
 }
 
-
+extension NowPlayingPresentationAdapter: NowPlayingPagingControllerDelegate {
+  func didRequestPage(page: Int) {
+    load(page: page)
+  }
+}
