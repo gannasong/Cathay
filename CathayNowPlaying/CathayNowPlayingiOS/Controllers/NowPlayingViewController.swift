@@ -48,7 +48,7 @@ public final class NowPlayingViewController: UIViewController {
   }
 
   private func configureNavigation() {
-    navigationController?.navigationBar.prefersLargeTitles = true
+//    navigationController?.navigationBar.prefersLargeTitles = true
 
     navigationController?.navigationBar.largeTitleTextAttributes = [
       NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.8705882353, green: 0.8705882353, blue: 0.8784313725, alpha: 1),

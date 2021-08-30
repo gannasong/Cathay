@@ -72,6 +72,6 @@ private extension RemoteNowPlayingFeed {
 
 private extension Array where Element == RemoteNowPlayingFeed.RemoteNowPlayingCard {
   var asCardDTO: [NowPlayingCard] {
-    return map { item in NowPlayingCard(id: item.id, title: item.original_title, imagePath: item.poster_path) }
+    return map { item in NowPlayingCard(id: item.id, title: item.original_title, imagePath: item.poster_path ?? "") }
   }
 }
