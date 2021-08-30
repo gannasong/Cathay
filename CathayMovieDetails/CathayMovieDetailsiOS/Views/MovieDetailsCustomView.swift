@@ -15,6 +15,7 @@ public final class MovieDetailsCustomView: UIView {
         self.isLoading ? self.loadingIndicator.startAnimating() : self.loadingIndicator.stopAnimating()
         self.vStack.isHidden = self.isLoading
         self.buyTicketButton.isHidden = self.isLoading
+        self.bakcgroundImageView.isHidden = self.isLoading
       })
     }
   }
@@ -71,6 +72,20 @@ public final class MovieDetailsCustomView: UIView {
     return button
   }()
 
+  private(set) public lazy var bakcgroundImageView: UIImageView = {
+    let imageView = UIImageView(frame: .zero)
+    imageView.translatesAutoresizingMaskIntoConstraints = false
+    imageView.contentMode = .scaleAspectFill
+    imageView.clipsToBounds = true
+
+    let gradient = CAGradientLayer()
+    gradient.frame = frame
+    gradient.colors = [UIColor.clear, .black].map{ $0.cgColor }
+    imageView.layer.addSublayer(gradient)
+
+    return imageView
+  }()
+
   private let vStack: UIStackView = {
     let view = UIStackView(frame: .zero)
     view.translatesAutoresizingMaskIntoConstraints = false
@@ -85,19 +100,24 @@ public final class MovieDetailsCustomView: UIView {
     super.init(frame: frame)
     configureUI()
   }
-
+  
   required init?(coder: NSCoder) {
-    return nil
+    fatalError("init(coder:) has not been implemented")
   }
-
+  
   private func configureUI() {
     backgroundColor = #colorLiteral(red: 0.1019607843, green: 0.1254901961, blue: 0.1882352941, alpha: 1)
 
     [titleLabel, metaLabel, overviewHeaderLabel, overviewLabel].forEach(vStack.addArrangedSubview)
     vStack.setCustomSpacing(64, after: metaLabel)
 
-    [loadingIndicator, vStack, buyTicketButton].forEach(addSubview)
+    [bakcgroundImageView, loadingIndicator, vStack, buyTicketButton].forEach(addSubview)
     NSLayoutConstraint.activate([
+      bakcgroundImageView.topAnchor.constraint(equalTo: topAnchor),
+      bakcgroundImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
+      bakcgroundImageView.bottomAnchor.constraint(equalTo: bottomAnchor),
+      bakcgroundImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
+
       loadingIndicator.centerXAnchor.constraint(equalTo: centerXAnchor),
       loadingIndicator.centerYAnchor.constraint(equalTo: centerYAnchor),
 
