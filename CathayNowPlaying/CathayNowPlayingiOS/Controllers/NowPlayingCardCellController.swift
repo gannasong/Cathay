@@ -13,13 +13,24 @@ protocol NowPlayingCardCellControllerDelegate {
   func didRequestCancelLoadImage()
 }
 
-final class NowPlayingCardCellController {
+final class NowPlayingCardCellController: Hashable {
+  private let id: Int
+
+  static func == (lhs: NowPlayingCardCellController, rhs: NowPlayingCardCellController) -> Bool {
+    lhs.id == rhs.id
+  }
+
+  func hash(into hasher: inout Hasher) {
+    hasher.combine(id)
+  }
+
   var didSelect: (() -> Void)?
 
   private var cell: NowPlayingCardFeedCell?
   private let delegate: NowPlayingCardCellControllerDelegate
 
-  init(delegate: NowPlayingCardCellControllerDelegate) {
+  init(id: Int, delegate: NowPlayingCardCellControllerDelegate) {
+    self.id = id
     self.delegate = delegate
   }
 

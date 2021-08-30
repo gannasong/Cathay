@@ -9,6 +9,12 @@ import UIKit
 import CathayNowPlayingiOS
 
 extension NowPlayingViewController {
+  public override func loadViewIfNeeded() {
+    super.loadViewIfNeeded()
+    // make view small to prevent rendering cells
+    collectionView.frame = CGRect(x: 0, y: 0, width: 1, height: 1)
+  }
+
   var loadingIndicatorIsVisible: Bool {
     return collectionView.refreshControl?.isRefreshing == true
   }
