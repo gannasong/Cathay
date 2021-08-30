@@ -23,6 +23,7 @@ public final class NowPlayingViewController: UIViewController {
     collectionView.prefetchDataSource = self
     collectionView.delegate = self
     collectionView.dataSource = self
+    collectionView.showsVerticalScrollIndicator = false
     collectionView.refreshControl = refreshController?.view
     collectionView.register(NowPlayingCardFeedCell.self, forCellWithReuseIdentifier: "NowPlayingCardFeedCell")
     return collectionView
