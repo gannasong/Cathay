@@ -6,9 +6,18 @@
 //
 
 import XCTest
+import CathayNetworking
 
 class RemoteImageDataLoader {
+  private let client: HTTPClient
 
+  init(client: HTTPClient) {
+    self.client = client
+  }
+
+  func load(from imageURL: URL) {
+    client.dispatch(URLRequest(url: imageURL), completion: { _ in })
+  }
 }
 
 class LoadImageDataFromRemoteUseCaseTests: XCTestCase {
@@ -19,11 +28,20 @@ class LoadImageDataFromRemoteUseCaseTests: XCTestCase {
     XCTAssertTrue(client.requestedURLs.isEmpty)
   }
 
+  func test_load_requestsDataFromUrl() {
+    let requestURL = makeURL("https://some-remote-image.com")
+    let (sut, client) = makeSUT()
+
+    sut.load(from: requestURL)
+
+    XCTAssertEqual(client.requestedURLs, [requestURL])
+  }
+
   // MARK: - Helpers
 
   func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: RemoteImageDataLoader, client: HTTPClientSpy) {
     let client = HTTPClientSpy()
-    let sut = RemoteImageDataLoader()
+    let sut = RemoteImageDataLoader(client: client)
     trackForMemoryLeaks(sut, file: file, line: line)
     trackForMemoryLeaks(client, file: file, line: line)
     return (sut, client)
