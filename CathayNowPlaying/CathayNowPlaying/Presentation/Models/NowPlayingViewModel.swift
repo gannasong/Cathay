@@ -8,5 +8,6 @@
 import Foundation
 
 public struct NowPlayingViewModel: Equatable {
+  public let pageNumber: Int
   public let items: [NowPlayingCard]
 }

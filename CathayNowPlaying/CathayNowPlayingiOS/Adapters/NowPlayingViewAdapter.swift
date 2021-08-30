@@ -37,14 +37,20 @@ final class NowPlayingViewAdapter {
     adapter.presenter = NowPlayingImagePresenter(view: WeakRefVirtualProxy(view), imageTransformer: UIImage.init)
     
     return view
-   }
+  }
 }
 
 extension NowPlayingViewAdapter: NowPlayingView {
   func display(_ viewModel: NowPlayingViewModel) {
-    let source = controller?.items ?? []
-    let target = source + viewModel.items.map(makeCellController)
-    controller?.items = target
+    let newItems = viewModel.items.map(makeCellController)
+
+    if viewModel.pageNumber == 1 {
+      controller?.items = newItems
+    } else {
+      let source = controller?.items ?? []
+      let target = source + newItems
+      controller?.items = target
+    }
   }
 }
 
