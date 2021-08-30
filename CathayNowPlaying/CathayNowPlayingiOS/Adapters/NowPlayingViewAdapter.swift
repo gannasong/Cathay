@@ -18,10 +18,14 @@ final class NowPlayingViewAdapter {
     self.controller = controller
     self.imageLoader = imageLoader
   }
+
+  private func makeCellController(for model: NowPlayingCard) -> NowPlayingCardCellController {
+     return NowPlayingCardCellController()
+   }
 }
 
 extension NowPlayingViewAdapter: NowPlayingView {
   func display(_ viewModel: NowPlayingViewModel) {
-    controller?.items = viewModel.items
+    controller?.items = viewModel.items.map(makeCellController(for:))
   }
 }

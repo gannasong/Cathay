@@ -42,6 +42,7 @@
 		49DFF00326DC792B00749A41 /* CathayMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFF00226DC792B00749A41 /* CathayMedia.framework */; };
 		49DFF00426DC792B00749A41 /* CathayMedia.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFF00226DC792B00749A41 /* CathayMedia.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		49DFF00626DC7A3000749A41 /* NowPlayingViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF00526DC7A3000749A41 /* NowPlayingViewAdapter.swift */; };
+		49DFF00826DC7B5D00749A41 /* NowPlayingCardCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF00726DC7B5D00749A41 /* NowPlayingCardCellController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +133,7 @@
 		49DFEFCA26DC680900749A41 /* NowPlayingPresentationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingPresentationAdapter.swift; sourceTree = "<group>"; };
 		49DFF00226DC792B00749A41 /* CathayMedia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CathayMedia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DFF00526DC7A3000749A41 /* NowPlayingViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingViewAdapter.swift; sourceTree = "<group>"; };
+		49DFF00726DC7B5D00749A41 /* NowPlayingCardCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingCardCellController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -292,6 +294,7 @@
 			children = (
 				49DFEFA426DBDACD00749A41 /* NowPlayingViewController.swift */,
 				49DFEFB326DBDF7200749A41 /* NowPlayingRefreshController.swift */,
+				49DFF00726DC7B5D00749A41 /* NowPlayingCardCellController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -594,6 +597,7 @@
 				49DFEFCB26DC680900749A41 /* NowPlayingPresentationAdapter.swift in Sources */,
 				49DFEFA526DBDACD00749A41 /* NowPlayingViewController.swift in Sources */,
 				49DFF00626DC7A3000749A41 /* NowPlayingViewAdapter.swift in Sources */,
+				49DFF00826DC7B5D00749A41 /* NowPlayingCardCellController.swift in Sources */,
 				49DFEFB426DBDF7200749A41 /* NowPlayingRefreshController.swift in Sources */,
 				49DFEFB226DBDE8300749A41 /* NowPlayingUIComposer.swift in Sources */,
 				49DFEFAF26DBDE1D00749A41 /* NowPlayingCardFeedCell.swift in Sources */,

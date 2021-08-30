@@ -27,4 +27,9 @@ extension NowPlayingViewController {
     collectionView.refreshControl?.beginRefreshing()
     scrollViewDidEndDragging(collectionView, willDecelerate: true)
   }
+
+  @discardableResult
+  func simulateItemVisible(at index: Int) -> UICollectionViewCell? {
+    return itemAt(index)
+  }
 }
