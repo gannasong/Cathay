@@ -10,6 +10,8 @@
 		49DFF04D26DCC86200749A41 /* CathayMovieDetails.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFF04326DCC86200749A41 /* CathayMovieDetails.framework */; };
 		49DFF05F26DCC93800749A41 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF05E26DCC93800749A41 /* Movie.swift */; };
 		49DFF06126DCC97300749A41 /* MovieLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF06026DCC97300749A41 /* MovieLoader.swift */; };
+		49DFF06426DCC9CC00749A41 /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF06326DCC9CC00749A41 /* XCTestCase+Extensions.swift */; };
+		49DFF06626DCC9FD00749A41 /* HTTPClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF06526DCC9FD00749A41 /* HTTPClientSpy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		49DFF05326DCC86200749A41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49DFF05E26DCC93800749A41 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		49DFF06026DCC97300749A41 /* MovieLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieLoader.swift; sourceTree = "<group>"; };
+		49DFF06326DCC9CC00749A41 /* XCTestCase+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extensions.swift"; sourceTree = "<group>"; };
+		49DFF06526DCC9FD00749A41 /* HTTPClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientSpy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,7 @@
 		49DFF05026DCC86200749A41 /* CathayMovieDetailsTests */ = {
 			isa = PBXGroup;
 			children = (
+				49DFF06226DCC9B000749A41 /* Helpers */,
 				49DFF05326DCC86200749A41 /* Info.plist */,
 			);
 			path = CathayMovieDetailsTests;
@@ -92,6 +97,15 @@
 				49DFF06026DCC97300749A41 /* MovieLoader.swift */,
 			);
 			path = Feature;
+			sourceTree = "<group>";
+		};
+		49DFF06226DCC9B000749A41 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				49DFF06326DCC9CC00749A41 /* XCTestCase+Extensions.swift */,
+				49DFF06526DCC9FD00749A41 /* HTTPClientSpy.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +172,7 @@
 					};
 					49DFF04B26DCC86200749A41 = {
 						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
 					};
 				};
 			};
@@ -211,6 +226,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49DFF06426DCC9CC00749A41 /* XCTestCase+Extensions.swift in Sources */,
+				49DFF06626DCC9FD00749A41 /* HTTPClientSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +420,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = U27B56TU48;
@@ -415,6 +433,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.GanNaSong.CathayMovieDetailsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -423,6 +442,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = U27B56TU48;
