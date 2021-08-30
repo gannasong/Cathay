@@ -72,6 +72,26 @@ class NowPlayingViewControllerTests: XCTestCase {
     XCTAssertEqual(loader.loadedImageURLs, [expectedURLZero, expectedURLOne])
   }
 
+  func test_load_nowPlayingCardCancelsImageLoadWhenNoLongerVisible() {
+    let (sut, loader) = makeSUT()
+    let itemZero = makeNowPlayingCard(id: 0)
+    let itemOne = makeNowPlayingCard(id: 1)
+    let feedPage = makeNowPlayingFeed(items: [itemZero, itemOne], pageNumber: 1, totalPages: 1)
+
+    let expectedURLZero = makeURL("https://image.tmdb.org/t/p/w500/\(itemZero.imagePath)")
+    let expectedURLOne = makeURL("https://image.tmdb.org/t/p/w500/\(itemOne.imagePath)")
+
+    sut.loadViewIfNeeded()
+    loader.loadFeedCompletes(with: .success(feedPage))
+    XCTAssertTrue(loader.loadedImageURLs.isEmpty)
+
+    sut.simulateItemNotVisible(at: 0)
+    XCTAssertEqual(loader.cancelledImageURLs, [expectedURLZero])
+
+    sut.simulateItemNotVisible(at: 1)
+    XCTAssertEqual(loader.cancelledImageURLs, [expectedURLZero, expectedURLOne])
+  }
+
   // MARK: - Helpers
 
   func makeSUT(file: StaticString = #file, line: UInt = #line) -> (NowPlayingViewController, LoaderSpy) {

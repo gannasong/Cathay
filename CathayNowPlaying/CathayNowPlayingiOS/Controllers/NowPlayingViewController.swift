@@ -44,9 +44,17 @@ public final class NowPlayingViewController: UICollectionViewController {
     return controller.view(in: collectionView, forItemAt: indexPath)
   }
 
+  public override func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    removeCellController(forItemAt: indexPath)
+  }
+
   private func cellController(forItemAt indexPath: IndexPath) -> NowPlayingCardCellController {
     let controller = items[indexPath.row]
     return controller
+  }
+
+  private func removeCellController(forItemAt indexPath: IndexPath) {
+    cellController(forItemAt: indexPath).cancelLoad()
   }
 }
 
