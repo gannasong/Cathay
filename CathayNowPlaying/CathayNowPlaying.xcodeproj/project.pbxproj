@@ -46,6 +46,7 @@
 		49DFF00A26DC7D8B00749A41 /* NowPlayingImagePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF00926DC7D8B00749A41 /* NowPlayingImagePresenterTests.swift */; };
 		49DFF00C26DC820900749A41 /* NowPlayingImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF00B26DC820900749A41 /* NowPlayingImageViewModel.swift */; };
 		49DFF00E26DC827100749A41 /* NowPlayingImagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF00D26DC827100749A41 /* NowPlayingImagePresenter.swift */; };
+		49DFF01026DC836600749A41 /* NowPlayingImageDataLoaderPresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF00F26DC836600749A41 /* NowPlayingImageDataLoaderPresentationAdapter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +141,7 @@
 		49DFF00926DC7D8B00749A41 /* NowPlayingImagePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingImagePresenterTests.swift; sourceTree = "<group>"; };
 		49DFF00B26DC820900749A41 /* NowPlayingImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingImageViewModel.swift; sourceTree = "<group>"; };
 		49DFF00D26DC827100749A41 /* NowPlayingImagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingImagePresenter.swift; sourceTree = "<group>"; };
+		49DFF00F26DC836600749A41 /* NowPlayingImageDataLoaderPresentationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingImageDataLoaderPresentationAdapter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -390,6 +392,7 @@
 			children = (
 				49DFEFCA26DC680900749A41 /* NowPlayingPresentationAdapter.swift */,
 				49DFF00526DC7A3000749A41 /* NowPlayingViewAdapter.swift */,
+				49DFF00F26DC836600749A41 /* NowPlayingImageDataLoaderPresentationAdapter.swift */,
 			);
 			path = Adapters;
 			sourceTree = "<group>";
@@ -612,6 +615,7 @@
 				49DFF00826DC7B5D00749A41 /* NowPlayingCardCellController.swift in Sources */,
 				49DFEFB426DBDF7200749A41 /* NowPlayingRefreshController.swift in Sources */,
 				49DFEFB226DBDE8300749A41 /* NowPlayingUIComposer.swift in Sources */,
+				49DFF01026DC836600749A41 /* NowPlayingImageDataLoaderPresentationAdapter.swift in Sources */,
 				49DFEFAF26DBDE1D00749A41 /* NowPlayingCardFeedCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

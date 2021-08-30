@@ -5,7 +5,7 @@
 //  Created by SUNG HAO LIN on 2021/8/30.
 //
 
-import Foundation
+import UIKit
 import CathayMedia
 import CathayNowPlaying
 
@@ -20,12 +20,25 @@ final class NowPlayingViewAdapter {
   }
 
   private func makeCellController(for model: NowPlayingCard) -> NowPlayingCardCellController {
-     return NowPlayingCardCellController()
+    let adapter = NowPlayingImageDataLoaderPresentationAdapter<WeakRefVirtualProxy<NowPlayingCardCellController>, UIImage>(
+      baseURL: URL(string: "https://image.tmdb.org/t/p/w500/")!, // TODO: Create URL factory
+      model: model,
+      imageLoader: imageLoader
+    )
+
+    let view = NowPlayingCardCellController(delegate: adapter)
+    return view
    }
 }
 
 extension NowPlayingViewAdapter: NowPlayingView {
   func display(_ viewModel: NowPlayingViewModel) {
     controller?.items = viewModel.items.map(makeCellController(for:))
+  }
+}
+
+extension WeakRefVirtualProxy: NowPlayingImageView where T: NowPlayingImageView, T.Image == UIImage {
+  public func display(_ model: NowPlayingImageViewModel<UIImage>) {
+    object?.display(model)
   }
 }

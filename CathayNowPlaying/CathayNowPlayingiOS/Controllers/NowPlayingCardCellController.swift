@@ -6,25 +6,29 @@
 //
 
 import UIKit
+import CathayNowPlaying
 
 protocol NowPlayingCardCellControllerDelegate {
   func didRequestLoadImage()
-  func didCancelLoadImage()
 }
 
 final class NowPlayingCardCellController {
   private var cell: NowPlayingCardFeedCell?
+  private let delegate: NowPlayingCardCellControllerDelegate
+
+  init(delegate: NowPlayingCardCellControllerDelegate) {
+    self.delegate = delegate
+  }
 
   func view(in collectionView: UICollectionView, forItemAt indexPath: IndexPath) -> UICollectionViewCell {
     cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NowPlayingCardFeedCell", for: indexPath) as? NowPlayingCardFeedCell
+    delegate.didRequestLoadImage()
     return cell!
   }
+}
 
-  func cancel() {
-    releaseCellForReuse()
-  }
+extension NowPlayingCardCellController: NowPlayingImageView {
+  func display(_ model: NowPlayingImageViewModel<UIImage>) {
 
-  private func releaseCellForReuse() {
-    cell = nil
   }
 }
