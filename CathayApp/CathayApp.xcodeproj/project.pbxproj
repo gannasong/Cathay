@@ -30,6 +30,8 @@
 		49DFF0AF26DCE76900749A41 /* CathayMovieDetails.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFF0AD26DCE76900749A41 /* CathayMovieDetails.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		49DFF0B126DCE76D00749A41 /* CathayMovieDetailsiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFF0B026DCE76D00749A41 /* CathayMovieDetailsiOS.framework */; };
 		49DFF0B226DCE76D00749A41 /* CathayMovieDetailsiOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFF0B026DCE76D00749A41 /* CathayMovieDetailsiOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		49FBAB1826DD275F00628E9D /* CathayCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49FBAB1726DD275F00628E9D /* CathayCommon.framework */; };
+		49FBAB1926DD275F00628E9D /* CathayCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 49FBAB1726DD275F00628E9D /* CathayCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,7 @@
 				49DFF0B226DCE76D00749A41 /* CathayMovieDetailsiOS.framework in Embed Frameworks */,
 				49DFF02026DCAD2000749A41 /* CathayNowPlaying.framework in Embed Frameworks */,
 				49DFF01D26DCAD1A00749A41 /* CathayNetworking.framework in Embed Frameworks */,
+				49FBAB1926DD275F00628E9D /* CathayCommon.framework in Embed Frameworks */,
 				49DFF02326DCAD2400749A41 /* CathayNowPlayingiOS.framework in Embed Frameworks */,
 				49DFF0AF26DCE76900749A41 /* CathayMovieDetails.framework in Embed Frameworks */,
 				49DFF01926DCAD1400749A41 /* CathayMedia.framework in Embed Frameworks */,
@@ -82,6 +85,7 @@
 		49DFF03226DCB5E300749A41 /* GetConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetConfig.swift; sourceTree = "<group>"; };
 		49DFF0AD26DCE76900749A41 /* CathayMovieDetails.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CathayMovieDetails.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DFF0B026DCE76D00749A41 /* CathayMovieDetailsiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CathayMovieDetailsiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49FBAB1726DD275F00628E9D /* CathayCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CathayCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,7 @@
 				49DFF02226DCAD2400749A41 /* CathayNowPlayingiOS.framework in Frameworks */,
 				49DFF01826DCAD1400749A41 /* CathayMedia.framework in Frameworks */,
 				49DFF0AE26DCE76900749A41 /* CathayMovieDetails.framework in Frameworks */,
+				49FBAB1826DD275F00628E9D /* CathayCommon.framework in Frameworks */,
 				49DFF0AC26DCE76100749A41 /* CathayMedia.framework in Frameworks */,
 				49DFF0B126DCE76D00749A41 /* CathayMovieDetailsiOS.framework in Frameworks */,
 			);
@@ -155,6 +160,7 @@
 		49DFF01626DCAD1400749A41 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				49FBAB1726DD275F00628E9D /* CathayCommon.framework */,
 				49DFF0B026DCE76D00749A41 /* CathayMovieDetailsiOS.framework */,
 				49DFF0AD26DCE76900749A41 /* CathayMovieDetails.framework */,
 				49DFF02126DCAD2400749A41 /* CathayNowPlayingiOS.framework */,

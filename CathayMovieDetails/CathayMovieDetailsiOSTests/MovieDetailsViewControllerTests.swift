@@ -6,7 +6,7 @@
 //
 
 import XCTest
-import UIKit
+import CathayMedia
 import CathayMovieDetails
 import CathayMovieDetailsiOS
 
@@ -30,6 +30,7 @@ class MovieDetailsViewControllerTests: XCTestCase {
     XCTAssertTrue(sut.loadingIndicatorIsVisible)
 
     loader.loadCompletes(with: .success(movie))
+    loader.completeImageLoading()
     XCTAssertFalse(sut.loadingIndicatorIsVisible)
   }
 
@@ -39,6 +40,7 @@ class MovieDetailsViewControllerTests: XCTestCase {
 
     sut.loadViewIfNeeded()
     loader.loadCompletes(with: .success(movie))
+    loader.completeImageLoading()
 
     assertThat(sut, hasViewConfiguredFor: movie)
   }
@@ -74,7 +76,7 @@ class MovieDetailsViewControllerTests: XCTestCase {
 
   func makeSUT(id: Int = 0, onBuyTicketSpy: @escaping () -> Void = { }, file: StaticString = #file, line: UInt = #line) -> (MovieDetailsViewController, LoaderSpy) {
     let loader = LoaderSpy()
-    let sut = MovieDetailsUIComposer.compose(id: id, loader: loader, onPurchaseCallback: onBuyTicketSpy)
+    let sut = MovieDetailsUIComposer.compose(id: id, loader: loader, imageLoader: loader, onPurchaseCallback: onBuyTicketSpy)
 
     trackForMemoryLeaks(loader, file: file, line: line)
     trackForMemoryLeaks(sut, file: file, line: line)
@@ -98,7 +100,7 @@ class MovieDetailsViewControllerTests: XCTestCase {
                  backdropImagePath: "some-action-movie-background.png")
   }
 
-  class LoaderSpy: MovieLoader {
+  class LoaderSpy: MovieLoader, ImageDataLoader {
 
     enum Message: Equatable {
       case load(Int)
@@ -116,6 +118,35 @@ class MovieDetailsViewControllerTests: XCTestCase {
 
     func loadCompletes(with result: Result, at index: Int = 0) {
       loadCompletions[index](result)
+    }
+
+    private struct TaskSpy: ImageDataLoaderTask {
+      let cancelCallback: () -> Void
+      func cancel() {
+        cancelCallback()
+      }
+    }
+
+    private var imageRequests = [(url: URL, completion: (ImageDataLoader.Result) -> Void)]()
+
+    var loadedImageURLs: [URL] {
+      return imageRequests.map { $0.url }
+    }
+
+    private(set) var cancelledImageURLs = [URL]()
+
+    func load(from url: URL, completion: @escaping (ImageDataLoader.Result) -> Void) -> ImageDataLoaderTask {
+      imageRequests.append((url, completion))
+      return TaskSpy { [weak self] in self?.cancelledImageURLs.append(url) }
+    }
+
+    func completeImageLoading(with imageData: Data = Data(), at index: Int = 0) {
+      imageRequests[index].completion(.success(imageData))
+    }
+
+    func completeImageLoadingWithError(at index: Int = 0) {
+      let error = NSError(domain: "an error", code: 0)
+      imageRequests[index].completion(.failure(error))
     }
   }
 }

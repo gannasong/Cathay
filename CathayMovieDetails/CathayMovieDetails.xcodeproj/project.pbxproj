@@ -36,6 +36,8 @@
 		49FBAB0D26DD143200628E9D /* MovieDetailsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBAB0C26DD143200628E9D /* MovieDetailsPresenterTests.swift */; };
 		49FBAB1426DD24BF00628E9D /* MovieDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBAB1326DD24BF00628E9D /* MovieDetailsViewModel.swift */; };
 		49FBAB1626DD24F400628E9D /* MovieDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBAB1526DD24F400628E9D /* MovieDetailsPresenter.swift */; };
+		49FBAB1E26DD2CEB00628E9D /* CathayMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49FBAB1D26DD2CEB00628E9D /* CathayMedia.framework */; };
+		49FBAB1F26DD2CEB00628E9D /* CathayMedia.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 49FBAB1D26DD2CEB00628E9D /* CathayMedia.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				49DFF06C26DCCA7A00749A41 /* CathayNetworking.framework in Embed Frameworks */,
+				49FBAB1F26DD2CEB00628E9D /* CathayMedia.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -117,6 +120,8 @@
 		49FBAB0C26DD143200628E9D /* MovieDetailsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsPresenterTests.swift; sourceTree = "<group>"; };
 		49FBAB1326DD24BF00628E9D /* MovieDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewModel.swift; sourceTree = "<group>"; };
 		49FBAB1526DD24F400628E9D /* MovieDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsPresenter.swift; sourceTree = "<group>"; };
+		49FBAB1A26DD27DC00628E9D /* CathayMedia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CathayMedia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49FBAB1D26DD2CEB00628E9D /* CathayMedia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CathayMedia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +130,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49DFF06B26DCCA7A00749A41 /* CathayNetworking.framework in Frameworks */,
+				49FBAB1E26DD2CEB00628E9D /* CathayMedia.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,6 +228,8 @@
 		49DFF06926DCCA7A00749A41 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				49FBAB1D26DD2CEB00628E9D /* CathayMedia.framework */,
+				49FBAB1A26DD27DC00628E9D /* CathayMedia.framework */,
 				49FBAB0526DD0F5B00628E9D /* CathayCommon.framework */,
 				49DFF06A26DCCA7A00749A41 /* CathayNetworking.framework */,
 			);
@@ -629,6 +637,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -686,6 +695,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VERSIONING_SYSTEM = "apple-generic";

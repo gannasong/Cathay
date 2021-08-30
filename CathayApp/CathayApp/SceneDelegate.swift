@@ -49,7 +49,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     let authzClient = AuthenticatedHTTPClientDecorator(decoratee: client, config: config)
 
     let loader = RemoteMovieLoader(baseURL: baseURL, client: authzClient)
-    let viewController = MovieDetailsUIComposer.compose(id: id, loader: loader, onPurchaseCallback: { })
+    let imageLoader = RemoteImageDataLoader(client: client)
+
+    let viewController = MovieDetailsUIComposer.compose(id: id, loader: loader, imageLoader: imageLoader, onPurchaseCallback: { })
     return viewController
   }
 }
