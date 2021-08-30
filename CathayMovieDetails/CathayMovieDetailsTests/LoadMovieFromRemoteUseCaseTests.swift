@@ -9,8 +9,8 @@ import XCTest
 import CathayNetworking
 import CathayMovieDetails
 
-class RemoteMovieLoader {
-  typealias Result = Swift.Result<Movie, Error>
+class RemoteMovieLoader: MovieLoader {
+  typealias Result = MovieLoader.Result
 
   enum Error: Swift.Error {
     case connectivity
@@ -50,7 +50,7 @@ class RemoteMovieLoader {
       let value = try MovieMapper.map(data, from: response)
       return .success(value.asMovie)
     } catch {
-      return .failure(.invalidResponse)
+      return .failure(error)
     }
   }
 }
@@ -166,7 +166,7 @@ class LoadMovieFromRemoteUseCaseTests: XCTestCase {
 
   func test_load_doesNotDeliverResultAfterSUTInstanceHasBeenDeallocated() {
     let client = HTTPClientSpy()
-    var sut: RemoteMovieLoader? = RemoteMovieLoader(baseURL: makeURL(), client: client)
+    var sut: MovieLoader? = RemoteMovieLoader(baseURL: makeURL(), client: client)
 
     var captureResults = [RemoteMovieLoader.Result]()
     sut?.load(id: 1, completion: { captureResults.append($0) })
@@ -179,7 +179,7 @@ class LoadMovieFromRemoteUseCaseTests: XCTestCase {
 
   // MARK: - Helpers
 
-  func makeSUT(baseURL: URL? = nil, file: StaticString = #file, line: UInt = #line) -> (RemoteMovieLoader, HTTPClientSpy) {
+  func makeSUT(baseURL: URL? = nil, file: StaticString = #file, line: UInt = #line) -> (MovieLoader, HTTPClientSpy) {
     let client = HTTPClientSpy()
     let sut = RemoteMovieLoader(baseURL: baseURL ?? makeURL(), client: client)
     trackForMemoryLeaks(client, file: file, line: line)
@@ -187,7 +187,7 @@ class LoadMovieFromRemoteUseCaseTests: XCTestCase {
     return (sut, client)
   }
 
-  func expect(_ sut: RemoteMovieLoader, toCompleteWith expectedResult: RemoteMovieLoader.Result, when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
+  func expect(_ sut: MovieLoader, toCompleteWith expectedResult: MovieLoader.Result, when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
     let exp = expectation(description: "Wait for load completion")
     sut.load(id: 0, completion: { receivedResult in
       switch (receivedResult, expectedResult) {
@@ -209,7 +209,7 @@ class LoadMovieFromRemoteUseCaseTests: XCTestCase {
     wait(for: [exp], timeout: 1.0)
   }
 
-  func failure(_ error: RemoteMovieLoader.Error) -> RemoteMovieLoader.Result {
+  func failure(_ error: RemoteMovieLoader.Error) -> MovieLoader.Result {
     return .failure(error)
   }
 
