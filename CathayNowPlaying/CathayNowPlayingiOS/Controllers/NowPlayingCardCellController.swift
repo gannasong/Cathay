@@ -14,6 +14,8 @@ protocol NowPlayingCardCellControllerDelegate {
 }
 
 final class NowPlayingCardCellController {
+  var didSelect: (() -> Void)?
+
   private var cell: NowPlayingCardFeedCell?
   private let delegate: NowPlayingCardCellControllerDelegate
 
@@ -38,6 +40,10 @@ final class NowPlayingCardCellController {
 
   func relaseCellForReuse() {
     cell = nil
+  }
+
+  func select() {
+    didSelect?()
   }
 }
 

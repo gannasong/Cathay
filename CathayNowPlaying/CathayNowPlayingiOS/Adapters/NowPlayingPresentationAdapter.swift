@@ -12,7 +12,7 @@ final class NowPlayingPresentationAdapter: NowPlayingRefreshControllerDelegate {
 
   var presenter: NowPlayingPresenter?
   private let loader: NowPlayingLoader
-
+  
   init(loader: NowPlayingLoader) {
     self.loader = loader
   }

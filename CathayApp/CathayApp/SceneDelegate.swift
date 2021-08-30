@@ -31,7 +31,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     let loader = RemoteNowPlayingLoader(baseURL: baseURL, client: authzClient)
     let imageLoader = RemoteImageDataLoader(client: client)
 
-    let viewController = NowPlayingUIComposer.compose(loader: loader, imageLoader: imageLoader)
+    let viewController = NowPlayingUIComposer.compose(loader: loader, imageLoader: imageLoader, onSelectCallback: { _ in })
     return viewController
   }
 }

@@ -233,11 +233,25 @@ class NowPlayingViewControllerTests: XCTestCase {
     wait(for: [exp], timeout: 1.0)
   }
 
+  func test_select_cardNotifiesObserver() {
+    var output: Int? = nil
+    let (sut, loader) = makeSUT(onSelectSpy: { output = $0 })
+    let item = makeNowPlayingCard(id: 0)
+    let feedPage = makeNowPlayingFeed(items: [item], pageNumber: 1, totalPages: 1)
+
+    sut.loadViewIfNeeded()
+    loader.loadFeedCompletes(with: .success(feedPage))
+
+    sut.simulateSelectItem(at: 0)
+
+    XCTAssertEqual(output, item.id)
+  }
+
   // MARK: - Helpers
 
-  func makeSUT(file: StaticString = #file, line: UInt = #line) -> (NowPlayingViewController, LoaderSpy) {
+  func makeSUT(onSelectSpy: @escaping (Int) -> Void = { _ in }, file: StaticString = #file, line: UInt = #line) -> (NowPlayingViewController, LoaderSpy) {
     let loader = LoaderSpy()
-    let sut = NowPlayingUIComposer.compose(loader: loader, imageLoader: loader)
+    let sut = NowPlayingUIComposer.compose(loader: loader, imageLoader: loader, onSelectCallback: onSelectSpy)
 
     trackForMemoryLeaks(loader, file: file, line: line)
     trackForMemoryLeaks(sut, file: file, line: line)

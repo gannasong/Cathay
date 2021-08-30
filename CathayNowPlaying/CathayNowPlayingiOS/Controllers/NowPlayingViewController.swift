@@ -130,6 +130,10 @@ extension NowPlayingViewController: UICollectionViewDelegate {
   public func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
     removeCellController(forItemAt: indexPath)
   }
+
+  public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    cellController(forItemAt: indexPath).select()
+  }
 }
 
 extension NowPlayingViewController: UICollectionViewDataSource {

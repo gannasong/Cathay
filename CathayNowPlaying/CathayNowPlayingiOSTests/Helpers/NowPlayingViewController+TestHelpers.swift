@@ -56,4 +56,10 @@ extension NowPlayingViewController {
     let indexPath = IndexPath(item: index, section: 0)
     prefetchDataSource?.collectionView?(collectionView, cancelPrefetchingForItemsAt: [indexPath])
   }
+
+  func simulateSelectItem(at index: Int) {
+    let delegate = collectionView.delegate
+    let indexPath = IndexPath(item: index, section: 0)
+    delegate?.collectionView?(collectionView, didSelectItemAt: indexPath)
+  }
 }

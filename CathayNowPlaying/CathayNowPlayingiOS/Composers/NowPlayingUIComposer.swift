@@ -12,13 +12,14 @@ import CathayNowPlaying
 public final class NowPlayingUIComposer {
   private init() {}
 
-  public static func compose(loader: NowPlayingLoader, imageLoader: ImageDataLoader) -> NowPlayingViewController {
+  public static func compose(loader: NowPlayingLoader, imageLoader: ImageDataLoader, onSelectCallback: @escaping (Int) -> Void) -> NowPlayingViewController {
     let adapter = NowPlayingPresentationAdapter(loader: MainQueueDispatchDecorator(decoratee: loader))
     let refreshController = NowPlayingRefreshController(delegate: adapter)
     let viewController = NowPlayingViewController(refreshController: refreshController)
 
     adapter.presenter = NowPlayingPresenter(view: NowPlayingViewAdapter(controller: viewController,
-                                                                        imageLoader: MainQueueDispatchDecorator(decoratee: imageLoader)),
+                                                                        imageLoader: MainQueueDispatchDecorator(decoratee: imageLoader),
+                                                                        onSelectCallback: onSelectCallback),
                                             loadingView: WeakRefVirtualProxy(refreshController),
                                             errorView: WeakRefVirtualProxy(viewController))
     

@@ -13,10 +13,12 @@ final class NowPlayingViewAdapter {
 
   private weak var controller: NowPlayingViewController?
   private let imageLoader: ImageDataLoader
+  private let onSelectCallback: (Int) -> Void
 
-  init(controller: NowPlayingViewController, imageLoader: ImageDataLoader) {
+  init(controller: NowPlayingViewController, imageLoader: ImageDataLoader, onSelectCallback: @escaping (Int) -> Void) {
     self.controller = controller
     self.imageLoader = imageLoader
+    self.onSelectCallback = onSelectCallback
   }
 
   private func makeCellController(for model: NowPlayingCard) -> NowPlayingCardCellController {
@@ -27,6 +29,10 @@ final class NowPlayingViewAdapter {
     )
 
     let view = NowPlayingCardCellController(delegate: adapter)
+    view.didSelect = { [weak self] in
+      self?.onSelectCallback(model.id)
+    }
+    
     adapter.presenter = NowPlayingImagePresenter(view: WeakRefVirtualProxy(view), imageTransformer: UIImage.init)
     
     return view
@@ -35,7 +41,7 @@ final class NowPlayingViewAdapter {
 
 extension NowPlayingViewAdapter: NowPlayingView {
   func display(_ viewModel: NowPlayingViewModel) {
-    controller?.items = viewModel.items.map(makeCellController(for:))
+    controller?.items = viewModel.items.map(makeCellController)
   }
 }
 
