@@ -50,6 +50,7 @@
 		49DFF03826DCBC8F00749A41 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF03726DCBC8F00749A41 /* UIImageView+Extensions.swift */; };
 		49DFF11226DD0DBF00749A41 /* CathayCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFF11126DD0DBF00749A41 /* CathayCommon.framework */; };
 		49DFF11326DD0DBF00749A41 /* CathayCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFF11126DD0DBF00749A41 /* CathayCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		49FBAB2826DD324500628E9D /* NowPlayingCardFeedCell+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBAB2726DD324500628E9D /* NowPlayingCardFeedCell+TestHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +149,7 @@
 		49DFF01426DC8EA400749A41 /* UIImage+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+TestHelpers.swift"; sourceTree = "<group>"; };
 		49DFF03726DCBC8F00749A41 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		49DFF11126DD0DBF00749A41 /* CathayCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CathayCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49FBAB2726DD324500628E9D /* NowPlayingCardFeedCell+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NowPlayingCardFeedCell+TestHelpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -320,6 +322,7 @@
 				49DFEFA926DBDD0F00749A41 /* UIRefreshControl+TestHelpers.swift */,
 				49DFEFAB26DBDD6F00749A41 /* NowPlayingViewController+TestHelpers.swift */,
 				49DFF01426DC8EA400749A41 /* UIImage+TestHelpers.swift */,
+				49FBAB2726DD324500628E9D /* NowPlayingCardFeedCell+TestHelpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -631,6 +634,7 @@
 				49DFEF9126DB81FC00749A41 /* XCTestCase+Extension.swift in Sources */,
 				49DFEF7E26DB7A0200749A41 /* NowPlayingViewControllerTests.swift in Sources */,
 				49DFF01526DC8EA400749A41 /* UIImage+TestHelpers.swift in Sources */,
+				49FBAB2826DD324500628E9D /* NowPlayingCardFeedCell+TestHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

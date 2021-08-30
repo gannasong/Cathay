@@ -36,6 +36,7 @@
 		49FBAB1F26DD2CEB00628E9D /* CathayMedia.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 49FBAB1D26DD2CEB00628E9D /* CathayMedia.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		49FBAB2126DD308200628E9D /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBAB2026DD308200628E9D /* UIImage+Extensions.swift */; };
 		49FBAB2426DD30EF00628E9D /* MovieLoaderPresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBAB2326DD30EF00628E9D /* MovieLoaderPresentationAdapter.swift */; };
+		49FBAB2626DD31AC00628E9D /* MovieDetailsViewController+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBAB2526DD31AC00628E9D /* MovieDetailsViewController+TestHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +121,7 @@
 		49FBAB1D26DD2CEB00628E9D /* CathayMedia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CathayMedia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49FBAB2026DD308200628E9D /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		49FBAB2326DD30EF00628E9D /* MovieLoaderPresentationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieLoaderPresentationAdapter.swift; sourceTree = "<group>"; };
+		49FBAB2526DD31AC00628E9D /* MovieDetailsViewController+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieDetailsViewController+TestHelpers.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,6 +281,7 @@
 				49DFF0A526DCE24100749A41 /* UIControl+TestHelpers.swift */,
 				49DFF0A726DCE25D00749A41 /* UIButton+Extensions.swift */,
 				49FBAB2026DD308200628E9D /* UIImage+Extensions.swift */,
+				49FBAB2526DD31AC00628E9D /* MovieDetailsViewController+TestHelpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -548,6 +551,7 @@
 			files = (
 				49DFF0A826DCE25D00749A41 /* UIButton+Extensions.swift in Sources */,
 				49DFF09626DCDAA700749A41 /* XCTestCase+Extensions.swift in Sources */,
+				49FBAB2626DD31AC00628E9D /* MovieDetailsViewController+TestHelpers.swift in Sources */,
 				49FBAB2126DD308200628E9D /* UIImage+Extensions.swift in Sources */,
 				49DFF0A626DCE24100749A41 /* UIControl+TestHelpers.swift in Sources */,
 				49DFF09526DCDA5B00749A41 /* MovieDetailsViewControllerTests.swift in Sources */,

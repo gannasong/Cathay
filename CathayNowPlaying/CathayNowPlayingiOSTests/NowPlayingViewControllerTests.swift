@@ -338,13 +338,3 @@ class NowPlayingViewControllerTests: XCTestCase {
     }
   }
 }
-
-extension NowPlayingCardFeedCell {
-  var loadingIndicatorIsVisible: Bool {
-    return isShimmering
-  }
-
-  var renderedImage: Data? {
-    return imageView.image?.pngData()
-  }
-}
