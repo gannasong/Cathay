@@ -50,6 +50,7 @@
 		49DFF01326DC88DF00749A41 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF01226DC88DF00749A41 /* UIView+Extensions.swift */; };
 		49DFF01526DC8EA400749A41 /* UIImage+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF01426DC8EA400749A41 /* UIImage+TestHelpers.swift */; };
 		49DFF03626DCB70900749A41 /* MainQueueDispatchDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF03426DCB67A00749A41 /* MainQueueDispatchDecorator.swift */; };
+		49DFF03826DCBC8F00749A41 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF03726DCBC8F00749A41 /* UIImageView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +149,7 @@
 		49DFF01226DC88DF00749A41 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		49DFF01426DC8EA400749A41 /* UIImage+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+TestHelpers.swift"; sourceTree = "<group>"; };
 		49DFF03426DCB67A00749A41 /* MainQueueDispatchDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQueueDispatchDecorator.swift; sourceTree = "<group>"; };
+		49DFF03726DCBC8F00749A41 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -410,6 +412,7 @@
 			isa = PBXGroup;
 			children = (
 				49DFF01226DC88DF00749A41 /* UIView+Extensions.swift */,
+				49DFF03726DCBC8F00749A41 /* UIImageView+Extensions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -627,6 +630,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49DFF03826DCBC8F00749A41 /* UIImageView+Extensions.swift in Sources */,
 				49DFEFCB26DC680900749A41 /* NowPlayingPresentationAdapter.swift in Sources */,
 				49DFEFA526DBDACD00749A41 /* NowPlayingViewController.swift in Sources */,
 				49DFF00626DC7A3000749A41 /* NowPlayingViewAdapter.swift in Sources */,
