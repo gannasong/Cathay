@@ -8,31 +8,32 @@
 import UIKit
 import CathayNowPlaying
 
-final class NowPlayingRefreshController: NSObject {
+protocol NowPlayingRefreshControllerDelegate {
+  func didRequestLoad()
+}
+
+final class NowPlayingRefreshController: NSObject, NowPlayingLoadingView {
 
   var onRefresh: (([NowPlayingCard]) -> Void)?
 
-  private let loader: NowPlayingLoader
+  private let delegate: NowPlayingRefreshControllerDelegate
 
   private(set) lazy var view = loadView()
 
-  init(loader: NowPlayingLoader) {
-    self.loader = loader
-  }
+  init(delegate: NowPlayingRefreshControllerDelegate) {
+     self.delegate = delegate
+   }
 
   @objc func load() {
-    view.beginRefreshing()
-
-    loader.execute(PagedNowPlayingRequest(page: 1), completion: { [weak self] result in
-      if let page = try? result.get() {
-        self?.onRefresh?(page.items)
-      }
-      self?.view.endRefreshing()
-    })
+    delegate.didRequestLoad()
   }
 
   func loadView() -> UIRefreshControl {
     let view = UIRefreshControl(frame: .zero)
     return view
+  }
+
+  func display(_ viewModel: NowPlayingLoadingViewModel) {
+    viewModel.isLoading ? view.beginRefreshing() : view.endRefreshing()
   }
 }

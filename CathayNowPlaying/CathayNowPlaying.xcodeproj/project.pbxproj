@@ -38,6 +38,7 @@
 		49DFEFC226DBEADE00749A41 /* NowPlayingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEFC126DBEADE00749A41 /* NowPlayingPresenter.swift */; };
 		49DFEFC526DBECDC00749A41 /* WeakRefVirtualProxyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEFC426DBECDC00749A41 /* WeakRefVirtualProxyTests.swift */; };
 		49DFEFC826DBEDB400749A41 /* WeakRefVirtualProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEFC726DBEDB400749A41 /* WeakRefVirtualProxy.swift */; };
+		49DFEFCB26DC680900749A41 /* NowPlayingPresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEFCA26DC680900749A41 /* NowPlayingPresentationAdapter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +125,7 @@
 		49DFEFC126DBEADE00749A41 /* NowPlayingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingPresenter.swift; sourceTree = "<group>"; };
 		49DFEFC426DBECDC00749A41 /* WeakRefVirtualProxyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakRefVirtualProxyTests.swift; sourceTree = "<group>"; };
 		49DFEFC726DBEDB400749A41 /* WeakRefVirtualProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakRefVirtualProxy.swift; sourceTree = "<group>"; };
+		49DFEFCA26DC680900749A41 /* NowPlayingPresentationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingPresentationAdapter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +251,7 @@
 		49DFEF6726DB793300749A41 /* CathayNowPlayingiOS */ = {
 			isa = PBXGroup;
 			children = (
+				49DFEFC926DC679200749A41 /* Adapters */,
 				49DFEFB026DBDE6C00749A41 /* Composers */,
 				49DFEFA326DBDAB300749A41 /* Controllers */,
 				49DFEFAD26DBDE0600749A41 /* Views */,
@@ -360,6 +363,14 @@
 				49DFEFC726DBEDB400749A41 /* WeakRefVirtualProxy.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		49DFEFC926DC679200749A41 /* Adapters */ = {
+			isa = PBXGroup;
+			children = (
+				49DFEFCA26DC680900749A41 /* NowPlayingPresentationAdapter.swift */,
+			);
+			path = Adapters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -571,6 +582,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49DFEFCB26DC680900749A41 /* NowPlayingPresentationAdapter.swift in Sources */,
 				49DFEFA526DBDACD00749A41 /* NowPlayingViewController.swift in Sources */,
 				49DFEFB426DBDF7200749A41 /* NowPlayingRefreshController.swift in Sources */,
 				49DFEFB226DBDE8300749A41 /* NowPlayingUIComposer.swift in Sources */,
