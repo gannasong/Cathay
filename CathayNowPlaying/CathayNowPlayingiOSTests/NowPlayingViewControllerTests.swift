@@ -6,7 +6,7 @@
 //
 
 import XCTest
-import UIKit
+import CathayMedia
 import CathayNowPlaying
 import CathayNowPlayingiOS
 
@@ -56,7 +56,7 @@ class NowPlayingViewControllerTests: XCTestCase {
 
   func makeSUT(file: StaticString = #file, line: UInt = #line) -> (NowPlayingViewController, LoaderSpy) {
     let loader = LoaderSpy()
-    let sut = NowPlayingUIComposer.compose(loader: loader)
+    let sut = NowPlayingUIComposer.compose(loader: loader, imageLoader: loader)
 
     trackForMemoryLeaks(loader, file: file, line: line)
     trackForMemoryLeaks(sut, file: file, line: line)
@@ -88,7 +88,7 @@ class NowPlayingViewControllerTests: XCTestCase {
     }
   }
 
-  class LoaderSpy: NowPlayingLoader {
+  class LoaderSpy: NowPlayingLoader, ImageDataLoader {
     private(set) var messages: [Message] = []
     private var loadCompletions: [(NowPlayingLoader.Result) -> Void] = []
 
@@ -103,6 +103,35 @@ class NowPlayingViewControllerTests: XCTestCase {
 
     func loadFeedCompletes(with result: NowPlayingLoader.Result, at index: Int = 0) {
       loadCompletions[index](result)
+    }
+
+    private struct TaskSpy: ImageDataLoaderTask {
+      let cancelCallback: () -> Void
+      func cancel() {
+        cancelCallback()
+      }
+    }
+
+    private var imageRequests = [(url: URL, completion: (ImageDataLoader.Result) -> Void)]()
+
+    var loadedImageURLs: [URL] {
+      return imageRequests.map { $0.url }
+    }
+
+    private(set) var cancelledImageURLs = [URL]()
+
+    func load(from url: URL, completion: @escaping (ImageDataLoader.Result) -> Void) -> ImageDataLoaderTask {
+      imageRequests.append((url, completion))
+      return TaskSpy { [weak self] in self?.cancelledImageURLs.append(url) }
+    }
+
+    func completeImageLoading(with imageData: Data = Data(), at index: Int = 0) {
+      imageRequests[index].completion(.success(imageData))
+    }
+
+    func completeImageLoadingWithError(at index: Int = 0) {
+      let error = NSError(domain: "an error", code: 0)
+      imageRequests[index].completion(.failure(error))
     }
   }
 }

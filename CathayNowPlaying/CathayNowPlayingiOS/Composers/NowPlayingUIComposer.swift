@@ -6,12 +6,13 @@
 //
 
 import Foundation
+import CathayMedia
 import CathayNowPlaying
 
 public final class NowPlayingUIComposer {
   private init() {}
 
-  public static func compose(loader: NowPlayingLoader) -> NowPlayingViewController {
+  public static func compose(loader: NowPlayingLoader, imageLoader: ImageDataLoader) -> NowPlayingViewController {
     let adapter = NowPlayingPresentationAdapter(loader: loader)
     let refreshController = NowPlayingRefreshController(delegate: adapter)
     let viewController = NowPlayingViewController(refreshController: refreshController)
