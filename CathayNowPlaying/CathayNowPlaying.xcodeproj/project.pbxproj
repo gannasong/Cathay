@@ -43,6 +43,7 @@
 		49DFF00426DC792B00749A41 /* CathayMedia.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFF00226DC792B00749A41 /* CathayMedia.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		49DFF00626DC7A3000749A41 /* NowPlayingViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF00526DC7A3000749A41 /* NowPlayingViewAdapter.swift */; };
 		49DFF00826DC7B5D00749A41 /* NowPlayingCardCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF00726DC7B5D00749A41 /* NowPlayingCardCellController.swift */; };
+		49DFF00A26DC7D8B00749A41 /* NowPlayingImagePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF00926DC7D8B00749A41 /* NowPlayingImagePresenterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +135,7 @@
 		49DFF00226DC792B00749A41 /* CathayMedia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CathayMedia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DFF00526DC7A3000749A41 /* NowPlayingViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingViewAdapter.swift; sourceTree = "<group>"; };
 		49DFF00726DC7B5D00749A41 /* NowPlayingCardCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingCardCellController.swift; sourceTree = "<group>"; };
+		49DFF00926DC7D8B00749A41 /* NowPlayingImagePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingImagePresenterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -329,6 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				49DFEFB726DBE42C00749A41 /* NowPlayingPresenterTests.swift */,
+				49DFF00926DC7D8B00749A41 /* NowPlayingImagePresenterTests.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -586,6 +589,7 @@
 				49DFEED326DB4F1900749A41 /* XCTestCase+Extension.swift in Sources */,
 				49DFEFC526DBECDC00749A41 /* WeakRefVirtualProxyTests.swift in Sources */,
 				49DFEEDC26DB600100749A41 /* HTTPClientSpy.swift in Sources */,
+				49DFF00A26DC7D8B00749A41 /* NowPlayingImagePresenterTests.swift in Sources */,
 				49DFEED526DB4F8F00749A41 /* LoadNowPlayingFromRemoteUseCaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
