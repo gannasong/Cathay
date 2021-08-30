@@ -22,6 +22,8 @@
 		49DFF09026DCDA4100749A41 /* CathayMovieDetails.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFF04326DCC86200749A41 /* CathayMovieDetails.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		49DFF09526DCDA5B00749A41 /* MovieDetailsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF09426DCDA5B00749A41 /* MovieDetailsViewControllerTests.swift */; };
 		49DFF09626DCDAA700749A41 /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF06326DCC9CC00749A41 /* XCTestCase+Extensions.swift */; };
+		49DFF09926DCDD2600749A41 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF09826DCDD2600749A41 /* Double+Extensions.swift */; };
+		49DFF09B26DCDD4900749A41 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF09A26DCDD4900749A41 /* String+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +93,8 @@
 		49DFF08026DCD25200749A41 /* CathayMovieDetailsiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CathayMovieDetailsiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DFF08726DCD25200749A41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49DFF09426DCDA5B00749A41 /* MovieDetailsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewControllerTests.swift; sourceTree = "<group>"; };
+		49DFF09826DCDD2600749A41 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
+		49DFF09A26DCDD4900749A41 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,10 +222,20 @@
 		49DFF08426DCD25200749A41 /* CathayMovieDetailsiOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				49DFF09726DCDD1300749A41 /* Helpers */,
 				49DFF08726DCD25200749A41 /* Info.plist */,
 				49DFF09426DCDA5B00749A41 /* MovieDetailsViewControllerTests.swift */,
 			);
 			path = CathayMovieDetailsiOSTests;
+			sourceTree = "<group>";
+		};
+		49DFF09726DCDD1300749A41 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				49DFF09826DCDD2600749A41 /* Double+Extensions.swift */,
+				49DFF09A26DCDD4900749A41 /* String+Extensions.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -430,6 +444,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49DFF09B26DCDD4900749A41 /* String+Extensions.swift in Sources */,
+				49DFF09926DCDD2600749A41 /* Double+Extensions.swift in Sources */,
 				49DFF09626DCDAA700749A41 /* XCTestCase+Extensions.swift in Sources */,
 				49DFF09526DCDA5B00749A41 /* MovieDetailsViewControllerTests.swift in Sources */,
 			);
