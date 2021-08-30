@@ -12,6 +12,15 @@
 		49DFEEF526DB651600749A41 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEEF426DB651600749A41 /* ViewController.swift */; };
 		49DFEEFA26DB651700749A41 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49DFEEF926DB651700749A41 /* Assets.xcassets */; };
 		49DFEEFD26DB651700749A41 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DFEEFB26DB651700749A41 /* LaunchScreen.storyboard */; };
+		49DFF01826DCAD1400749A41 /* CathayMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFF01726DCAD1400749A41 /* CathayMedia.framework */; };
+		49DFF01926DCAD1400749A41 /* CathayMedia.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFF01726DCAD1400749A41 /* CathayMedia.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		49DFF01C26DCAD1A00749A41 /* CathayNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFF01B26DCAD1A00749A41 /* CathayNetworking.framework */; };
+		49DFF01D26DCAD1A00749A41 /* CathayNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFF01B26DCAD1A00749A41 /* CathayNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		49DFF01F26DCAD2000749A41 /* CathayNowPlaying.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFF01E26DCAD2000749A41 /* CathayNowPlaying.framework */; };
+		49DFF02026DCAD2000749A41 /* CathayNowPlaying.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFF01E26DCAD2000749A41 /* CathayNowPlaying.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		49DFF02226DCAD2400749A41 /* CathayNowPlayingiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFF02126DCAD2400749A41 /* CathayNowPlayingiOS.framework */; };
+		49DFF02326DCAD2400749A41 /* CathayNowPlayingiOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFF02126DCAD2400749A41 /* CathayNowPlayingiOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		49DFF02626DCAD7A00749A41 /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF02526DCAD7A00749A41 /* XCTestCase+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +40,23 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		49DFF01A26DCAD1400749A41 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				49DFF02026DCAD2000749A41 /* CathayNowPlaying.framework in Embed Frameworks */,
+				49DFF01D26DCAD1A00749A41 /* CathayNetworking.framework in Embed Frameworks */,
+				49DFF02326DCAD2400749A41 /* CathayNowPlayingiOS.framework in Embed Frameworks */,
+				49DFF01926DCAD1400749A41 /* CathayMedia.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		49DFEEED26DB651600749A41 /* CathayApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CathayApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DFEEF026DB651600749A41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +69,11 @@
 		49DFEF0926DB651700749A41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49DFEF0E26DB651700749A41 /* CathayAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CathayAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DFEF1426DB651700749A41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49DFF01726DCAD1400749A41 /* CathayMedia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CathayMedia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49DFF01B26DCAD1A00749A41 /* CathayNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CathayNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49DFF01E26DCAD2000749A41 /* CathayNowPlaying.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CathayNowPlaying.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49DFF02126DCAD2400749A41 /* CathayNowPlayingiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CathayNowPlayingiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49DFF02526DCAD7A00749A41 /* XCTestCase+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +81,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49DFF01F26DCAD2000749A41 /* CathayNowPlaying.framework in Frameworks */,
+				49DFF01C26DCAD1A00749A41 /* CathayNetworking.framework in Frameworks */,
+				49DFF02226DCAD2400749A41 /* CathayNowPlayingiOS.framework in Frameworks */,
+				49DFF01826DCAD1400749A41 /* CathayMedia.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +112,7 @@
 				49DFEF0626DB651700749A41 /* CathayAppTests */,
 				49DFEF1126DB651700749A41 /* CathayAppUITests */,
 				49DFEEEE26DB651600749A41 /* Products */,
+				49DFF01626DCAD1400749A41 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +142,7 @@
 		49DFEF0626DB651700749A41 /* CathayAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				49DFF02426DCAD4400749A41 /* Helpers */,
 				49DFEF0926DB651700749A41 /* Info.plist */,
 			);
 			path = CathayAppTests;
@@ -119,6 +156,25 @@
 			path = CathayAppUITests;
 			sourceTree = "<group>";
 		};
+		49DFF01626DCAD1400749A41 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				49DFF02126DCAD2400749A41 /* CathayNowPlayingiOS.framework */,
+				49DFF01E26DCAD2000749A41 /* CathayNowPlaying.framework */,
+				49DFF01B26DCAD1A00749A41 /* CathayNetworking.framework */,
+				49DFF01726DCAD1400749A41 /* CathayMedia.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		49DFF02426DCAD4400749A41 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				49DFF02526DCAD7A00749A41 /* XCTestCase+Extensions.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -129,6 +185,7 @@
 				49DFEEE926DB651600749A41 /* Sources */,
 				49DFEEEA26DB651600749A41 /* Frameworks */,
 				49DFEEEB26DB651600749A41 /* Resources */,
+				49DFF01A26DCAD1400749A41 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -189,6 +246,7 @@
 					};
 					49DFEF0226DB651700749A41 = {
 						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
 						TestTargetID = 49DFEEEC26DB651600749A41;
 					};
 					49DFEF0D26DB651700749A41 = {
@@ -258,6 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49DFF02626DCAD7A00749A41 /* XCTestCase+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +513,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U27B56TU48;
 				INFOPLIST_FILE = CathayAppTests/Info.plist;
@@ -465,6 +525,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.GanNaSong.CathayAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CathayApp.app/CathayApp";
@@ -476,6 +537,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U27B56TU48;
 				INFOPLIST_FILE = CathayAppTests/Info.plist;
