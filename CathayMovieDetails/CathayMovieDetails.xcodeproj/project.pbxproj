@@ -23,10 +23,6 @@
 		49DFF09526DCDA5B00749A41 /* MovieDetailsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF09426DCDA5B00749A41 /* MovieDetailsViewControllerTests.swift */; };
 		49DFF09626DCDAA700749A41 /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF06326DCC9CC00749A41 /* XCTestCase+Extensions.swift */; };
 		49DFF09E26DCDDC500749A41 /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF09D26DCDDC500749A41 /* MovieDetailsViewController.swift */; };
-		49DFF0A026DCDE2D00749A41 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF09826DCDD2600749A41 /* Double+Extensions.swift */; };
-		49DFF0A126DCDE3200749A41 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF09A26DCDD4900749A41 /* String+Extensions.swift */; };
-		49DFF0A226DCDE3900749A41 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF09A26DCDD4900749A41 /* String+Extensions.swift */; };
-		49DFF0A326DCDE3C00749A41 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF09826DCDD2600749A41 /* Double+Extensions.swift */; };
 		49DFF0A626DCE24100749A41 /* UIControl+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF0A526DCE24100749A41 /* UIControl+TestHelpers.swift */; };
 		49DFF0A826DCE25D00749A41 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF0A726DCE25D00749A41 /* UIButton+Extensions.swift */; };
 		49DFF0AB26DCE32500749A41 /* MovieDetailsUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF0AA26DCE32500749A41 /* MovieDetailsUIComposer.swift */; };
@@ -109,8 +105,6 @@
 		49DFF08026DCD25200749A41 /* CathayMovieDetailsiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CathayMovieDetailsiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DFF08726DCD25200749A41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49DFF09426DCDA5B00749A41 /* MovieDetailsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewControllerTests.swift; sourceTree = "<group>"; };
-		49DFF09826DCDD2600749A41 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
-		49DFF09A26DCDD4900749A41 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		49DFF09D26DCDDC500749A41 /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
 		49DFF0A526DCE24100749A41 /* UIControl+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+TestHelpers.swift"; sourceTree = "<group>"; };
 		49DFF0A726DCE25D00749A41 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
@@ -249,7 +243,6 @@
 			isa = PBXGroup;
 			children = (
 				49DFF0A926DCE30C00749A41 /* Composers */,
-				49DFF09726DCDD1300749A41 /* Helpers */,
 				49DFF09C26DCDDB900749A41 /* Controllers */,
 				49FBAB0826DD11A600628E9D /* Views */,
 				49DFF07B26DCD25200749A41 /* Info.plist */,
@@ -265,15 +258,6 @@
 				49DFF09426DCDA5B00749A41 /* MovieDetailsViewControllerTests.swift */,
 			);
 			path = CathayMovieDetailsiOSTests;
-			sourceTree = "<group>";
-		};
-		49DFF09726DCDD1300749A41 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				49DFF09826DCDD2600749A41 /* Double+Extensions.swift */,
-				49DFF09A26DCDD4900749A41 /* String+Extensions.swift */,
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 		49DFF09C26DCDDB900749A41 /* Controllers */ = {
@@ -537,8 +521,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49DFF0A026DCDE2D00749A41 /* Double+Extensions.swift in Sources */,
-				49DFF0A126DCDE3200749A41 /* String+Extensions.swift in Sources */,
 				49FBAB0A26DD127C00628E9D /* MovieDetailsCustomView.swift in Sources */,
 				49DFF09E26DCDDC500749A41 /* MovieDetailsViewController.swift in Sources */,
 				49DFF0AB26DCE32500749A41 /* MovieDetailsUIComposer.swift in Sources */,
@@ -549,10 +531,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49DFF0A326DCDE3C00749A41 /* Double+Extensions.swift in Sources */,
 				49DFF0A826DCE25D00749A41 /* UIButton+Extensions.swift in Sources */,
 				49DFF09626DCDAA700749A41 /* XCTestCase+Extensions.swift in Sources */,
-				49DFF0A226DCDE3900749A41 /* String+Extensions.swift in Sources */,
 				49DFF0A626DCE24100749A41 /* UIControl+TestHelpers.swift in Sources */,
 				49DFF09526DCDA5B00749A41 /* MovieDetailsViewControllerTests.swift in Sources */,
 			);
