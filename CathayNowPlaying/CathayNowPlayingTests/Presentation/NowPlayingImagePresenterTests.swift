@@ -60,7 +60,7 @@ class NowPlayingImagePresenterTests: XCTestCase {
     XCTAssertNil(message?.image)
   }
 
-  func test_finish_loading_image_data_success_set_image_on_transform_success() {
+  func test_load_finishLoadingImageDataSuccessSetImageOnTransformSuccess() {
     let transformedData = SomeImage()
     let item = makeNowPlayingCard(id: 123)
     let imageData = makeData()
