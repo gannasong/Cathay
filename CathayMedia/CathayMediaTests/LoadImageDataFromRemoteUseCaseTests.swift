@@ -6,37 +6,7 @@
 //
 
 import XCTest
-import CathayNetworking
-
-class RemoteImageDataLoader {
-  enum Error: Swift.Error {
-    case connectivity
-    case invalidResponse
-  }
-
-  typealias Result = Swift.Result<Data, Error>
-
-  private let client: HTTPClient
-
-  init(client: HTTPClient) {
-    self.client = client
-  }
-
-  func load(from imageURL: URL, completion: @escaping (Result) -> Void = { _ in }) {
-    client.dispatch(URLRequest(url: imageURL), completion: { result in
-      switch result {
-      case let .success(body):
-        if body.data.count > 0 && body.response.statusCode == 200 {
-          completion(.success(body.data))
-        } else {
-          completion(.failure(Error.invalidResponse))
-        }
-      case .failure:
-        completion(.failure(Error.connectivity))
-      }
-    })
-  }
-}
+import CathayMedia
 
 class LoadImageDataFromRemoteUseCaseTests: XCTestCase {
 
@@ -123,7 +93,7 @@ class LoadImageDataFromRemoteUseCaseTests: XCTestCase {
       case let (.success(receivedData), .success(expectedData)):
         XCTAssertEqual(receivedData, expectedData, file: file, line: line)
 
-      case let (.failure(receivedError as RemoteImageDataLoader.Error), .failure(expectedError as RemoteImageDataLoader.Error)):
+      case let (.failure(receivedError), .failure(expectedError)):
         XCTAssertEqual(receivedError, expectedError, file: file, line: line)
 
       default:

@@ -13,6 +13,7 @@
 		49DFEFF726DC6C4F00749A41 /* XCTestCase+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEFF626DC6C4F00749A41 /* XCTestCase+Extension.swift */; };
 		49DFEFF926DC6CBC00749A41 /* HTTPClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEFF826DC6CBC00749A41 /* HTTPClientSpy.swift */; };
 		49DFEFFB26DC6D2300749A41 /* LoadImageDataFromRemoteUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEFFA26DC6D2300749A41 /* LoadImageDataFromRemoteUseCaseTests.swift */; };
+		49DFEFFD26DC724B00749A41 /* RemoteImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEFFC26DC724B00749A41 /* RemoteImageDataLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		49DFEFF626DC6C4F00749A41 /* XCTestCase+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extension.swift"; sourceTree = "<group>"; };
 		49DFEFF826DC6CBC00749A41 /* HTTPClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientSpy.swift; sourceTree = "<group>"; };
 		49DFEFFA26DC6D2300749A41 /* LoadImageDataFromRemoteUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadImageDataFromRemoteUseCaseTests.swift; sourceTree = "<group>"; };
+		49DFEFFC26DC724B00749A41 /* RemoteImageDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageDataLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				49DFEFDA26DC6B9700749A41 /* Info.plist */,
+				49DFEFFC26DC724B00749A41 /* RemoteImageDataLoader.swift */,
 			);
 			path = CathayMedia;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				TargetAttributes = {
 					49DFEFD526DC6B9700749A41 = {
 						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
 					};
 					49DFEFDE26DC6B9700749A41 = {
 						CreatedOnToolsVersion = 12.5;
@@ -233,6 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49DFEFFD26DC724B00749A41 /* RemoteImageDataLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +386,7 @@
 		49DFEFEB26DC6B9700749A41 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -399,6 +405,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -406,6 +413,7 @@
 		49DFEFEC26DC6B9700749A41 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -431,6 +439,7 @@
 		49DFEFEE26DC6B9700749A41 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -451,6 +460,7 @@
 		49DFEFEF26DC6B9700749A41 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
