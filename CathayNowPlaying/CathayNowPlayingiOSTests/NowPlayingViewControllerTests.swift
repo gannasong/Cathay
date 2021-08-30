@@ -114,6 +114,31 @@ class NowPlayingViewControllerTests: XCTestCase {
     XCTAssertEqual(viewTwo?.loadingIndicatorIsVisible, false)
   }
 
+  func test_load_nowPlayingCardRendersImageFromRemote() {
+    let (sut, loader) = makeSUT()
+    let itemZero = makeNowPlayingCard(id: 0)
+    let itemOne = makeNowPlayingCard(id: 1)
+    let feedPage = makeNowPlayingFeed(items: [itemZero, itemOne], pageNumber: 1, totalPages: 1)
+
+    sut.loadViewIfNeeded()
+    loader.loadFeedCompletes(with: .success(feedPage))
+
+    let imageZeroData = makeImageData(withColor: .purple)
+    let viewZero = sut.simulateItemNotVisible(at: 0) as? NowPlayingCardFeedCell
+    XCTAssertEqual(viewZero?.renderedImage, .none)
+
+    loader.completeImageLoading(with: imageZeroData, at: 0)
+    XCTAssertEqual(viewZero?.renderedImage, imageZeroData)
+
+    let imageOneData = makeImageData(withColor: .darkGray)
+    let viewOne = sut.simulateItemNotVisible(at: 1) as? NowPlayingCardFeedCell
+    XCTAssertEqual(viewOne?.renderedImage, .none)
+
+    loader.completeImageLoading(with: imageOneData, at: 1)
+    XCTAssertEqual(viewOne?.renderedImage, imageOneData)
+  }
+
+
   // MARK: - Helpers
 
   func makeSUT(file: StaticString = #file, line: UInt = #line) -> (NowPlayingViewController, LoaderSpy) {
@@ -131,6 +156,14 @@ class NowPlayingViewControllerTests: XCTestCase {
 
   func makeNowPlayingCard(id: Int, title: String? = nil, imagePath: String? = nil ) -> NowPlayingCard {
     return NowPlayingCard(id: id, title: title ?? UUID().uuidString, imagePath: imagePath ?? "\(UUID().uuidString).jpg")
+  }
+
+  func makeImageData(withColor color: UIColor = .systemTeal) -> Data {
+    return makeImage(withColor: color).pngData()!
+  }
+
+  func makeImage(withColor color: UIColor = .systemTeal) -> UIImage {
+    return UIImage.make(withColor: color)
   }
 
   func assertThat(_ sut: NowPlayingViewController, isRendering feed: [NowPlayingCard], file: StaticString = #file, line: UInt = #line) {
@@ -201,5 +234,9 @@ class NowPlayingViewControllerTests: XCTestCase {
 extension NowPlayingCardFeedCell {
   var loadingIndicatorIsVisible: Bool {
     return imageContainer.isShimmering
+  }
+
+  var renderedImage: Data? {
+    return imageView.image?.pngData()
   }
 }
