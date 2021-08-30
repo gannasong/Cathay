@@ -44,6 +44,8 @@
 		49DFF00626DC7A3000749A41 /* NowPlayingViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF00526DC7A3000749A41 /* NowPlayingViewAdapter.swift */; };
 		49DFF00826DC7B5D00749A41 /* NowPlayingCardCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF00726DC7B5D00749A41 /* NowPlayingCardCellController.swift */; };
 		49DFF00A26DC7D8B00749A41 /* NowPlayingImagePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF00926DC7D8B00749A41 /* NowPlayingImagePresenterTests.swift */; };
+		49DFF00C26DC820900749A41 /* NowPlayingImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF00B26DC820900749A41 /* NowPlayingImageViewModel.swift */; };
+		49DFF00E26DC827100749A41 /* NowPlayingImagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF00D26DC827100749A41 /* NowPlayingImagePresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +138,8 @@
 		49DFF00526DC7A3000749A41 /* NowPlayingViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingViewAdapter.swift; sourceTree = "<group>"; };
 		49DFF00726DC7B5D00749A41 /* NowPlayingCardCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingCardCellController.swift; sourceTree = "<group>"; };
 		49DFF00926DC7D8B00749A41 /* NowPlayingImagePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingImagePresenterTests.swift; sourceTree = "<group>"; };
+		49DFF00B26DC820900749A41 /* NowPlayingImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingImageViewModel.swift; sourceTree = "<group>"; };
+		49DFF00D26DC827100749A41 /* NowPlayingImagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingImagePresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -349,6 +353,7 @@
 			children = (
 				49DFEFBA26DBEA3400749A41 /* Models */,
 				49DFEFC126DBEADE00749A41 /* NowPlayingPresenter.swift */,
+				49DFF00D26DC827100749A41 /* NowPlayingImagePresenter.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -359,6 +364,7 @@
 				49DFEFBB26DBEA4600749A41 /* NowPlayingErrorViewModel.swift */,
 				49DFEFBD26DBEA7600749A41 /* NowPlayingLoadingViewModel.swift */,
 				49DFEFBF26DBEAB400749A41 /* NowPlayingViewModel.swift */,
+				49DFF00B26DC820900749A41 /* NowPlayingImageViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -569,12 +575,14 @@
 			files = (
 				49DFEFC826DBEDB400749A41 /* WeakRefVirtualProxy.swift in Sources */,
 				49DFEEDF26DB61A300749A41 /* HTTPURLResponse+Extension.swift in Sources */,
+				49DFF00E26DC827100749A41 /* NowPlayingImagePresenter.swift in Sources */,
 				49DFEECF26DB4ACC00749A41 /* NowPlayingLoader.swift in Sources */,
 				49DFEFC226DBEADE00749A41 /* NowPlayingPresenter.swift in Sources */,
 				49DFEFBE26DBEA7600749A41 /* NowPlayingLoadingViewModel.swift in Sources */,
 				49DFEFBC26DBEA4600749A41 /* NowPlayingErrorViewModel.swift in Sources */,
 				49DFEECD26DB4A7C00749A41 /* NowPlayingCard.swift in Sources */,
 				49DFEFC026DBEAB400749A41 /* NowPlayingViewModel.swift in Sources */,
+				49DFF00C26DC820900749A41 /* NowPlayingImageViewModel.swift in Sources */,
 				49DFEEE126DB61CF00749A41 /* NowPlayingItemsMapper.swift in Sources */,
 				49DFEEE326DB622A00749A41 /* RemoteNowPlayingLoader.swift in Sources */,
 				49DFEED726DB570F00749A41 /* NowPlayingFeed.swift in Sources */,
