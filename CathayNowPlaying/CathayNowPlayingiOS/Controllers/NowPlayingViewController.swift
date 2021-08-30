@@ -25,6 +25,7 @@ public final class NowPlayingViewController: UICollectionViewController {
 
   public override func viewDidLoad() {
     super.viewDidLoad()
+    collectionView.prefetchDataSource = self
     collectionView.refreshControl = refreshController?.view
     collectionView.register(NowPlayingCardFeedCell.self, forCellWithReuseIdentifier: "NowPlayingCardFeedCell")
     refreshController?.load()
@@ -55,6 +56,16 @@ public final class NowPlayingViewController: UICollectionViewController {
 
   private func removeCellController(forItemAt indexPath: IndexPath) {
     cellController(forItemAt: indexPath).cancelLoad()
+  }
+
+  private func prefetchCellController(forItemAt indexPath: IndexPath) {
+    cellController(forItemAt: indexPath).prefetch()
+  }
+}
+
+extension NowPlayingViewController: UICollectionViewDataSourcePrefetching {
+  public func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+    indexPaths.forEach(prefetchCellController)
   }
 }
 

@@ -30,6 +30,10 @@ final class NowPlayingCardCellController {
   func cancelLoad() {
     delegate.didRequestCancelLoadImage()
   }
+
+  func prefetch() {
+    delegate.didRequestLoadImage()
+  }
 }
 
 extension NowPlayingCardCellController: NowPlayingImageView {
