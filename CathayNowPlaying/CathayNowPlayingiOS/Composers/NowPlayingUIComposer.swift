@@ -21,6 +21,8 @@ public final class NowPlayingUIComposer {
                                                                         imageLoader: MainQueueDispatchDecorator(decoratee: imageLoader)),
                                             loadingView: WeakRefVirtualProxy(refreshController),
                                             errorView: WeakRefVirtualProxy(viewController))
+    
+    viewController.title = NowPlayingPresenter.title
     return viewController
   }
 }

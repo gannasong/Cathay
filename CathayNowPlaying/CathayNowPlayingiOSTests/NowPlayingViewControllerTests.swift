@@ -12,6 +12,12 @@ import CathayNowPlayingiOS
 
 class NowPlayingViewControllerTests: XCTestCase {
 
+  func test_init_setsTitle() {
+    let (sut, _) = makeSUT()
+
+    XCTAssertEqual(sut.title, NowPlayingPresenter.title)
+  }
+
   func test_loadActions_requestNowPlayingFromLoader() {
     let request: LoaderSpy.Message = .load(PagedNowPlayingRequest(page: 1))
     let (sut, loader) = makeSUT()
