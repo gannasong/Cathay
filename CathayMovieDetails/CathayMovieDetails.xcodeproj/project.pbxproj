@@ -29,6 +29,7 @@
 		49DFF0A326DCDE3C00749A41 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF09826DCDD2600749A41 /* Double+Extensions.swift */; };
 		49DFF0A626DCE24100749A41 /* UIControl+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF0A526DCE24100749A41 /* UIControl+TestHelpers.swift */; };
 		49DFF0A826DCE25D00749A41 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF0A726DCE25D00749A41 /* UIButton+Extensions.swift */; };
+		49DFF0AB26DCE32500749A41 /* MovieDetailsUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF0AA26DCE32500749A41 /* MovieDetailsUIComposer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,7 @@
 		49DFF09D26DCDDC500749A41 /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
 		49DFF0A526DCE24100749A41 /* UIControl+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+TestHelpers.swift"; sourceTree = "<group>"; };
 		49DFF0A726DCE25D00749A41 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
+		49DFF0AA26DCE32500749A41 /* MovieDetailsUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsUIComposer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +224,7 @@
 		49DFF07926DCD25200749A41 /* CathayMovieDetailsiOS */ = {
 			isa = PBXGroup;
 			children = (
+				49DFF0A926DCE30C00749A41 /* Composers */,
 				49DFF09726DCDD1300749A41 /* Helpers */,
 				49DFF09C26DCDDB900749A41 /* Controllers */,
 				49DFF07B26DCD25200749A41 /* Info.plist */,
@@ -263,6 +266,14 @@
 				49DFF0A726DCE25D00749A41 /* UIButton+Extensions.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		49DFF0A926DCE30C00749A41 /* Composers */ = {
+			isa = PBXGroup;
+			children = (
+				49DFF0AA26DCE32500749A41 /* MovieDetailsUIComposer.swift */,
+			);
+			path = Composers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -468,6 +479,7 @@
 				49DFF0A026DCDE2D00749A41 /* Double+Extensions.swift in Sources */,
 				49DFF0A126DCDE3200749A41 /* String+Extensions.swift in Sources */,
 				49DFF09E26DCDDC500749A41 /* MovieDetailsViewController.swift in Sources */,
+				49DFF0AB26DCE32500749A41 /* MovieDetailsUIComposer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
