@@ -50,6 +50,18 @@ class LoadMovieFromRemoteUseCaseTests: XCTestCase {
     XCTAssertEqual(client.requestedURLs, [expectedURL])
   }
 
+  func test_load_requestsDataFromURLTwice() {
+    let movieID = 1
+    let expectedURL = makeURL("https://some-remote-svc.com/3/movie/\(movieID)")
+    let baseURL = makeURL("https://some-remote-svc.com")
+    let (sut, client) = makeSUT(baseURL: baseURL)
+
+    sut.load(id: movieID, completion: { _ in })
+    sut.load(id: movieID, completion: { _ in })
+
+    XCTAssertEqual(client.requestedURLs, [expectedURL, expectedURL])
+  }
+
   // MARK: - Helpers
 
   func makeSUT(baseURL: URL? = nil, file: StaticString = #file, line: UInt = #line) -> (RemoteMovieLoader, HTTPClientSpy) {
