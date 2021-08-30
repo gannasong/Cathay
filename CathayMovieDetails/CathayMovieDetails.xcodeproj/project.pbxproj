@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		49DFF04D26DCC86200749A41 /* CathayMovieDetails.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFF04326DCC86200749A41 /* CathayMovieDetails.framework */; };
+		49DFF05F26DCC93800749A41 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF05E26DCC93800749A41 /* Movie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +26,7 @@
 		49DFF04726DCC86200749A41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49DFF04C26DCC86200749A41 /* CathayMovieDetailsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CathayMovieDetailsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DFF05326DCC86200749A41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49DFF05E26DCC93800749A41 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 		49DFF04526DCC86200749A41 /* CathayMovieDetails */ = {
 			isa = PBXGroup;
 			children = (
+				49DFF05D26DCC92B00749A41 /* Feature */,
 				49DFF04726DCC86200749A41 /* Info.plist */,
 			);
 			path = CathayMovieDetails;
@@ -78,6 +81,14 @@
 				49DFF05326DCC86200749A41 /* Info.plist */,
 			);
 			path = CathayMovieDetailsTests;
+			sourceTree = "<group>";
+		};
+		49DFF05D26DCC92B00749A41 /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				49DFF05E26DCC93800749A41 /* Movie.swift */,
+			);
+			path = Feature;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +151,7 @@
 				TargetAttributes = {
 					49DFF04226DCC86200749A41 = {
 						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
 					};
 					49DFF04B26DCC86200749A41 = {
 						CreatedOnToolsVersion = 12.5;
@@ -187,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49DFF05F26DCC93800749A41 /* Movie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +345,7 @@
 		49DFF05826DCC86200749A41 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -350,6 +364,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -357,6 +372,7 @@
 		49DFF05926DCC86200749A41 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -382,6 +398,7 @@
 		49DFF05B26DCC86200749A41 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = U27B56TU48;
@@ -401,6 +418,7 @@
 		49DFF05C26DCC86200749A41 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = U27B56TU48;
