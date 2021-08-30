@@ -8,6 +8,7 @@
 import XCTest
 import UIKit
 import CathayMovieDetails
+import CathayMovieDetailsiOS
 
 final class MovieDetailsViewController: UIViewController {
   private var id: Int?
