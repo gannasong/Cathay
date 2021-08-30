@@ -15,6 +15,8 @@
 		49DFF06826DCCA6100749A41 /* LoadMovieFromRemoteUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF06726DCCA6100749A41 /* LoadMovieFromRemoteUseCaseTests.swift */; };
 		49DFF06B26DCCA7A00749A41 /* CathayNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFF06A26DCCA7A00749A41 /* CathayNetworking.framework */; };
 		49DFF06C26DCCA7A00749A41 /* CathayNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFF06A26DCCA7A00749A41 /* CathayNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		49DFF07026DCD16300749A41 /* RemoteMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF06F26DCD16300749A41 /* RemoteMovie.swift */; };
+		49DFF07226DCD17F00749A41 /* RemoteMovieLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF07126DCD17F00749A41 /* RemoteMovieLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		49DFF06526DCC9FD00749A41 /* HTTPClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientSpy.swift; sourceTree = "<group>"; };
 		49DFF06726DCCA6100749A41 /* LoadMovieFromRemoteUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMovieFromRemoteUseCaseTests.swift; sourceTree = "<group>"; };
 		49DFF06A26DCCA7A00749A41 /* CathayNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CathayNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49DFF06F26DCD16300749A41 /* RemoteMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteMovie.swift; sourceTree = "<group>"; };
+		49DFF07126DCD17F00749A41 /* RemoteMovieLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteMovieLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,7 @@
 		49DFF04526DCC86200749A41 /* CathayMovieDetails */ = {
 			isa = PBXGroup;
 			children = (
+				49DFF06E26DCD15400749A41 /* API */,
 				49DFF05D26DCC92B00749A41 /* Feature */,
 				49DFF04726DCC86200749A41 /* Info.plist */,
 			);
@@ -136,6 +141,15 @@
 				49DFF06A26DCCA7A00749A41 /* CathayNetworking.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		49DFF06E26DCD15400749A41 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				49DFF06F26DCD16300749A41 /* RemoteMovie.swift */,
+				49DFF07126DCD17F00749A41 /* RemoteMovieLoader.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,6 +262,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49DFF07026DCD16300749A41 /* RemoteMovie.swift in Sources */,
+				49DFF07226DCD17F00749A41 /* RemoteMovieLoader.swift in Sources */,
 				49DFF05F26DCC93800749A41 /* Movie.swift in Sources */,
 				49DFF06126DCC97300749A41 /* MovieLoader.swift in Sources */,
 			);
