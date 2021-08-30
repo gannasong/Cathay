@@ -20,7 +20,7 @@ class LoadImageDataFromRemoteUseCaseTests: XCTestCase {
     let requestURL = makeURL("https://some-remote-image.com")
     let (sut, client) = makeSUT()
 
-    sut.load(from: requestURL)
+    _ = sut.load(from: requestURL) { _ in }
 
     XCTAssertEqual(client.requestedURLs, [requestURL])
   }
@@ -29,8 +29,8 @@ class LoadImageDataFromRemoteUseCaseTests: XCTestCase {
     let requestURL = makeURL("https://some-remote-image.com")
     let (sut, client) = makeSUT()
 
-    sut.load(from: requestURL)
-    sut.load(from: requestURL)
+    _ = sut.load(from: requestURL) { _ in }
+    _ = sut.load(from: requestURL) { _ in }
 
     XCTAssertEqual(client.requestedURLs, [requestURL, requestURL])
   }
@@ -87,13 +87,13 @@ class LoadImageDataFromRemoteUseCaseTests: XCTestCase {
   func expect(_ sut: RemoteImageDataLoader, toCompleteWith expectedResult: RemoteImageDataLoader.Result, when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
     let exp = expectation(description: "Wait for load completion")
     let imageURL = makeURL()
-
-    sut.load(from: imageURL, completion: { receivedResult in
+    
+    _ = sut.load(from: imageURL, completion: { receivedResult in
       switch (receivedResult, expectedResult) {
       case let (.success(receivedData), .success(expectedData)):
         XCTAssertEqual(receivedData, expectedData, file: file, line: line)
 
-      case let (.failure(receivedError), .failure(expectedError)):
+      case let (.failure(receivedError as RemoteImageDataLoader.Error), .failure(expectedError as RemoteImageDataLoader.Error)):
         XCTAssertEqual(receivedError, expectedError, file: file, line: line)
 
       default:
