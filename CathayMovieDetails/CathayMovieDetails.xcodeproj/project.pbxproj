@@ -32,6 +32,7 @@
 		49DFF0AB26DCE32500749A41 /* MovieDetailsUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF0AA26DCE32500749A41 /* MovieDetailsUIComposer.swift */; };
 		49FBAB0626DD0F5B00628E9D /* CathayCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49FBAB0526DD0F5B00628E9D /* CathayCommon.framework */; };
 		49FBAB0726DD0F5B00628E9D /* CathayCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 49FBAB0526DD0F5B00628E9D /* CathayCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		49FBAB0A26DD127C00628E9D /* MovieDetailsCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBAB0926DD127C00628E9D /* MovieDetailsCustomView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,7 @@
 		49DFF0A726DCE25D00749A41 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		49DFF0AA26DCE32500749A41 /* MovieDetailsUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsUIComposer.swift; sourceTree = "<group>"; };
 		49FBAB0526DD0F5B00628E9D /* CathayCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CathayCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49FBAB0926DD127C00628E9D /* MovieDetailsCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsCustomView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +235,7 @@
 				49DFF0A926DCE30C00749A41 /* Composers */,
 				49DFF09726DCDD1300749A41 /* Helpers */,
 				49DFF09C26DCDDB900749A41 /* Controllers */,
+				49FBAB0826DD11A600628E9D /* Views */,
 				49DFF07B26DCD25200749A41 /* Info.plist */,
 			);
 			path = CathayMovieDetailsiOS;
@@ -280,6 +283,14 @@
 				49DFF0AA26DCE32500749A41 /* MovieDetailsUIComposer.swift */,
 			);
 			path = Composers;
+			sourceTree = "<group>";
+		};
+		49FBAB0826DD11A600628E9D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				49FBAB0926DD127C00628E9D /* MovieDetailsCustomView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -484,6 +495,7 @@
 			files = (
 				49DFF0A026DCDE2D00749A41 /* Double+Extensions.swift in Sources */,
 				49DFF0A126DCDE3200749A41 /* String+Extensions.swift in Sources */,
+				49FBAB0A26DD127C00628E9D /* MovieDetailsCustomView.swift in Sources */,
 				49DFF09E26DCDDC500749A41 /* MovieDetailsViewController.swift in Sources */,
 				49DFF0AB26DCE32500749A41 /* MovieDetailsUIComposer.swift in Sources */,
 			);

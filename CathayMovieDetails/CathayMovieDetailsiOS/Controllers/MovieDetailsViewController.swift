@@ -9,67 +9,60 @@ import UIKit
 import CathayMovieDetails
 
 public final class MovieDetailsViewController: UIViewController {
-
+  
   public var onBuyTicket: (() -> Void)?
-
+  
   private var id: Int?
   private var loader: MovieLoader?
-
-  private(set) public var loadingIndicator: UIActivityIndicatorView = {
-    let view = UIActivityIndicatorView(style: .large)
-    view.translatesAutoresizingMaskIntoConstraints = false
-    return view
-  }()
-
-  private(set) public var titleLabel: UILabel = {
-    let view = UILabel(frame: .zero)
-    return view
-  }()
-
-  private(set) public var metaLabel: UILabel = {
-    let view = UILabel(frame: .zero)
-    return view
-  }()
-
-  private(set) public var overviewLabel: UILabel = {
-    let view = UILabel(frame: .zero)
-    return view
-  }()
-
-  private(set) public var buyTicketButton: UIButton = {
-    let button = UIButton(type: .system)
-    button.setTitle("Buy ticket", for: .normal)
-    return button
-  }()
-
-  public  convenience init(id: Int, loader: MovieLoader) {
+  
+  private(set) public lazy var customView = view as! MovieDetailsCustomView
+  
+  public convenience init(id: Int, loader: MovieLoader) {
     self.init(nibName: nil, bundle: nil)
     self.id = id
     self.loader = loader
   }
-
+  
+  public override func loadView() {
+    view = MovieDetailsCustomView(frame: UIScreen.main.bounds)
+  }
+  
   public override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = #colorLiteral(red: 0.1019607843, green: 0.1254901961, blue: 0.1882352941, alpha: 1)
-
-    buyTicketButton.addTarget(self, action: #selector(didTapBuyTicket), for: .touchUpInside)
-    loadingIndicator.startAnimating()
+    configureUI()
+    configureNavigation()
+    
     loader?.load(id: id!, completion: { [weak self] result in
-
+      
       if let movie = try? result.get() {
-        self?.titleLabel.text = movie.title
-
+        self?.customView.titleLabel.text = movie.title
+        
         let runTime = Double(movie.length * 60).asString(style: .short)
         let genres = movie.genres.map { $0.capitalizingFirstLetter() }.joined(separator: ", ")
-        self?.metaLabel.text = "\(runTime) | \(genres)"
-        self?.overviewLabel.text = movie.overview
+        self?.customView.metaLabel.text = "\(runTime) | \(genres)"
+        self?.customView.overviewLabel.text = movie.overview
       }
-
-      self?.loadingIndicator.stopAnimating()
+      
+      self?.customView.isLoading = false
     })
   }
-
+  
   @objc private func didTapBuyTicket() {
     onBuyTicket?()
+  }
+  
+  private func configureNavigation() {
+    navigationController?.navigationBar.titleTextAttributes = [
+      NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.8705882353, green: 0.8705882353, blue: 0.8784313725, alpha: 1),
+      NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20)
+    ]
+    
+    navigationController?.navigationBar.tintColor = #colorLiteral(red: 0.8705882353, green: 0.8705882353, blue: 0.8784313725, alpha: 1)
+    navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.1019607843, green: 0.1254901961, blue: 0.1882352941, alpha: 1)
+  }
+  
+  private func configureUI() {
+    customView.isLoading = true
+    customView.buyTicketButton.addTarget(self, action: #selector(didTapBuyTicket), for: .touchUpInside)
   }
 }
