@@ -10,55 +10,6 @@ import UIKit
 import CathayMovieDetails
 import CathayMovieDetailsiOS
 
-final class MovieDetailsViewController: UIViewController {
-  private var id: Int?
-  private var loader: MovieLoader?
-
-  private(set) public var loadingIndicator: UIActivityIndicatorView = {
-    let view = UIActivityIndicatorView(style: .large)
-    view.translatesAutoresizingMaskIntoConstraints = false
-    return view
-  }()
-
-  private(set) public var titleLabel: UILabel = {
-    let view = UILabel(frame: .zero)
-    return view
-  }()
-
-  private(set) public var metaLabel: UILabel = {
-    let view = UILabel(frame: .zero)
-    return view
-  }()
-
-  private(set) public var overviewLabel: UILabel = {
-    let view = UILabel(frame: .zero)
-    return view
-  }()
-
-  convenience init(id: Int, loader: MovieLoader) {
-    self.init(nibName: nil, bundle: nil)
-    self.id = id
-    self.loader = loader
-  }
-
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    loadingIndicator.startAnimating()
-    loader?.load(id: id!, completion: { [weak self] result in
-      if let movie = try? result.get() {
-        self?.titleLabel.text = movie.title
-
-        let runTime = Double(movie.length * 60).asString(style: .short)
-        let genres = movie.genres.map { $0.capitalizingFirstLetter() }.joined(separator: ", ")
-        self?.metaLabel.text = "\(runTime) | \(genres)"
-        self?.overviewLabel.text = movie.overview
-      }
-
-      self?.loadingIndicator.stopAnimating()
-    })
-  }
-}
-
 class MovieDetailsViewControllerTests: XCTestCase {
 
   func test_load_actionsRequestDetailsFromLoader() {
@@ -92,11 +43,26 @@ class MovieDetailsViewControllerTests: XCTestCase {
     assertThat(sut, hasViewConfiguredFor: movie)
   }
 
+  func test_tap_buyTicketNotifiesObserver() {
+    var wasCalled = false
+    let (sut, loader) = makeSUT(onBuyTicketSpy: { wasCalled = true })
+    let movie = makeMovie()
+
+    sut.loadViewIfNeeded()
+    loader.loadCompletes(with: .success(movie))
+
+    sut.simulateBuyTicket()
+
+    XCTAssertTrue(wasCalled)
+  }
+
   // MARK: - Helpers
 
-  func makeSUT(id: Int = 0, file: StaticString = #file, line: UInt = #line) -> (MovieDetailsViewController, LoaderSpy) {
+  func makeSUT(id: Int = 0, onBuyTicketSpy: @escaping () -> Void = { }, file: StaticString = #file, line: UInt = #line) -> (MovieDetailsViewController, LoaderSpy) {
     let loader = LoaderSpy()
     let sut = MovieDetailsViewController(id: id, loader: loader)
+    sut.onBuyTicket = onBuyTicketSpy
+
     trackForMemoryLeaks(loader, file: file, line: line)
     trackForMemoryLeaks(sut, file: file, line: line)
 
@@ -156,5 +122,9 @@ extension MovieDetailsViewController {
 
   var overviewText: String? {
     return overviewLabel.text
+  }
+
+  func simulateBuyTicket() {
+    buyTicketButton.simulateTap()
   }
 }
