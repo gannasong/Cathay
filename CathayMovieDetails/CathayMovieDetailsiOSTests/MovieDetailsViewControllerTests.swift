@@ -56,6 +56,20 @@ class MovieDetailsViewControllerTests: XCTestCase {
     XCTAssertTrue(wasCalled)
   }
 
+  func test_load_movieLoaderCompletesFromBackgroundToMainThread() {
+    let (sut, loader) = makeSUT()
+    let movie = makeMovie()
+    sut.loadViewIfNeeded()
+
+    let exp = expectation(description: "await background queue")
+    DispatchQueue.global().async {
+      loader.loadCompletes(with: .success(movie))
+      exp.fulfill()
+    }
+
+    wait(for: [exp], timeout: 1.0)
+  }
+
   // MARK: - Helpers
 
   func makeSUT(id: Int = 0, onBuyTicketSpy: @escaping () -> Void = { }, file: StaticString = #file, line: UInt = #line) -> (MovieDetailsViewController, LoaderSpy) {
