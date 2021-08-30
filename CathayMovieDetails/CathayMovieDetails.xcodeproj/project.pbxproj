@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		49DFF04D26DCC86200749A41 /* CathayMovieDetails.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFF04326DCC86200749A41 /* CathayMovieDetails.framework */; };
 		49DFF05F26DCC93800749A41 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF05E26DCC93800749A41 /* Movie.swift */; };
+		49DFF06126DCC97300749A41 /* MovieLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF06026DCC97300749A41 /* MovieLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +28,7 @@
 		49DFF04C26DCC86200749A41 /* CathayMovieDetailsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CathayMovieDetailsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DFF05326DCC86200749A41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49DFF05E26DCC93800749A41 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		49DFF06026DCC97300749A41 /* MovieLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				49DFF05E26DCC93800749A41 /* Movie.swift */,
+				49DFF06026DCC97300749A41 /* MovieLoader.swift */,
 			);
 			path = Feature;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49DFF05F26DCC93800749A41 /* Movie.swift in Sources */,
+				49DFF06126DCC97300749A41 /* MovieLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
