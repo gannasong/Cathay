@@ -17,6 +17,7 @@
 		49DFF06C26DCCA7A00749A41 /* CathayNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFF06A26DCCA7A00749A41 /* CathayNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		49DFF07026DCD16300749A41 /* RemoteMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF06F26DCD16300749A41 /* RemoteMovie.swift */; };
 		49DFF07226DCD17F00749A41 /* RemoteMovieLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF07126DCD17F00749A41 /* RemoteMovieLoader.swift */; };
+		49DFF08126DCD25200749A41 /* CathayMovieDetailsiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFF07826DCD25200749A41 /* CathayMovieDetailsiOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +27,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 49DFF04226DCC86200749A41;
 			remoteInfo = CathayMovieDetails;
+		};
+		49DFF08226DCD25200749A41 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49DFF03A26DCC86200749A41 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49DFF07726DCD25200749A41;
+			remoteInfo = CathayMovieDetailsiOS;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -56,6 +64,10 @@
 		49DFF06A26DCCA7A00749A41 /* CathayNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CathayNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DFF06F26DCD16300749A41 /* RemoteMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteMovie.swift; sourceTree = "<group>"; };
 		49DFF07126DCD17F00749A41 /* RemoteMovieLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteMovieLoader.swift; sourceTree = "<group>"; };
+		49DFF07826DCD25200749A41 /* CathayMovieDetailsiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CathayMovieDetailsiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		49DFF07B26DCD25200749A41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49DFF08026DCD25200749A41 /* CathayMovieDetailsiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CathayMovieDetailsiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		49DFF08726DCD25200749A41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +87,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		49DFF07526DCD25200749A41 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49DFF07D26DCD25200749A41 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49DFF08126DCD25200749A41 /* CathayMovieDetailsiOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -83,6 +110,8 @@
 			children = (
 				49DFF04526DCC86200749A41 /* CathayMovieDetails */,
 				49DFF05026DCC86200749A41 /* CathayMovieDetailsTests */,
+				49DFF07926DCD25200749A41 /* CathayMovieDetailsiOS */,
+				49DFF08426DCD25200749A41 /* CathayMovieDetailsiOSTests */,
 				49DFF04426DCC86200749A41 /* Products */,
 				49DFF06926DCCA7A00749A41 /* Frameworks */,
 			);
@@ -93,6 +122,8 @@
 			children = (
 				49DFF04326DCC86200749A41 /* CathayMovieDetails.framework */,
 				49DFF04C26DCC86200749A41 /* CathayMovieDetailsTests.xctest */,
+				49DFF07826DCD25200749A41 /* CathayMovieDetailsiOS.framework */,
+				49DFF08026DCD25200749A41 /* CathayMovieDetailsiOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -152,10 +183,33 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		49DFF07926DCD25200749A41 /* CathayMovieDetailsiOS */ = {
+			isa = PBXGroup;
+			children = (
+				49DFF07B26DCD25200749A41 /* Info.plist */,
+			);
+			path = CathayMovieDetailsiOS;
+			sourceTree = "<group>";
+		};
+		49DFF08426DCD25200749A41 /* CathayMovieDetailsiOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				49DFF08726DCD25200749A41 /* Info.plist */,
+			);
+			path = CathayMovieDetailsiOSTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
 		49DFF03E26DCC86200749A41 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49DFF07326DCD25200749A41 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -202,6 +256,42 @@
 			productReference = 49DFF04C26DCC86200749A41 /* CathayMovieDetailsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		49DFF07726DCD25200749A41 /* CathayMovieDetailsiOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49DFF08926DCD25200749A41 /* Build configuration list for PBXNativeTarget "CathayMovieDetailsiOS" */;
+			buildPhases = (
+				49DFF07326DCD25200749A41 /* Headers */,
+				49DFF07426DCD25200749A41 /* Sources */,
+				49DFF07526DCD25200749A41 /* Frameworks */,
+				49DFF07626DCD25200749A41 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CathayMovieDetailsiOS;
+			productName = CathayMovieDetailsiOS;
+			productReference = 49DFF07826DCD25200749A41 /* CathayMovieDetailsiOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		49DFF07F26DCD25200749A41 /* CathayMovieDetailsiOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49DFF08C26DCD25200749A41 /* Build configuration list for PBXNativeTarget "CathayMovieDetailsiOSTests" */;
+			buildPhases = (
+				49DFF07C26DCD25200749A41 /* Sources */,
+				49DFF07D26DCD25200749A41 /* Frameworks */,
+				49DFF07E26DCD25200749A41 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				49DFF08326DCD25200749A41 /* PBXTargetDependency */,
+			);
+			name = CathayMovieDetailsiOSTests;
+			productName = CathayMovieDetailsiOSTests;
+			productReference = 49DFF08026DCD25200749A41 /* CathayMovieDetailsiOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -218,6 +308,12 @@
 					49DFF04B26DCC86200749A41 = {
 						CreatedOnToolsVersion = 12.5;
 						LastSwiftMigration = 1250;
+					};
+					49DFF07726DCD25200749A41 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					49DFF07F26DCD25200749A41 = {
+						CreatedOnToolsVersion = 12.5;
 					};
 				};
 			};
@@ -236,6 +332,8 @@
 			targets = (
 				49DFF04226DCC86200749A41 /* CathayMovieDetails */,
 				49DFF04B26DCC86200749A41 /* CathayMovieDetailsTests */,
+				49DFF07726DCD25200749A41 /* CathayMovieDetailsiOS */,
+				49DFF07F26DCD25200749A41 /* CathayMovieDetailsiOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -249,6 +347,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		49DFF04A26DCC86200749A41 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49DFF07626DCD25200749A41 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49DFF07E26DCD25200749A41 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -279,6 +391,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		49DFF07426DCD25200749A41 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49DFF07C26DCD25200749A41 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -286,6 +412,11 @@
 			isa = PBXTargetDependency;
 			target = 49DFF04226DCC86200749A41 /* CathayMovieDetails */;
 			targetProxy = 49DFF04E26DCC86200749A41 /* PBXContainerItemProxy */;
+		};
+		49DFF08326DCD25200749A41 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49DFF07726DCD25200749A41 /* CathayMovieDetailsiOS */;
+			targetProxy = 49DFF08226DCD25200749A41 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -507,6 +638,104 @@
 			};
 			name = Release;
 		};
+		49DFF08A26DCD25200749A41 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = U27B56TU48;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CathayMovieDetailsiOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.GanNaSong.CathayMovieDetailsiOS;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		49DFF08B26DCD25200749A41 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = U27B56TU48;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CathayMovieDetailsiOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.GanNaSong.CathayMovieDetailsiOS;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		49DFF08D26DCD25200749A41 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U27B56TU48;
+				INFOPLIST_FILE = CathayMovieDetailsiOSTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.GanNaSong.CathayMovieDetailsiOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		49DFF08E26DCD25200749A41 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U27B56TU48;
+				INFOPLIST_FILE = CathayMovieDetailsiOSTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.GanNaSong.CathayMovieDetailsiOSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -533,6 +762,24 @@
 			buildConfigurations = (
 				49DFF05B26DCC86200749A41 /* Debug */,
 				49DFF05C26DCC86200749A41 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49DFF08926DCD25200749A41 /* Build configuration list for PBXNativeTarget "CathayMovieDetailsiOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49DFF08A26DCD25200749A41 /* Debug */,
+				49DFF08B26DCD25200749A41 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49DFF08C26DCD25200749A41 /* Build configuration list for PBXNativeTarget "CathayMovieDetailsiOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49DFF08D26DCD25200749A41 /* Debug */,
+				49DFF08E26DCD25200749A41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
