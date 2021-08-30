@@ -74,6 +74,17 @@ class LoadImageDataFromRemoteUseCaseTests: XCTestCase {
     }
   }
 
+  func test_cancel_pendingTaskCancelsClientRequest() {
+    let requestURL = makeURL("https://some-remote-image.com")
+    let (sut, client) = makeSUT()
+
+    let task = sut.load(from: requestURL, completion: { _ in })
+    XCTAssertTrue(client.cancelledURLs.isEmpty)
+
+    task.cancel()
+    XCTAssertEqual(client.cancelledURLs, [requestURL])
+  }
+
   // MARK: - Helpers
 
   func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: RemoteImageDataLoader, client: HTTPClientSpy) {
@@ -87,7 +98,7 @@ class LoadImageDataFromRemoteUseCaseTests: XCTestCase {
   func expect(_ sut: RemoteImageDataLoader, toCompleteWith expectedResult: RemoteImageDataLoader.Result, when action: () -> Void, file: StaticString = #file, line: UInt = #line) {
     let exp = expectation(description: "Wait for load completion")
     let imageURL = makeURL()
-    
+
     _ = sut.load(from: imageURL, completion: { receivedResult in
       switch (receivedResult, expectedResult) {
       case let (.success(receivedData), .success(expectedData)):
