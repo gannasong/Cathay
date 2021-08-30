@@ -49,4 +49,11 @@ extension NowPlayingViewController {
     let indexPath = IndexPath(item: index, section: 0)
     prefetchDataSource?.collectionView(collectionView, prefetchItemsAt: [indexPath])
   }
+
+  func simulateItemNoLongerNearVisible(at index: Int) {
+    simulateItemNearVisible(at: index)
+    let prefetchDataSource = collectionView.prefetchDataSource
+    let indexPath = IndexPath(item: index, section: 0)
+    prefetchDataSource?.collectionView?(collectionView, cancelPrefetchingForItemsAt: [indexPath])
+  }
 }
