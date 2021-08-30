@@ -52,6 +52,7 @@
 		49DFF11326DD0DBF00749A41 /* CathayCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFF11126DD0DBF00749A41 /* CathayCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		49FBAB2826DD324500628E9D /* NowPlayingCardFeedCell+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBAB2726DD324500628E9D /* NowPlayingCardFeedCell+TestHelpers.swift */; };
 		49FBAB2A26DD348800628E9D /* NowPlayingPagingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBAB2926DD348800628E9D /* NowPlayingPagingViewModel.swift */; };
+		49FBAB2C26DD37DE00628E9D /* NowPlayingPagingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBAB2B26DD37DE00628E9D /* NowPlayingPagingController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,6 +153,7 @@
 		49DFF11126DD0DBF00749A41 /* CathayCommon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CathayCommon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49FBAB2726DD324500628E9D /* NowPlayingCardFeedCell+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NowPlayingCardFeedCell+TestHelpers.swift"; sourceTree = "<group>"; };
 		49FBAB2926DD348800628E9D /* NowPlayingPagingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingPagingViewModel.swift; sourceTree = "<group>"; };
+		49FBAB2B26DD37DE00628E9D /* NowPlayingPagingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingPagingController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -313,6 +315,7 @@
 				49DFEFA426DBDACD00749A41 /* NowPlayingViewController.swift */,
 				49DFEFB326DBDF7200749A41 /* NowPlayingRefreshController.swift */,
 				49DFF00726DC7B5D00749A41 /* NowPlayingCardCellController.swift */,
+				49FBAB2B26DD37DE00628E9D /* NowPlayingPagingController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -618,6 +621,7 @@
 				49DFF03826DCBC8F00749A41 /* UIImageView+Extensions.swift in Sources */,
 				49DFEFCB26DC680900749A41 /* NowPlayingPresentationAdapter.swift in Sources */,
 				49DFEFA526DBDACD00749A41 /* NowPlayingViewController.swift in Sources */,
+				49FBAB2C26DD37DE00628E9D /* NowPlayingPagingController.swift in Sources */,
 				49DFF00626DC7A3000749A41 /* NowPlayingViewAdapter.swift in Sources */,
 				49DFF01326DC88DF00749A41 /* UIView+Extensions.swift in Sources */,
 				49DFF00826DC7B5D00749A41 /* NowPlayingCardCellController.swift in Sources */,
