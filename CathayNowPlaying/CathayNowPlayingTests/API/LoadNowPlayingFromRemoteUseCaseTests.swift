@@ -156,7 +156,7 @@ class LoadNowPlayingFromRemoteUseCaseTests: XCTestCase {
 
     let json: [String: Any] = [
       "results": items.map { $0.json },
-      "number": pageNumber,
+      "page": pageNumber,
       "total_pages": totalPages
     ].compactMapValues { $0 }
 

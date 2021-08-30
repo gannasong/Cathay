@@ -66,7 +66,7 @@ private extension RemoteNowPlayingLoader {
 
 private extension RemoteNowPlayingFeed {
   var asPageDTO: NowPlayingFeed {
-    return NowPlayingFeed(items: results.asCardDTO, page: number, totalPages: total_pages)
+    return NowPlayingFeed(items: results.asCardDTO, page: page, totalPages: total_pages)
   }
 }
 
