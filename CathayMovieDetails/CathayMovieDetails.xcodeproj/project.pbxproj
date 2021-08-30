@@ -35,6 +35,7 @@
 		49FBAB1E26DD2CEB00628E9D /* CathayMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49FBAB1D26DD2CEB00628E9D /* CathayMedia.framework */; };
 		49FBAB1F26DD2CEB00628E9D /* CathayMedia.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 49FBAB1D26DD2CEB00628E9D /* CathayMedia.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		49FBAB2126DD308200628E9D /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBAB2026DD308200628E9D /* UIImage+Extensions.swift */; };
+		49FBAB2426DD30EF00628E9D /* MovieLoaderPresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FBAB2326DD30EF00628E9D /* MovieLoaderPresentationAdapter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +119,7 @@
 		49FBAB1A26DD27DC00628E9D /* CathayMedia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CathayMedia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49FBAB1D26DD2CEB00628E9D /* CathayMedia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CathayMedia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49FBAB2026DD308200628E9D /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		49FBAB2326DD30EF00628E9D /* MovieLoaderPresentationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieLoaderPresentationAdapter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +246,7 @@
 		49DFF07926DCD25200749A41 /* CathayMovieDetailsiOS */ = {
 			isa = PBXGroup;
 			children = (
+				49FBAB2226DD30DF00628E9D /* Adapters */,
 				49DFF0A926DCE30C00749A41 /* Composers */,
 				49DFF09C26DCDDB900749A41 /* Controllers */,
 				49FBAB0826DD11A600628E9D /* Views */,
@@ -319,6 +322,14 @@
 				49FBAB1326DD24BF00628E9D /* MovieDetailsViewModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		49FBAB2226DD30DF00628E9D /* Adapters */ = {
+			isa = PBXGroup;
+			children = (
+				49FBAB2326DD30EF00628E9D /* MovieLoaderPresentationAdapter.swift */,
+			);
+			path = Adapters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -527,6 +538,7 @@
 				49FBAB0A26DD127C00628E9D /* MovieDetailsCustomView.swift in Sources */,
 				49DFF09E26DCDDC500749A41 /* MovieDetailsViewController.swift in Sources */,
 				49DFF0AB26DCE32500749A41 /* MovieDetailsUIComposer.swift in Sources */,
+				49FBAB2426DD30EF00628E9D /* MovieLoaderPresentationAdapter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
