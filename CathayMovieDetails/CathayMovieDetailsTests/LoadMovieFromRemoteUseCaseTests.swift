@@ -81,7 +81,7 @@ class LoadMovieFromRemoteUseCaseTests: XCTestCase {
     }
   }
 
-  func test_execute_deliversErrorOnNonSuccessResponse() {
+  func test_load_deliversErrorOnNonSuccessResponse() {
     let (sut, client) = makeSUT()
     let samples = [299, 300, 399, 400, 418, 499, 500]
 
@@ -90,6 +90,15 @@ class LoadMovieFromRemoteUseCaseTests: XCTestCase {
         let data = makeData()
         client.completes(withStatusCode: code, data: data, at: index)
       }
+    }
+  }
+
+  func test_load_deliversErrorOnSuccessResponseWithInvalidJson() {
+    let (sut, client) = makeSUT()
+    let invalidJSONData = Data("invalid json".utf8)
+
+    expect(sut, toCompleteWith: failure(.invalidResponse)) {
+      client.completes(withStatusCode: 200, data: invalidJSONData)
     }
   }
 
