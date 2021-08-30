@@ -49,7 +49,7 @@
 		49DFF01026DC836600749A41 /* NowPlayingImageDataLoaderPresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF00F26DC836600749A41 /* NowPlayingImageDataLoaderPresentationAdapter.swift */; };
 		49DFF01326DC88DF00749A41 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF01226DC88DF00749A41 /* UIView+Extensions.swift */; };
 		49DFF01526DC8EA400749A41 /* UIImage+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF01426DC8EA400749A41 /* UIImage+TestHelpers.swift */; };
-		49DFF03526DCB67A00749A41 /* MainQueueDispatchDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF03426DCB67A00749A41 /* MainQueueDispatchDecorator.swift */; };
+		49DFF03626DCB70900749A41 /* MainQueueDispatchDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF03426DCB67A00749A41 /* MainQueueDispatchDecorator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -383,7 +383,6 @@
 			isa = PBXGroup;
 			children = (
 				49DFEFC426DBECDC00749A41 /* WeakRefVirtualProxyTests.swift */,
-				49DFF03426DCB67A00749A41 /* MainQueueDispatchDecorator.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -392,6 +391,7 @@
 			isa = PBXGroup;
 			children = (
 				49DFEFC726DBEDB400749A41 /* WeakRefVirtualProxy.swift */,
+				49DFF03426DCB67A00749A41 /* MainQueueDispatchDecorator.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -601,6 +601,7 @@
 				49DFEFBE26DBEA7600749A41 /* NowPlayingLoadingViewModel.swift in Sources */,
 				49DFEFBC26DBEA4600749A41 /* NowPlayingErrorViewModel.swift in Sources */,
 				49DFEECD26DB4A7C00749A41 /* NowPlayingCard.swift in Sources */,
+				49DFF03626DCB70900749A41 /* MainQueueDispatchDecorator.swift in Sources */,
 				49DFEFC026DBEAB400749A41 /* NowPlayingViewModel.swift in Sources */,
 				49DFF00C26DC820900749A41 /* NowPlayingImageViewModel.swift in Sources */,
 				49DFEEE126DB61CF00749A41 /* NowPlayingItemsMapper.swift in Sources */,
@@ -614,7 +615,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				49DFEFB826DBE42C00749A41 /* NowPlayingPresenterTests.swift in Sources */,
-				49DFF03526DCB67A00749A41 /* MainQueueDispatchDecorator.swift in Sources */,
 				49DFEED326DB4F1900749A41 /* XCTestCase+Extension.swift in Sources */,
 				49DFEFC526DBECDC00749A41 /* WeakRefVirtualProxyTests.swift in Sources */,
 				49DFEEDC26DB600100749A41 /* HTTPClientSpy.swift in Sources */,
