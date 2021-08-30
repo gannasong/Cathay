@@ -61,7 +61,7 @@ class LoadImageDataFromRemoteUseCaseTests: XCTestCase {
     XCTAssertEqual(client.requestedURLs, [requestURL, requestURL])
   }
 
-  func test_execute_deliversErrorOnClientError() {
+  func test_load_deliversErrorOnClientError() {
     let (sut, client) = makeSUT()
     let error = makeError()
 
@@ -70,7 +70,7 @@ class LoadImageDataFromRemoteUseCaseTests: XCTestCase {
     }
   }
 
-  func test_execute_deliversErrorOnNonSuccessResponse() {
+  func test_load_deliversErrorOnNonSuccessResponse() {
     let (sut, client) = makeSUT()
     let samples = [299, 300, 399, 400, 418, 499, 500]
 
@@ -79,6 +79,15 @@ class LoadImageDataFromRemoteUseCaseTests: XCTestCase {
         let data = makeData()
         client.completes(withStatusCode: code, data: data, at: index)
       }
+    }
+  }
+
+  func test_load_deliversErrorOnSuccessResponseWithEmptyData() {
+    let (sut, client) = makeSUT()
+    let emptyData = makeData(isEmpty: true)
+
+    expect(sut, toCompleteWith: failure(.invalidResponse)) {
+      client.completes(withStatusCode: 200, data: emptyData)
     }
   }
 
