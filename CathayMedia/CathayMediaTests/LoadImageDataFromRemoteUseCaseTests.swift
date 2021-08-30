@@ -14,7 +14,7 @@ class RemoteImageDataLoader {
     case invalidResponse
   }
 
-  typealias Result = Swift.Result<Void, Error>
+  typealias Result = Swift.Result<Data, Error>
 
   private let client: HTTPClient
 
@@ -22,13 +22,17 @@ class RemoteImageDataLoader {
     self.client = client
   }
 
-  func load(from imageURL: URL, completions: @escaping (Result) -> Void = { _ in }) {
+  func load(from imageURL: URL, completion: @escaping (Result) -> Void = { _ in }) {
     client.dispatch(URLRequest(url: imageURL), completion: { result in
       switch result {
-      case .success:
-        completions(.failure(Error.invalidResponse))
+      case let .success(body):
+        if body.data.count > 0 && body.response.statusCode == 200 {
+          completion(.success(body.data))
+        } else {
+          completion(.failure(Error.invalidResponse))
+        }
       case .failure:
-        completions(.failure(Error.connectivity))
+        completion(.failure(Error.connectivity))
       }
     })
   }
@@ -91,6 +95,15 @@ class LoadImageDataFromRemoteUseCaseTests: XCTestCase {
     }
   }
 
+  func test_delivers_successOnSuccessResponseWithNonEmptyData() {
+    let (sut, client) = makeSUT()
+    let nonEmptyData = makeData()
+
+    expect(sut, toCompleteWith: .success(nonEmptyData)) {
+      client.completes(withStatusCode: 200, data: nonEmptyData)
+    }
+  }
+
   // MARK: - Helpers
 
   func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: RemoteImageDataLoader, client: HTTPClientSpy) {
@@ -105,13 +118,18 @@ class LoadImageDataFromRemoteUseCaseTests: XCTestCase {
     let exp = expectation(description: "Wait for load completion")
     let imageURL = makeURL()
 
-    sut.load(from: imageURL, completions: { receivedResult in
+    sut.load(from: imageURL, completion: { receivedResult in
       switch (receivedResult, expectedResult) {
+      case let (.success(receivedData), .success(expectedData)):
+        XCTAssertEqual(receivedData, expectedData, file: file, line: line)
+
       case let (.failure(receivedError as RemoteImageDataLoader.Error), .failure(expectedError as RemoteImageDataLoader.Error)):
         XCTAssertEqual(receivedError, expectedError, file: file, line: line)
+
       default:
         XCTFail("Expected result \(expectedResult) got \(receivedResult) instead", file: file, line: line)
       }
+
       exp.fulfill()
     })
 
