@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,10 @@
 		49DFF07026DCD16300749A41 /* RemoteMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF06F26DCD16300749A41 /* RemoteMovie.swift */; };
 		49DFF07226DCD17F00749A41 /* RemoteMovieLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF07126DCD17F00749A41 /* RemoteMovieLoader.swift */; };
 		49DFF08126DCD25200749A41 /* CathayMovieDetailsiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFF07826DCD25200749A41 /* CathayMovieDetailsiOS.framework */; };
+		49DFF08F26DCDA4100749A41 /* CathayMovieDetails.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFF04326DCC86200749A41 /* CathayMovieDetails.framework */; platformFilter = ios; };
+		49DFF09026DCDA4100749A41 /* CathayMovieDetails.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFF04326DCC86200749A41 /* CathayMovieDetails.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		49DFF09526DCDA5B00749A41 /* MovieDetailsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF09426DCDA5B00749A41 /* MovieDetailsViewControllerTests.swift */; };
+		49DFF09626DCDAA700749A41 /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF06326DCC9CC00749A41 /* XCTestCase+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +39,13 @@
 			remoteGlobalIDString = 49DFF07726DCD25200749A41;
 			remoteInfo = CathayMovieDetailsiOS;
 		};
+		49DFF09126DCDA4100749A41 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49DFF03A26DCC86200749A41 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49DFF04226DCC86200749A41;
+			remoteInfo = CathayMovieDetails;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +56,17 @@
 			dstSubfolderSpec = 10;
 			files = (
 				49DFF06C26DCCA7A00749A41 /* CathayNetworking.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49DFF09326DCDA4100749A41 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				49DFF09026DCDA4100749A41 /* CathayMovieDetails.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -68,6 +90,7 @@
 		49DFF07B26DCD25200749A41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49DFF08026DCD25200749A41 /* CathayMovieDetailsiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CathayMovieDetailsiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DFF08726DCD25200749A41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49DFF09426DCDA5B00749A41 /* MovieDetailsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49DFF08F26DCDA4100749A41 /* CathayMovieDetails.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				49DFF08726DCD25200749A41 /* Info.plist */,
+				49DFF09426DCDA5B00749A41 /* MovieDetailsViewControllerTests.swift */,
 			);
 			path = CathayMovieDetailsiOSTests;
 			sourceTree = "<group>";
@@ -264,10 +289,12 @@
 				49DFF07426DCD25200749A41 /* Sources */,
 				49DFF07526DCD25200749A41 /* Frameworks */,
 				49DFF07626DCD25200749A41 /* Resources */,
+				49DFF09326DCDA4100749A41 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				49DFF09226DCDA4100749A41 /* PBXTargetDependency */,
 			);
 			name = CathayMovieDetailsiOS;
 			productName = CathayMovieDetailsiOS;
@@ -314,6 +341,7 @@
 					};
 					49DFF07F26DCD25200749A41 = {
 						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
 					};
 				};
 			};
@@ -402,6 +430,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49DFF09626DCDAA700749A41 /* XCTestCase+Extensions.swift in Sources */,
+				49DFF09526DCDA5B00749A41 /* MovieDetailsViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +447,12 @@
 			isa = PBXTargetDependency;
 			target = 49DFF07726DCD25200749A41 /* CathayMovieDetailsiOS */;
 			targetProxy = 49DFF08226DCD25200749A41 /* PBXContainerItemProxy */;
+		};
+		49DFF09226DCDA4100749A41 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = 49DFF04226DCC86200749A41 /* CathayMovieDetails */;
+			targetProxy = 49DFF09126DCDA4100749A41 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -696,6 +732,7 @@
 		49DFF08D26DCD25200749A41 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U27B56TU48;
 				INFOPLIST_FILE = CathayMovieDetailsiOSTests/Info.plist;
@@ -709,6 +746,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -717,6 +755,7 @@
 		49DFF08E26DCD25200749A41 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U27B56TU48;
 				INFOPLIST_FILE = CathayMovieDetailsiOSTests/Info.plist;
