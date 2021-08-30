@@ -21,6 +21,7 @@
 		49DFF02226DCAD2400749A41 /* CathayNowPlayingiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFF02126DCAD2400749A41 /* CathayNowPlayingiOS.framework */; };
 		49DFF02326DCAD2400749A41 /* CathayNowPlayingiOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFF02126DCAD2400749A41 /* CathayNowPlayingiOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		49DFF02626DCAD7A00749A41 /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF02526DCAD7A00749A41 /* XCTestCase+Extensions.swift */; };
+		49DFF02926DCADAE00749A41 /* AuthConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF02826DCADAE00749A41 /* AuthConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		49DFF01E26DCAD2000749A41 /* CathayNowPlaying.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CathayNowPlaying.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DFF02126DCAD2400749A41 /* CathayNowPlayingiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CathayNowPlayingiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DFF02526DCAD7A00749A41 /* XCTestCase+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extensions.swift"; sourceTree = "<group>"; };
+		49DFF02826DCADAE00749A41 /* AuthConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 		49DFEEEF26DB651600749A41 /* CathayApp */ = {
 			isa = PBXGroup;
 			children = (
+				49DFF02726DCAD9F00749A41 /* Models */,
 				49DFEEF026DB651600749A41 /* AppDelegate.swift */,
 				49DFEEF226DB651600749A41 /* SceneDelegate.swift */,
 				49DFEEF426DB651600749A41 /* ViewController.swift */,
@@ -173,6 +176,14 @@
 				49DFF02526DCAD7A00749A41 /* XCTestCase+Extensions.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		49DFF02726DCAD9F00749A41 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				49DFF02826DCADAE00749A41 /* AuthConfig.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,6 +320,7 @@
 				49DFEEF526DB651600749A41 /* ViewController.swift in Sources */,
 				49DFEEF126DB651600749A41 /* AppDelegate.swift in Sources */,
 				49DFEEF326DB651600749A41 /* SceneDelegate.swift in Sources */,
+				49DFF02926DCADAE00749A41 /* AuthConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
