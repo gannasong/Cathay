@@ -12,6 +12,7 @@
 		49DFEFF326DC6C0E00749A41 /* CathayNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 49DFEFF126DC6C0E00749A41 /* CathayNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		49DFEFF726DC6C4F00749A41 /* XCTestCase+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEFF626DC6C4F00749A41 /* XCTestCase+Extension.swift */; };
 		49DFEFF926DC6CBC00749A41 /* HTTPClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEFF826DC6CBC00749A41 /* HTTPClientSpy.swift */; };
+		49DFEFFB26DC6D2300749A41 /* LoadImageDataFromRemoteUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEFFA26DC6D2300749A41 /* LoadImageDataFromRemoteUseCaseTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		49DFEFF126DC6C0E00749A41 /* CathayNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CathayNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DFEFF626DC6C4F00749A41 /* XCTestCase+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extension.swift"; sourceTree = "<group>"; };
 		49DFEFF826DC6CBC00749A41 /* HTTPClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientSpy.swift; sourceTree = "<group>"; };
+		49DFEFFA26DC6D2300749A41 /* LoadImageDataFromRemoteUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadImageDataFromRemoteUseCaseTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			children = (
 				49DFEFF526DC6C3500749A41 /* Helpers */,
 				49DFEFE626DC6B9700749A41 /* Info.plist */,
+				49DFEFFA26DC6D2300749A41 /* LoadImageDataFromRemoteUseCaseTests.swift */,
 			);
 			path = CathayMediaTests;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 			files = (
 				49DFEFF726DC6C4F00749A41 /* XCTestCase+Extension.swift in Sources */,
 				49DFEFF926DC6CBC00749A41 /* HTTPClientSpy.swift in Sources */,
+				49DFEFFB26DC6D2300749A41 /* LoadImageDataFromRemoteUseCaseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
