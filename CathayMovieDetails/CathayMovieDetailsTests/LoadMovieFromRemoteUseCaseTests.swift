@@ -13,6 +13,7 @@ class RemoteMovieLoader {
 
   enum Error: Swift.Error {
     case connectivity
+    case invalidResponse
   }
 
   private let baseURL: URL
@@ -24,8 +25,11 @@ class RemoteMovieLoader {
   }
 
   func load(id: Int, completion: @escaping (Result) -> Void) {
-    client.dispatch(URLRequest(url: enrich(baseURL, with: id)), completion: { _ in
-      completion(.failure(.connectivity))
+    client.dispatch(URLRequest(url: enrich(baseURL, with: id)), completion: { [weak self] result in
+      switch result {
+      case .success: completion(.failure(.invalidResponse))
+      case .failure: completion(.failure(.connectivity))
+      }
     })
   }
 
@@ -77,6 +81,18 @@ class LoadMovieFromRemoteUseCaseTests: XCTestCase {
     }
   }
 
+  func test_execute_deliversErrorOnNonSuccessResponse() {
+    let (sut, client) = makeSUT()
+    let samples = [299, 300, 399, 400, 418, 499, 500]
+
+    samples.enumerated().forEach { index, code in
+      expect(sut, toCompleteWith: failure(.invalidResponse)) {
+        let data = makeData()
+        client.completes(withStatusCode: code, data: data, at: index)
+      }
+    }
+  }
+
   // MARK: - Helpers
 
   func makeSUT(baseURL: URL? = nil, file: StaticString = #file, line: UInt = #line) -> (RemoteMovieLoader, HTTPClientSpy) {
@@ -91,10 +107,10 @@ class LoadMovieFromRemoteUseCaseTests: XCTestCase {
     let exp = expectation(description: "Wait for load completion")
     sut.load(id: 0, completion: { receivedResult in
       switch (receivedResult, expectedResult) {
-        case let (.failure(receivedError as RemoteMovieLoader.Error), .failure(expectedError as RemoteMovieLoader.Error)):
-          XCTAssertEqual(receivedError, expectedError, file: file, line: line)
-        default:
-          XCTFail("Expected result \(expectedResult) got \(receivedResult) instead", file: file, line: line)
+      case let (.failure(receivedError as RemoteMovieLoader.Error), .failure(expectedError as RemoteMovieLoader.Error)):
+        XCTAssertEqual(receivedError, expectedError, file: file, line: line)
+      default:
+        XCTFail("Expected result \(expectedResult) got \(receivedResult) instead", file: file, line: line)
       }
       exp.fulfill()
     })
