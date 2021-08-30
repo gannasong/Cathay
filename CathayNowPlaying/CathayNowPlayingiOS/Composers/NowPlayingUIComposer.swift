@@ -7,6 +7,7 @@
 
 import Foundation
 import CathayMedia
+import CathayCommon
 import CathayNowPlaying
 
 public final class NowPlayingUIComposer {

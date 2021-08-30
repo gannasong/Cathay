@@ -1,6 +1,6 @@
 //
 //  WeakRefVirtualProxy.swift
-//  CathayNowPlaying
+//  CathayCommon
 //
 //  Created by SUNG HAO LIN on 2021/8/30.
 //

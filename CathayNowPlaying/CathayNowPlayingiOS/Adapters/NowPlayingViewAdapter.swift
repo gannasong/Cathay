@@ -7,6 +7,7 @@
 
 import UIKit
 import CathayMedia
+import CathayCommon
 import CathayNowPlaying
 
 final class NowPlayingViewAdapter {

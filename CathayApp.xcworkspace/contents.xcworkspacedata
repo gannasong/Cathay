@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:CathayCommon/CathayCommon.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:CathayMovieDetails/CathayMovieDetails.xcodeproj">
    </FileRef>
    <FileRef
