@@ -47,6 +47,7 @@
 		49DFF00C26DC820900749A41 /* NowPlayingImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF00B26DC820900749A41 /* NowPlayingImageViewModel.swift */; };
 		49DFF00E26DC827100749A41 /* NowPlayingImagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF00D26DC827100749A41 /* NowPlayingImagePresenter.swift */; };
 		49DFF01026DC836600749A41 /* NowPlayingImageDataLoaderPresentationAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF00F26DC836600749A41 /* NowPlayingImageDataLoaderPresentationAdapter.swift */; };
+		49DFF01326DC88DF00749A41 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFF01226DC88DF00749A41 /* UIView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +143,7 @@
 		49DFF00B26DC820900749A41 /* NowPlayingImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingImageViewModel.swift; sourceTree = "<group>"; };
 		49DFF00D26DC827100749A41 /* NowPlayingImagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingImagePresenter.swift; sourceTree = "<group>"; };
 		49DFF00F26DC836600749A41 /* NowPlayingImageDataLoaderPresentationAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingImageDataLoaderPresentationAdapter.swift; sourceTree = "<group>"; };
+		49DFF01226DC88DF00749A41 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -320,6 +322,7 @@
 		49DFEFAD26DBDE0600749A41 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				49DFF01126DC88CD00749A41 /* Helpers */,
 				49DFEFAE26DBDE1D00749A41 /* NowPlayingCardFeedCell.swift */,
 			);
 			path = Views;
@@ -395,6 +398,14 @@
 				49DFF00F26DC836600749A41 /* NowPlayingImageDataLoaderPresentationAdapter.swift */,
 			);
 			path = Adapters;
+			sourceTree = "<group>";
+		};
+		49DFF01126DC88CD00749A41 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				49DFF01226DC88DF00749A41 /* UIView+Extensions.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -612,6 +623,7 @@
 				49DFEFCB26DC680900749A41 /* NowPlayingPresentationAdapter.swift in Sources */,
 				49DFEFA526DBDACD00749A41 /* NowPlayingViewController.swift in Sources */,
 				49DFF00626DC7A3000749A41 /* NowPlayingViewAdapter.swift in Sources */,
+				49DFF01326DC88DF00749A41 /* UIView+Extensions.swift in Sources */,
 				49DFF00826DC7B5D00749A41 /* NowPlayingCardCellController.swift in Sources */,
 				49DFEFB426DBDF7200749A41 /* NowPlayingRefreshController.swift in Sources */,
 				49DFEFB226DBDE8300749A41 /* NowPlayingUIComposer.swift in Sources */,

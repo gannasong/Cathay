@@ -8,5 +8,9 @@
 import UIKit
 
 public final class NowPlayingCardFeedCell: UICollectionViewCell {
-
+  public let imageContainer: UIView = {
+    let view = UIView(frame: .zero)
+    view.translatesAutoresizingMaskIntoConstraints = false
+    return view
+  }()
 }

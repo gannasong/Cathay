@@ -27,6 +27,8 @@ final class NowPlayingViewAdapter {
     )
 
     let view = NowPlayingCardCellController(delegate: adapter)
+    adapter.presenter = NowPlayingImagePresenter(view: WeakRefVirtualProxy(view), imageTransformer: UIImage.init)
+    
     return view
    }
 }

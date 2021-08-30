@@ -92,6 +92,28 @@ class NowPlayingViewControllerTests: XCTestCase {
     XCTAssertEqual(loader.cancelledImageURLs, [expectedURLZero, expectedURLOne])
   }
 
+  func test_load_nowPlayingCardShowsLoadingIndicatorWhenImageIsLoading() {
+    let (sut, loader) = makeSUT()
+    let itemZero = makeNowPlayingCard(id: 0)
+    let itemOne = makeNowPlayingCard(id: 1)
+    let feedPage = makeNowPlayingFeed(items: [itemZero, itemOne], pageNumber: 1, totalPages: 1)
+
+    sut.loadViewIfNeeded()
+    loader.loadFeedCompletes(with: .success(feedPage))
+
+    let viewOne = sut.simulateItemVisible(at: 0) as? NowPlayingCardFeedCell
+    XCTAssertEqual(viewOne?.loadingIndicatorIsVisible, true)
+
+    loader.completeImageLoading(with: makeData(), at: 0)
+    XCTAssertEqual(viewOne?.loadingIndicatorIsVisible, false)
+
+    let viewTwo = sut.simulateItemVisible(at: 1) as? NowPlayingCardFeedCell
+    XCTAssertEqual(viewTwo?.loadingIndicatorIsVisible, true)
+
+    loader.completeImageLoading(with: makeData(), at: 1)
+    XCTAssertEqual(viewTwo?.loadingIndicatorIsVisible, false)
+  }
+
   // MARK: - Helpers
 
   func makeSUT(file: StaticString = #file, line: UInt = #line) -> (NowPlayingViewController, LoaderSpy) {
@@ -173,5 +195,11 @@ class NowPlayingViewControllerTests: XCTestCase {
       let error = NSError(domain: "an error", code: 0)
       imageRequests[index].completion(.failure(error))
     }
+  }
+}
+
+extension NowPlayingCardFeedCell {
+  var loadingIndicatorIsVisible: Bool {
+    return imageContainer.isShimmering
   }
 }
